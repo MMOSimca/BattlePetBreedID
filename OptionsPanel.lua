@@ -18,8 +18,6 @@ BPBID_Options.Names.HSFUpdate: In the Pet Journal scrolling frame
 BPBID_Options.Names.PJT: In the Pet Journal tooltips
 	BPBID_Options.Names.PJTRarity: Color Pet Journal tooltip headers by rarity
 
-Future: rest of pet journal and maybe natural battlepetcount integration
-
 BPBID_Options.Tooltips.Enabled: Enable Battle Pet BreedID Tooltips
 Show Battle Pet BreedID Tooltips...
 BPBID_Options.Tooltips.BattleTooltip: In Battle (PrimaryBattlePetUnitTooltip)
@@ -39,15 +37,15 @@ BPBID_Options.Breedtip.AllStats25: All breeds' stats at level 25
 	BPBID_Options.Breedtip.AllStats25Rare: Always assume pet will be Rare at level 25
 --]]
 
--- get folder path and set addon namespace
+-- Get folder path and set addon namespace
 local addonname, internal = ...
 
--- create options panel
+-- Create options panel
 local Options = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
 Options:Hide()
 Options.name = "Battle Pet BreedID"
 
--- variable for easy positioning
+-- Variable for easy positioning
 local lastcheckbox
 
 -- Ro's CreateFont function for easy FontString creation
@@ -55,7 +53,7 @@ local function CreateFont(fontName, r, g, b, anchorPoint, relativeTo, relativePo
 	local font = Options:CreateFontString(nil, "BACKGROUND", fontName)
 	font:SetJustifyH("LEFT")
 	font:SetJustifyV("TOP")
-	if type(r) == "string" then -- r is text, no positioning
+	if type(r) == "string" then -- R is text, no positioning
 		text = r
 	else
 		if r then
@@ -68,7 +66,7 @@ local function CreateFont(fontName, r, g, b, anchorPoint, relativeTo, relativePo
 	return font
 end
 
--- my CreateCheckbox function for easy Checkbox creation (going to need lots and lots)
+-- My CreateCheckbox function for easy Checkbox creation (going to need lots and lots)
 local function CreateCheckbox(text, height, width, anchorPoint, relativeTo, relativePoint, xoff, yoff, font)
 	local checkbox = CreateFrame("CheckButton", nil, Options, "UICheckButtonTemplate")
 	checkbox:SetPoint(anchorPoint, relativeTo, relativePoint, xoff, yoff)
@@ -83,7 +81,7 @@ end
 local panelWidth = InterfaceOptionsFramePanelContainer:GetWidth() -- ~623
 local wideWidth = panelWidth - 40
 
--- create title, version, author, and description fields
+-- Create title, version, author, and description fields
 local title = CreateFont("GameFontNormalLarge", "Battle Pet BreedID")
 title:SetPoint("TOPLEFT", 16, -16)
 local ver = CreateFont("GameFontNormalSmall", "version "..GetAddOnMetadata(addonname, "Version"))
@@ -92,46 +90,46 @@ local auth = CreateFont("GameFontNormalSmall", "created by "..GetAddOnMetadata(a
 auth:SetPoint("BOTTOMLEFT", ver, "BOTTOMRIGHT", 3, 0)
 local desc = CreateFont("GameFontHighlight", nil, nil, nil, "TOPLEFT", title, "BOTTOMLEFT", wideWidth, 40, 0, -8, "Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in item tooltips.")
 
--- create temp format variable
+-- Create temp format variable
 local tempformat = 3
 
--- create dropdownmenu
+-- Create dropdownmenu
 if not BPBID_OptionsFormatMenu then
 	CreateFrame("Button", "BPBID_OptionsFormatMenu", Options, "UIDropDownMenuTemplate")
 end
 
--- set dropdownmenu location
+-- Set dropdownmenu location
 BPBID_OptionsFormatMenu:ClearAllPoints()
 BPBID_OptionsFormatMenu:SetPoint("TOPLEFT", desc, "BOTTOMLEFT", 16, -8)
 BPBID_OptionsFormatMenu:Show()
 
--- create array for dropdownmenu
+-- Create array for dropdownmenu
 local formats = {
 	"Number (3)",
 	"Dual numbers (3/13)",
 	"Letters (B/B)",
 }
 
--- create array for text blurb
+-- Create array for text blurb
 local formatTexts = {
 	"The number system was created by Blizzard developers and is used internally (it was discovered via the Web API). As such, it is fairly arbitrary (why does it start at 3?), but it was all we had at first. However, a lot of people have learned the system by numbers, and a few of the first-created resources and addons use it, such as Warla's popular website, PetSear.ch.",
 	"Same as numbers but for people who like a reminder that we cannot figure out the sex of pets. Male pets are the first number (3 - 12) and female pets are the second number (13 - 22). Remember that not all pets can be both sexes. For example, all (?) Elemental type pets are exclusively male.",
 	"The letter system was developed as a way to more quickly tell breeds apart from each other. Each letter represents one half of the stat contribution that makes up a breed. A few examples: S/S (#5) is a pure Speed breed. S/B (#11) is half Speed with the other half Balanced between all three stats. H/P (#7) is half Health and half Power.",
 }
 
--- create text blurb explaining format choices
+-- Create text blurb explaining format choices
 local FormatTextBlurb = CreateFont("GameFontNormal", nil, nil, nil, "TOPLEFT", BPBID_OptionsFormatMenu, "TOPRIGHT" , 350, 100, 16, 24, formatTexts[tempformat])
 FormatTextBlurb:SetTextColor(1, 1, 1, 1)
 
 -- OnClick function for dropdownmenu
 local function BPBID_OptionsFormatMenu_OnClick(self, arg1, arg2, checked)
-	-- update temp variable
+	-- Update temp variable
 	tempformat = arg1
 	
-	-- update dropdownmenu text
+	-- Update dropdownmenu text
 	UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[tempformat])
 	
-	-- update text blurb to the new choice
+	-- Update text blurb to the new choice
 	FormatTextBlurb:SetText(formatTexts[tempformat])
 end
 
@@ -148,19 +146,19 @@ local function BPBID_OptionsFormatMenu_Initialize(self, level)
 	UIDropDownMenu_AddButton(info)
 end
 
--- final setup for dropdownmenu
+-- Final setup for dropdownmenu
 UIDropDownMenu_Initialize(BPBID_OptionsFormatMenu, BPBID_OptionsFormatMenu_Initialize)
 UIDropDownMenu_SetWidth(BPBID_OptionsFormatMenu, 148);
 UIDropDownMenu_SetButtonWidth(BPBID_OptionsFormatMenu, 124)
 UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[tempformat])
 UIDropDownMenu_JustifyText(BPBID_OptionsFormatMenu, "LEFT")
 
--- set on top of colored region
+-- Set on top of colored region
 local nameTitle = CreateFont("GameFontNormal", "Show BreedIDs in the Name line...")
 nameTitle:SetPoint("TOPLEFT", BPBID_OptionsFormatMenu, "BOTTOMLEFT", -8, -16)
 nameTitle:SetTextColor(1, 1, 1, 1)
 
--- make Names checkboxes
+-- Make Names checkboxes
 local OptNamesPrimaryBattle = CreateCheckbox("In Battle (on primary pets)", 32, 32, "TOPLEFT", nameTitle, "BOTTOMLEFT", 0, 0)
 local OptNamesBattleTooltip = CreateCheckbox("On in-battle tooltips", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptNamesBPT = CreateCheckbox("In Item tooltips", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
@@ -170,26 +168,26 @@ local OptNamesHSFUpdateRarity = CreateCheckbox("Color Pet Journal scrolling fram
 local OptNamesPJT = CreateCheckbox("In the Pet Journal description tooltip", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", -32, 0)
 local OptNamesPJTRarity = CreateCheckbox("Color Pet Journal tooltip headers by rarity", 16, 16, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 32, 0, "GameFontNormalSmall")
 
--- above the Tooltips region's title (this checkbox disables the rest of them)
+-- Above the Tooltips region's title (this checkbox disables the rest of them)
 local OptTooltipsEnabled = CreateCheckbox("Enable Battle Pet BreedID Tooltips", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", -32, -16)
 
--- text above the Tooltips region
+-- Text above the Tooltips region
 local tooltipsTitle = CreateFont("GameFontNormal", "Show Battle Pet BreedID Tooltips...")
 tooltipsTitle:SetPoint("TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, -2)
 tooltipsTitle:SetTextColor(1, 1, 1, 1)
 
--- make Tooltips checkboxes
+-- Make Tooltips checkboxes
 local OptTooltipsBattleTooltip = CreateCheckbox("In Battle", 32, 32, "TOPLEFT", tooltipsTitle, "BOTTOMLEFT", 0, 0)
 local OptTooltipsBPT = CreateCheckbox("On Items", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptTooltipsFBPT = CreateCheckbox("On Chat Links", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptTooltipsPJT = CreateCheckbox("In the Pet Journal", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 
--- text above the Tooltips region
+-- Text above the Tooltips region
 local breedtipTitle = CreateFont("GameFontNormal", "In Tooltips, show...")
 breedtipTitle:SetPoint("TOP", FormatTextBlurb, "BOTTOM", -48, -8)
 breedtipTitle:SetTextColor(1, 1, 1, 1)
 
--- make Breedtip checkboxes
+-- Make Breedtip checkboxes
 local OptBreedtipCurrent = CreateCheckbox("Current pet's breed", 32, 32, "TOPLEFT", breedtipTitle, "BOTTOMLEFT", 0, 0)
 local OptBreedtipPossible = CreateCheckbox("Current pet's possible breeds", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptBreedtipSpeciesBase = CreateCheckbox("Pet species' base stats", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
@@ -200,41 +198,41 @@ local OptBreedtipCurrentStats25Rare = CreateCheckbox("Always assume pet will be 
 local OptBreedtipAllStats25 = CreateCheckbox("All breeds' stats at level 25", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", -32, 0)
 local OptBreedtipAllStats25Rare = CreateCheckbox("Always assume pet will be Rare at level 25", 16, 16, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 32, 0, "GameFontNormalSmall")
 
--- text above the BlizzBug region
-local blizzbugTitle = CreateFont("GameFontNormal", "Fix Bugs:") -- used to say "Fix Blizzard Bugs:"
+-- Text above the BlizzBug region
+local blizzbugTitle = CreateFont("GameFontNormal", "Fix Bugs:") -- Used to say "Fix Blizzard Bugs:"
 blizzbugTitle:SetPoint("TOPLEFT", OptBreedtipAllStats25Rare, "BOTTOMLEFT", -32, -16)
 blizzbugTitle:SetTextColor(1, 1, 1, 1)
 
 local OptBugBattleFontFix = CreateCheckbox("Test old Pet Battle rarity coloring", 32, 32, "TOPLEFT", blizzbugTitle, "BOTTOMLEFT", 0, 0)
 
--- to disable rarity checkbox since it is dependent
+-- To disable rarity checkbox since it is dependent
 local function BPBID_OptNamesHSFUpdate_OnClick(self, button, down)
 	
-	-- if the checkbox is checked
+	-- If the checkbox is checked
 	if (OptNamesHSFUpdate:GetChecked()) then
 		
-		-- enable and check rarity checkbox
+		-- Enable and check rarity checkbox
 		OptNamesHSFUpdateRarity:Enable()
 		OptNamesHSFUpdateRarity:SetChecked(true)
 		
 	elseif (not OptNamesHSFUpdate:GetChecked()) then
 		
-		-- disable and uncheck rarity checkbox
+		-- Disable and uncheck rarity checkbox
 		OptNamesHSFUpdateRarity:Disable()
 		OptNamesHSFUpdateRarity:SetChecked(nil)
 	end
 end
 
--- variable to store settings until window is closed in case user wants to 
+-- Variable to store settings until window is closed in case user wants to 
 local tempstorage
 
--- disable dependent checkboxes if unchecked
+-- Disable dependent checkboxes if unchecked
 local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 	
-	-- if the checkbox is checked AND it was unchecked at one point in time (to create tempstorage!)
+	-- If the checkbox is checked AND it was unchecked at one point in time (to create tempstorage!)
 	if (OptTooltipsEnabled:GetChecked()) and (tempstorage) then
 		
-		-- enable all tooltip-related checkboxes
+		-- Enable all tooltip-related checkboxes
 		OptTooltipsBattleTooltip:Enable()
 		OptTooltipsBPT:Enable()
 		OptTooltipsFBPT:Enable()
@@ -249,7 +247,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 		OptBreedtipAllStats25:Enable()
 		OptBreedtipAllStats25Rare:Enable()
 		
-		-- set them to their old values
+		-- Set them to their old values
 		OptTooltipsBattleTooltip:SetChecked(tempstorage[1])
 		OptTooltipsBPT:SetChecked(tempstorage[2])
 		OptTooltipsFBPT:SetChecked(tempstorage[3])
@@ -266,7 +264,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 		
 	elseif (not OptTooltipsEnabled:GetChecked()) then
 		
-		-- update tempstorage with the current values from the checkboxes (before they get wiped)
+		-- Update tempstorage with the current values from the checkboxes (before they get wiped)
 		tempstorage = {
 			OptTooltipsBattleTooltip:GetChecked(),
 			OptTooltipsBPT:GetChecked(),
@@ -283,7 +281,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 			OptBreedtipAllStats25Rare:GetChecked(),
 		}
 		
-		-- disable any tooltip-related checkboxes
+		-- Disable any tooltip-related checkboxes
 		OptTooltipsBattleTooltip:Disable()
 		OptTooltipsBPT:Disable()
 		OptTooltipsFBPT:Disable()
@@ -298,7 +296,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 		OptBreedtipAllStats25:Disable()
 		OptBreedtipAllStats25Rare:Disable()
 		
-		-- uncheck all tooltip-related checkboxes
+		-- Uncheck all tooltip-related checkboxes
 		OptTooltipsBattleTooltip:SetChecked(nil)
 		OptTooltipsBPT:SetChecked(nil)
 		OptTooltipsFBPT:SetChecked(nil)
@@ -316,14 +314,14 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
 end
 
 local function BPBID_Options_Refresh()
-	-- reset the dropdownmenu to the old value
+	-- Reset the dropdownmenu to the old value
 	tempformat = BPBID_Options.format
 	UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[tempformat])
 	
-	-- reset the text blurb to the old value
+	-- Reset the text blurb to the old value
 	FormatTextBlurb:SetText(formatTexts[tempformat])
 	
-	-- reset all the checkboxes to the old value
+	-- Reset all the checkboxes to the old value
 	OptNamesPrimaryBattle:SetChecked(BPBID_Options.Names.PrimaryBattle)
 	OptNamesBattleTooltip:SetChecked(BPBID_Options.Names.BattleTooltip)
 	OptNamesBPT:SetChecked(BPBID_Options.Names.BPT)
@@ -348,7 +346,7 @@ local function BPBID_Options_Refresh()
 	OptBreedtipAllStats25Rare:SetChecked(BPBID_Options.Breedtip.AllStats25Rare)
 	OptBugBattleFontFix:SetChecked(BPBID_Options.BattleFontFix)
 	
-	-- call this to fix the checkboxes to their correct enabled state
+	-- Call this to fix the checkboxes to their correct enabled state
 	BPBID_OptTooltipsEnabled_OnClick()
 end
 
@@ -394,7 +392,7 @@ function Options.default()
 	
 	BPBID_Options.BattleFontFix = false -- Use alternate rarity coloring method in-battle
 	
-	-- refresh the options page to display the new defaults
+	-- Refresh the options page to display the new defaults
 	BPBID_Options_Refresh()
 end
 
@@ -402,13 +400,13 @@ function Options.okay()
 	-- IF THE LAST TOOLTIP CALLED BEFORE THE OPTIONS ARE CHANGED HAS CHANGED FONT,
 	-- BAD STUFF WILL HAPPEN SO CALL ORIGINAL FONT CHANGING FUNCTIONS IN OKAY BOX
 	
-	-- clear storage for TooltipsEnabled remembering
+	-- Clear storage for TooltipsEnabled remembering
 	tempstorage = nil
 	
-	-- store format setting
+	-- Store format setting
 	BPBID_Options.format = tempformat
 	
-	-- retrieve the rest of the settings from the checkboxes
+	-- Retrieve the rest of the settings from the checkboxes
 	BPBID_Options.Names.PrimaryBattle = OptNamesPrimaryBattle:GetChecked()
 	BPBID_Options.Names.BattleTooltip = OptNamesBattleTooltip:GetChecked()
 	BPBID_Options.Names.BPT = OptNamesBPT:GetChecked()
@@ -433,17 +431,17 @@ function Options.okay()
 	BPBID_Options.Breedtip.AllStats25Rare = OptBreedtipAllStats25Rare:GetChecked()
 	BPBID_Options.BattleFontFix = OptBugBattleFontFix:GetChecked()
 	
-	-- fix fontsize for PrimaryBattlePetUnitTooltip (TODO: PetFrame)
+	-- Fix fontsize for PrimaryBattlePetUnitTooltip (TODO: PetFrame)
 	if (not BPBID_Options.Names.BattleTooltip) and (internal.BattleFontSize) then
 		PetBattlePrimaryUnitTooltip.Name:SetFont(internal.BattleFontSize[1], internal.BattleFontSize[2], internal.BattleFontSize[3])
 	end
 	
-	-- reset fontsize for BattlePetTooltip if original font size known
+	-- Reset fontsize for BattlePetTooltip if original font size known
 	if (not BPBID_Options.Names.BPT) and (internal.BPTFontSize) then
 		BattlePetTooltip.Name:SetFont(internal.BPTFontSize[1], internal.BPTFontSize[2], internal.BPTFontSize[3])
 	end
 	
-	-- fix width for FloatingBattlePetTooltip
+	-- Fix width for FloatingBattlePetTooltip
 	if (not BPBID_Options.Names.FBPT) then
 		FloatingBattlePetTooltip:SetWidth(260)
 		FloatingBattlePetTooltip.Name:SetWidth(238)
@@ -454,32 +452,32 @@ function Options.okay()
 		FloatingBattlePetTooltip.JournalClick:SetWidth(238)
 	end
 	
-	-- fix font size for HSFUpdate
+	-- Fix font size for HSFUpdate
 	if (not BPBID_Options.Names.HSFUpdate) then
 		for i = 1, #PetJournalListScrollFrame.buttons do
 			PetJournalListScrollFrame.buttons[i].name:SetFontObject("GameFontNormal")
 		end
 	end
 	
-	-- a manual change has occurred (added in v1.0.8 to help update values added in new versions)
+	-- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
 	BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
 	
-	-- refresh the options page to display the new values
+	-- Refresh the options page to display the new values
 	BPBID_Options_Refresh()
 end
 
 function Options.cancel()
 	
-	-- clear storage for TooltipsEnabled remembering
+	-- Clear storage for TooltipsEnabled remembering
 	tempstorage = nil
 	
-	-- refresh the options page to display the old settings
+	-- Refresh the options page to display the old settings
 	BPBID_Options_Refresh()
 end
 
--- set script for needed checkbox
+-- Set script for needed checkbox
 OptNamesHSFUpdate:SetScript("OnClick", BPBID_OptNamesHSFUpdate_OnClick)
 OptTooltipsEnabled:SetScript("OnClick", BPBID_OptTooltipsEnabled_OnClick)
 
--- add the options panel to the Blizzard list
+-- Add the options panel to the Blizzard list
 InterfaceOptions_AddCategory(Options)
