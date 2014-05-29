@@ -12,18 +12,18 @@ Huge shoutout to Warla for his website http://petsear.ch/ - extremely useful in 
 
 -- GLOBALS: BPBID_Arrays
 
--- expose information globally
+-- Expose information globally
 BPBID_Arrays = {}
 
 function BPBID_Arrays.InitializeArrays()
 
-	-- declare addon-wide arrays
+	-- Declare addon-wide arrays
 	BPBID_Arrays.RealRarityValues = {}
 	BPBID_Arrays.BreedStats = {}
 	BPBID_Arrays.BasePetStats = {}
 	BPBID_Arrays.BreedsPerSpecies = {}
 	
-	-- fill rarity array
+	-- Fill rarity array
 	BPBID_Arrays.RealRarityValues[1] = 0.5
 	BPBID_Arrays.RealRarityValues[2] = 0.550000011920929
 	BPBID_Arrays.RealRarityValues[3] = 0.600000023841858
@@ -31,7 +31,7 @@ function BPBID_Arrays.InitializeArrays()
 	BPBID_Arrays.RealRarityValues[5] = 0.699999988079071
 	BPBID_Arrays.RealRarityValues[6] = 0.75
 	
-	-- fill breed array
+	-- Fill breed array
 	BPBID_Arrays.BreedStats[3] = {0.5, 0.5, 0.5}
 	BPBID_Arrays.BreedStats[4] = {0, 2, 0}
 	BPBID_Arrays.BreedStats[5] = {0, 0, 2}
@@ -43,7 +43,7 @@ function BPBID_Arrays.InitializeArrays()
 	BPBID_Arrays.BreedStats[11] = {0.4, 0.4, 0.9}
 	BPBID_Arrays.BreedStats[12] = {0.9, 0.4, 0.4}
 	
-	-- fill base stats array
+	-- Fill base stats array
 	BPBID_Arrays.BasePetStats[1] = false
 	BPBID_Arrays.BasePetStats[2] = {510.5, 8, 9.5}
 	BPBID_Arrays.BasePetStats[3] = false
@@ -2685,11 +2685,11 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1252] = false
     BPBID_Arrays.BreedsPerSpecies[1253] = false
     BPBID_Arrays.BreedsPerSpecies[1254] = false
-    BPBID_Arrays.BreedsPerSpecies[1255] = {8} -- UNUSED: Murkimus Tyrannicus
-    BPBID_Arrays.BreedsPerSpecies[1256] = {10, 11} -- NEW: Rascal-Bot
-    BPBID_Arrays.BreedsPerSpecies[1257] = {3} -- HIDDEN: Crafty
-    BPBID_Arrays.BreedsPerSpecies[1258] = {8} -- HIDDEN: Angara
-    BPBID_Arrays.BreedsPerSpecies[1259] = {6} -- HIDDEN: Widowling
+    BPBID_Arrays.BreedsPerSpecies[1255] = {8}
+    BPBID_Arrays.BreedsPerSpecies[1256] = {10, 11}
+    BPBID_Arrays.BreedsPerSpecies[1257] = {3}
+    BPBID_Arrays.BreedsPerSpecies[1258] = {8}
+    BPBID_Arrays.BreedsPerSpecies[1259] = {6}
     BPBID_Arrays.BreedsPerSpecies[1260] = false
     BPBID_Arrays.BreedsPerSpecies[1261] = false
     BPBID_Arrays.BreedsPerSpecies[1262] = false
@@ -2782,9 +2782,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1349] = {3}
     BPBID_Arrays.BreedsPerSpecies[1350] = {3}
     BPBID_Arrays.BreedsPerSpecies[1351] = {7}
-    BPBID_Arrays.BreedsPerSpecies[1352] = {6} -- HIDDEN: Chubbs
+    BPBID_Arrays.BreedsPerSpecies[1352] = {6}
     BPBID_Arrays.BreedsPerSpecies[1353] = false
-    BPBID_Arrays.BreedsPerSpecies[1354] = {3} -- HIDDEN: C92 Annihilator
+    BPBID_Arrays.BreedsPerSpecies[1354] = {3}
     BPBID_Arrays.BreedsPerSpecies[1355] = false
     BPBID_Arrays.BreedsPerSpecies[1356] = false
     BPBID_Arrays.BreedsPerSpecies[1357] = false
