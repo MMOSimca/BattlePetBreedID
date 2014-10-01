@@ -1568,7 +1568,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1569] = ??? -- NEW: Soul of the Forge
     --BPBID_Arrays.BasePetStats[1570] = ??? -- NEW: Sunfire Kaliri
     --BPBID_Arrays.BasePetStats[1571] = ??? -- NEW: Albino River Calf
-    --BPBID_Arrays.BasePetStats[1572] = ??? -- NEW: Brilliant Bloodfeather
+    BPBID_Arrays.BasePetStats[1572] = {8, 8, 8} -- NEW: Brilliant Bloodfeather
     --BPBID_Arrays.BasePetStats[1573] = ??? -- NEW: Golden Dawnfeather
     --BPBID_Arrays.BasePetStats[1574] = ??? -- NEW: Son of Sethe
     --BPBID_Arrays.BasePetStats[1575] = ??? -- NEW: Sky Fry
@@ -1578,7 +1578,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1579] = ??? -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BasePetStats[1581] = ??? -- TAMER: Fen Crab
     BPBID_Arrays.BasePetStats[1582] = {7.5, 9, 7.5} -- NEW: Zangar Crawler
-    --BPBID_Arrays.BasePetStats[1583] = ??? -- NEW: Kelp Scuttler
+    BPBID_Arrays.BasePetStats[1583] = {7.5, 9, 7.5} -- NEW: Kelp Scuttler
     --BPBID_Arrays.BasePetStats[1586] = ??? -- TAMER: Cerulean Moth
     BPBID_Arrays.BasePetStats[1587] = {8, 8, 8} -- NEW: Royal Moth
     --BPBID_Arrays.BasePetStats[1588] = ??? -- TAMER: Dusty Sporewing
@@ -3129,7 +3129,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1569] = {???} -- NEW: Soul of the Forge
     --BPBID_Arrays.BreedsPerSpecies[1570] = {???} -- NEW: Sunfire Kaliri
     --BPBID_Arrays.BreedsPerSpecies[1571] = {???} -- NEW: Albino River Calf
-    --BPBID_Arrays.BreedsPerSpecies[1572] = {???} -- NEW: Brilliant Bloodfeather
+    BPBID_Arrays.BreedsPerSpecies[1572] = {9} -- NEW: Brilliant Bloodfeather
     --BPBID_Arrays.BreedsPerSpecies[1573] = {???} -- NEW: Golden Dawnfeather
     --BPBID_Arrays.BreedsPerSpecies[1574] = {???} -- NEW: Son of Sethe
     --BPBID_Arrays.BreedsPerSpecies[1575] = {???} -- NEW: Sky Fry
@@ -3139,7 +3139,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1579] = {???} -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BreedsPerSpecies[1581] = {???} -- TAMER: Fen Crab
     BPBID_Arrays.BreedsPerSpecies[1582] = {4, 6} -- NEW: Zangar Crawler
-    --BPBID_Arrays.BreedsPerSpecies[1583] = {???} -- NEW: Kelp Scuttler
+    BPBID_Arrays.BreedsPerSpecies[1583] = {4} -- NEW: Kelp Scuttler
     --BPBID_Arrays.BreedsPerSpecies[1586] = {???} -- TAMER: Cerulean Moth
     BPBID_Arrays.BreedsPerSpecies[1587] = {3, 8, 9} -- NEW: Royal Moth
     --BPBID_Arrays.BreedsPerSpecies[1588] = {???} -- TAMER: Dusty Sporewing
