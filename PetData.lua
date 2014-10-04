@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: October 1st, 2014; Patch 6.0.2 PTR/Beta
+Last Update: October 4th, 2014; Patch 6.0.2 PTR/Beta
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -1550,9 +1550,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1550] = {8, 8, 8} -- TAMER: Wolfus
     BPBID_Arrays.BasePetStats[1552] = {8, 8, 8} -- TAMER: Fangra
     BPBID_Arrays.BasePetStats[1553] = {8, 8, 8} -- TAMER: Wolfgar
-    --BPBID_Arrays.BasePetStats[1554] = ??? -- TAMER: Gladiator Deathy
-    --BPBID_Arrays.BasePetStats[1555] = ??? -- TAMER: Gladiator Murkalot
-    --BPBID_Arrays.BasePetStats[1556] = ??? -- TAMER: Gladiator Murkimus
+    BPBID_Arrays.BasePetStats[1554] = {8, 8, 8} -- TAMER: Gladiator Deathy
+    BPBID_Arrays.BasePetStats[1555] = {8, 8, 8} -- TAMER: Gladiator Murkalot
+    BPBID_Arrays.BasePetStats[1556] = {9.25, 9.25, 5.5} -- TAMER: Gladiator Murkimus
     BPBID_Arrays.BasePetStats[1557] = {8, 8, 8} -- TAMER: Darkwing
     BPBID_Arrays.BasePetStats[1558] = {8, 8, 8} -- TAMER: The Great Kaliri
     BPBID_Arrays.BasePetStats[1559] = {8, 8, 8} -- TAMER: Apexis Guardian
@@ -1575,7 +1575,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1576] = ??? -- NEW: Eye of Observation
     --BPBID_Arrays.BasePetStats[1577] = ??? -- TAMER: Bloodthorn Hatchling
     --BPBID_Arrays.BasePetStats[1578] = ??? -- NEW: Frostshell Pincher
-    --BPBID_Arrays.BasePetStats[1579] = ??? -- NEW: Ironclaw Scuttler
+    BPBID_Arrays.BasePetStats[1579] = {7.5, 9, 7.5} -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BasePetStats[1581] = ??? -- TAMER: Fen Crab
     BPBID_Arrays.BasePetStats[1582] = {7.5, 9, 7.5} -- NEW: Zangar Crawler
     BPBID_Arrays.BasePetStats[1583] = {7.5, 9, 7.5} -- NEW: Kelp Scuttler
@@ -3008,7 +3008,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1423] = {???} -- TAMER: Bitey
     BPBID_Arrays.BreedsPerSpecies[1424] = {11} -- TAMER: Gyrexle, the Eternal Mechanic
     BPBID_Arrays.BreedsPerSpecies[1426] = {6} -- NEW: Elekk Plushie
-    BPBID_Arrays.BreedsPerSpecies[1427] = {3, 5, 8} -- NEW: Frostfur Rat
+    BPBID_Arrays.BreedsPerSpecies[1427] = {3, 4, 5, 6, 7, 8, 12} -- NEW: Frostfur Rat
     --BPBID_Arrays.BreedsPerSpecies[1428] = {???} -- NEW: Zomstrok
     --BPBID_Arrays.BreedsPerSpecies[1429] = {???} -- TAMER: Autumnal Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1430] = {???} -- TAMER: Forest Sproutling
@@ -3035,7 +3035,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1458] = {???} -- NEW: Bone Wasp
     BPBID_Arrays.BreedsPerSpecies[1462] = {11} -- NEW: Bloodsting Wasp
     BPBID_Arrays.BreedsPerSpecies[1463] = {11} -- NEW: Wood Wasp
-    BPBID_Arrays.BreedsPerSpecies[1464] = {10, 11, 12} -- NEW: Twilight Wasp
+    BPBID_Arrays.BreedsPerSpecies[1464] = {3, 10, 11, 12} -- NEW: Twilight Wasp
     BPBID_Arrays.BreedsPerSpecies[1465] = {3, 11} -- NEW: Amberbarb Wasp
     --BPBID_Arrays.BreedsPerSpecies[1466] = {???} -- TAMER: Runtish Gronnling
     --BPBID_Arrays.BreedsPerSpecies[1467] = {???} -- NEW: Sky-Bo
@@ -3111,9 +3111,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1550] = {4} -- TAMER: Wolfus
     BPBID_Arrays.BreedsPerSpecies[1552] = {5} -- TAMER: Fangra
     BPBID_Arrays.BreedsPerSpecies[1553] = {7} -- TAMER: Wolfgar
-    --BPBID_Arrays.BreedsPerSpecies[1554] = {???} -- TAMER: Gladiator Deathy
-    --BPBID_Arrays.BreedsPerSpecies[1555] = {???} -- TAMER: Gladiator Murkalot
-    --BPBID_Arrays.BreedsPerSpecies[1556] = {???} -- TAMER: Gladiator Murkimus
+    BPBID_Arrays.BreedsPerSpecies[1554] = {7} -- TAMER: Gladiator Deathy
+    BPBID_Arrays.BreedsPerSpecies[1555] = {7} -- TAMER: Gladiator Murkalot
+    BPBID_Arrays.BreedsPerSpecies[1556] = {6} -- TAMER: Gladiator Murkimus
     BPBID_Arrays.BreedsPerSpecies[1557] = {7} -- TAMER: Darkwing
     BPBID_Arrays.BreedsPerSpecies[1558] = {7} -- TAMER: The Great Kaliri
     BPBID_Arrays.BreedsPerSpecies[1559] = {4} -- TAMER: Apexis Guardian
@@ -3136,7 +3136,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1576] = {???} -- NEW: Eye of Observation
     --BPBID_Arrays.BreedsPerSpecies[1577] = {???} -- TAMER: Bloodthorn Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1578] = {???} -- NEW: Frostshell Pincher
-    --BPBID_Arrays.BreedsPerSpecies[1579] = {???} -- NEW: Ironclaw Scuttler
+    BPBID_Arrays.BreedsPerSpecies[1579] = {4, 6} -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BreedsPerSpecies[1581] = {???} -- TAMER: Fen Crab
     BPBID_Arrays.BreedsPerSpecies[1582] = {4, 6} -- NEW: Zangar Crawler
     BPBID_Arrays.BreedsPerSpecies[1583] = {4, 6} -- NEW: Kelp Scuttler
