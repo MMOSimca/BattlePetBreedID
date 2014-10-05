@@ -22,7 +22,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedStats = {}
     BPBID_Arrays.BasePetStats = {}
     BPBID_Arrays.BreedsPerSpecies = {}
-    
+
     -- Fill rarity array
     BPBID_Arrays.RealRarityValues[1] = 0.5
     BPBID_Arrays.RealRarityValues[2] = 0.550000011920929
@@ -30,7 +30,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.RealRarityValues[4] = 0.649999976158142
     BPBID_Arrays.RealRarityValues[5] = 0.699999988079071
     BPBID_Arrays.RealRarityValues[6] = 0.75
-    
+
     -- Fill breed array
     BPBID_Arrays.BreedStats[3] = {0.5, 0.5, 0.5}
     BPBID_Arrays.BreedStats[4] = {0, 2, 0}
@@ -42,7 +42,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedStats[10] = {0.4, 0.9, 0.4}
     BPBID_Arrays.BreedStats[11] = {0.4, 0.4, 0.9}
     BPBID_Arrays.BreedStats[12] = {0.9, 0.4, 0.4}
-    
+
     -- Fill base stats array
     BPBID_Arrays.BasePetStats[1] = false
     BPBID_Arrays.BasePetStats[2] = {510.5, 8, 9.5}
@@ -1440,7 +1440,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1403] = ??? -- NEW: Mechanical Axebeak
     --BPBID_Arrays.BasePetStats[1409] = ??? -- TAMER: Eleanor
     --BPBID_Arrays.BasePetStats[1410] = ??? -- TAMER: Mechanical Training Dummy
-    --BPBID_Arrays.BasePetStats[1411] = ??? -- NEW: Royal Peacock
+    BPBID_Arrays.BasePetStats[1411] = {8, 8, 8} -- NEW: Royal Peacock
     --BPBID_Arrays.BasePetStats[1412] = ??? -- NEW: Lifelike Mechanical Frostboar
     BPBID_Arrays.BasePetStats[1416] = {8, 8, 8} -- NEW: Teroclaw Hatchling
     --BPBID_Arrays.BasePetStats[1420] = ??? -- TAMER: Evil Widowling
@@ -1448,7 +1448,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1424] = {8.5, 7.5, 8} -- TAMER: Gyrexle, the Eternal Mechanic
     BPBID_Arrays.BasePetStats[1426] = {13, 8, 5.5} -- NEW: Elekk Plushie
     BPBID_Arrays.BasePetStats[1427] = {7.625, 7.875, 8.5} -- NEW: Frostfur Rat
-    --BPBID_Arrays.BasePetStats[1428] = ??? -- NEW: Zomstrok
+    BPBID_Arrays.BasePetStats[1428] = {8, 8, 8} -- NEW: Zomstrok
     --BPBID_Arrays.BasePetStats[1429] = ??? -- TAMER: Autumnal Sproutling
     --BPBID_Arrays.BasePetStats[1430] = ??? -- TAMER: Forest Sproutling
     --BPBID_Arrays.BasePetStats[1431] = ??? -- TAMER: Kelp Sproutling
@@ -1460,7 +1460,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1442] = ??? -- NEW: Ghastly Kid
     BPBID_Arrays.BasePetStats[1443] = {8, 9, 8} -- TAMER: Idol of Decay
     BPBID_Arrays.BasePetStats[1444] = {8.5, 8.5, 7} -- TAMER: Wishbright Lantern
-    --BPBID_Arrays.BasePetStats[1446] = ??? -- NEW: Meadowstomper Calf
+    BPBID_Arrays.BasePetStats[1446] = {8, 8, 8} -- NEW: Meadowstomper Calf
     BPBID_Arrays.BasePetStats[1447] = {8, 8, 8} -- NEW: Moonshell Crab
     --BPBID_Arrays.BasePetStats[1448] = ??? -- NEW: Sea Calf
     --BPBID_Arrays.BasePetStats[1449] = ??? -- NEW: Deathwatch Hatchling
@@ -1481,7 +1481,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1468] = ??? -- TAMER: Bloodbeak
     BPBID_Arrays.BasePetStats[1469] = {7.62, 8.26, 8.12} -- NEW: Junglebeak
     BPBID_Arrays.BasePetStats[1470] = {7.62, 8.26, 8.12} -- NEW: Axebeak Hatchling
-    --BPBID_Arrays.BasePetStats[1471] = ??? -- NEW: Fruit Hunter
+    BPBID_Arrays.BasePetStats[1471] = {8, 8, 8} -- NEW: Fruit Hunter
     BPBID_Arrays.BasePetStats[1472] = {9.79, 16.5, 6.25} -- NEW: Gnawface
     BPBID_Arrays.BasePetStats[1473] = {9.79, 14.5, 7.75} -- NEW: Carrotus Maximus
     BPBID_Arrays.BasePetStats[1474] = {8.935, 15.25, 7.4} -- NEW: Gorefu
@@ -1516,12 +1516,12 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1505] = ??? -- TAMER: Protectron 022481
     --BPBID_Arrays.BasePetStats[1506] = ??? -- TAMER: Protectron 011803
     BPBID_Arrays.BasePetStats[1507] = {36.5, 11.75, 6.51} -- NEW: Stitches Jr.
-    --BPBID_Arrays.BasePetStats[1508] = ??? -- TAMER: Manos
-    --BPBID_Arrays.BasePetStats[1509] = ??? -- TAMER: Hanos
-    --BPBID_Arrays.BasePetStats[1510] = ??? -- TAMER: Fatos
+    BPBID_Arrays.BasePetStats[1508] = {8, 8, 8} -- TAMER: Manos
+    BPBID_Arrays.BasePetStats[1509] = {8, 8.75, 6.75} -- TAMER: Hanos
+    BPBID_Arrays.BasePetStats[1510] = {8.5, 8.5, 7} -- TAMER: Fatos
     --BPBID_Arrays.BasePetStats[1511] = ??? -- NEW: Lovebird Hatchling
     --BPBID_Arrays.BasePetStats[1514] = ??? -- NEW: Mystical Spring Bouquet
-    --BPBID_Arrays.BasePetStats[1515] = ??? -- NEW: Stonegrinder
+    BPBID_Arrays.BasePetStats[1515] = {8, 8, 8} -- NEW: Stonegrinder
     --BPBID_Arrays.BasePetStats[1516] = ??? -- NEW: Bush Chicken
     --BPBID_Arrays.BasePetStats[1517] = ??? -- NEW: Blazing Cindercrawler
     --BPBID_Arrays.BasePetStats[1518] = ??? -- NEW: Stout Alemental
@@ -1534,8 +1534,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1532] = {7, 9, 8} -- NEW: Ikky
     --BPBID_Arrays.BasePetStats[1533] = ??? -- NEW: Lanticore Spawnling
     --BPBID_Arrays.BasePetStats[1536] = ??? -- TAMER: Zangar Spore
-    --BPBID_Arrays.BasePetStats[1537] = ??? -- NEW: Crimson Spore
-    --BPBID_Arrays.BasePetStats[1538] = ??? -- NEW: Umbrafen Spore
+    BPBID_Arrays.BasePetStats[1537] = {8, 8, 8} -- NEW: Crimson Spore
+    BPBID_Arrays.BasePetStats[1538] = {8, 8, 8} -- NEW: Umbrafen Spore
     --BPBID_Arrays.BasePetStats[1539] = ??? -- TAMER: Seaborne Spore
     BPBID_Arrays.BasePetStats[1540] = {8, 8, 8} -- NEW: Brilliant Spore
     BPBID_Arrays.BasePetStats[1541] = {8, 8.5, 7.5} -- NEW: Hydraling
@@ -1543,7 +1543,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1543] = ??? -- NEW: Pygmy Cow
     --BPBID_Arrays.BasePetStats[1544] = ??? -- NEW: Hatespark the Tiny
     --BPBID_Arrays.BasePetStats[1545] = ??? -- NEW: Firewing
-    --BPBID_Arrays.BasePetStats[1546] = ??? -- NEW: Stormwing
+    BPBID_Arrays.BasePetStats[1546] = {8, 8, 8} -- NEW: Stormwing
     BPBID_Arrays.BasePetStats[1547] = {8, 8, 8} -- TAMER: Pixiebell
     BPBID_Arrays.BasePetStats[1548] = {9.5, 8, 6.5} -- TAMER: Doodle
     BPBID_Arrays.BasePetStats[1549] = {7.25, 9.25, 7.5} -- TAMER: Tally
@@ -1574,7 +1574,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1575] = ??? -- NEW: Sky Fry
     --BPBID_Arrays.BasePetStats[1576] = ??? -- NEW: Eye of Observation
     --BPBID_Arrays.BasePetStats[1577] = ??? -- TAMER: Bloodthorn Hatchling
-    --BPBID_Arrays.BasePetStats[1578] = ??? -- NEW: Frostshell Pincher
+    BPBID_Arrays.BasePetStats[1578] = {7.5, 9, 7.5} -- NEW: Frostshell Pincher
     BPBID_Arrays.BasePetStats[1579] = {7.5, 9, 7.5} -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BasePetStats[1581] = ??? -- TAMER: Fen Crab
     BPBID_Arrays.BasePetStats[1582] = {7.5, 9, 7.5} -- NEW: Zangar Crawler
@@ -1583,7 +1583,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1587] = {8, 8, 8} -- NEW: Royal Moth
     --BPBID_Arrays.BasePetStats[1588] = ??? -- TAMER: Dusty Sporewing
     --BPBID_Arrays.BasePetStats[1589] = ??? -- TAMER: Crimsonwing Moth
-    --BPBID_Arrays.BasePetStats[1590] = ??? -- NEW: Swamplighter Firefly
+    BPBID_Arrays.BasePetStats[1590] = {8, 8, 8} -- NEW: Swamplighter Firefly
     --BPBID_Arrays.BasePetStats[1591] = ??? -- TAMER: Violet Firefly
     --BPBID_Arrays.BasePetStats[1592] = ??? -- TAMER: Sapphire Firefly
     BPBID_Arrays.BasePetStats[1593] = {8, 7.5, 8.5} -- NEW: Waterfly
@@ -1598,12 +1598,12 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1602] = ??? -- NEW: Grommloc
     --BPBID_Arrays.BasePetStats[1603] = ??? -- NEW: Argi
     --BPBID_Arrays.BasePetStats[1604] = ??? -- TAMER: Unused
-    --BPBID_Arrays.BasePetStats[1605] = ??? -- NEW: Trunks
+    BPBID_Arrays.BasePetStats[1605] = {8, 9.5, 6.5} -- NEW: Trunks
     --BPBID_Arrays.BasePetStats[1607] = ??? -- TAMER: Gorefu
     --BPBID_Arrays.BasePetStats[1608] = ??? -- TAMER: Carrotus Maximus
     --BPBID_Arrays.BasePetStats[1609] = ??? -- TAMER: Gnawface
     --BPBID_Arrays.BasePetStats[1610] = ??? -- TAMER: Unborn Val'kyr
-    --BPBID_Arrays.BasePetStats[1615] = ??? -- NEW: Parched Lizard
+    BPBID_Arrays.BasePetStats[1615] = {8, 8, 8} -- NEW: Parched Lizard
 
     BPBID_Arrays.BreedsPerSpecies[1] = false
     BPBID_Arrays.BreedsPerSpecies[2] = false
@@ -3001,7 +3001,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1403] = {???} -- NEW: Mechanical Axebeak
     --BPBID_Arrays.BreedsPerSpecies[1409] = {???} -- TAMER: Eleanor
     --BPBID_Arrays.BreedsPerSpecies[1410] = {???} -- TAMER: Mechanical Training Dummy
-    --BPBID_Arrays.BreedsPerSpecies[1411] = {???} -- NEW: Royal Peacock
+    BPBID_Arrays.BreedsPerSpecies[1411] = {10} -- NEW: Royal Peacock
     --BPBID_Arrays.BreedsPerSpecies[1412] = {???} -- NEW: Lifelike Mechanical Frostboar
     BPBID_Arrays.BreedsPerSpecies[1416] = {7} -- NEW: Teroclaw Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1420] = {???} -- TAMER: Evil Widowling
@@ -3009,7 +3009,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1424] = {11} -- TAMER: Gyrexle, the Eternal Mechanic
     BPBID_Arrays.BreedsPerSpecies[1426] = {6} -- NEW: Elekk Plushie
     BPBID_Arrays.BreedsPerSpecies[1427] = {3, 4, 5, 6, 7, 8, 12} -- NEW: Frostfur Rat
-    --BPBID_Arrays.BreedsPerSpecies[1428] = {???} -- NEW: Zomstrok
+    BPBID_Arrays.BreedsPerSpecies[1428] = {7} -- NEW: Zomstrok
     --BPBID_Arrays.BreedsPerSpecies[1429] = {???} -- TAMER: Autumnal Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1430] = {???} -- TAMER: Forest Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1431] = {???} -- TAMER: Kelp Sproutling
@@ -3021,7 +3021,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1442] = {???} -- NEW: Ghastly Kid
     BPBID_Arrays.BreedsPerSpecies[1443] = {8} -- TAMER: Idol of Decay
     BPBID_Arrays.BreedsPerSpecies[1444] = {3} -- TAMER: Wishbright Lantern
-    --BPBID_Arrays.BreedsPerSpecies[1446] = {???} -- NEW: Meadowstomper Calf
+    BPBID_Arrays.BreedsPerSpecies[1446] = {10} -- NEW: Meadowstomper Calf
     BPBID_Arrays.BreedsPerSpecies[1447] = {4, 6} -- NEW: Moonshell Crab
     --BPBID_Arrays.BreedsPerSpecies[1448] = {???} -- NEW: Sea Calf
     --BPBID_Arrays.BreedsPerSpecies[1449] = {???} -- NEW: Deathwatch Hatchling
@@ -3029,7 +3029,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1451] = {???} -- NEW: Molten Corgi
     --BPBID_Arrays.BreedsPerSpecies[1453] = {???} -- TAMER: River Calf
     --BPBID_Arrays.BreedsPerSpecies[1454] = {???} -- TAMER: Dwarf Gronnling
-    BPBID_Arrays.BreedsPerSpecies[1455] = {11, 12} -- NEW: Mossbite Skitterer
+    BPBID_Arrays.BreedsPerSpecies[1455] = {10, 11, 12} -- NEW: Mossbite Skitterer
     BPBID_Arrays.BreedsPerSpecies[1456] = {11, 12} -- NEW: Thicket Skitterer
     BPBID_Arrays.BreedsPerSpecies[1457] = {3, 10, 11, 12} -- NEW: Icespine Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1458] = {???} -- NEW: Bone Wasp
@@ -3042,7 +3042,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1468] = {???} -- TAMER: Bloodbeak
     BPBID_Arrays.BreedsPerSpecies[1469] = {3, 7, 10, 12} -- NEW: Junglebeak
     BPBID_Arrays.BreedsPerSpecies[1470] = {10} -- NEW: Axebeak Hatchling
-    --BPBID_Arrays.BreedsPerSpecies[1471] = {???} -- NEW: Fruit Hunter
+    BPBID_Arrays.BreedsPerSpecies[1471] = {10} -- NEW: Fruit Hunter
     BPBID_Arrays.BreedsPerSpecies[1472] = {5} -- NEW: Gnawface
     BPBID_Arrays.BreedsPerSpecies[1473] = {4} -- NEW: Carrotus Maximus
     BPBID_Arrays.BreedsPerSpecies[1474] = {6} -- NEW: Gorefu
@@ -3077,12 +3077,12 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1505] = {???} -- TAMER: Protectron 022481
     --BPBID_Arrays.BreedsPerSpecies[1506] = {???} -- TAMER: Protectron 011803
     BPBID_Arrays.BreedsPerSpecies[1507] = {6} -- NEW: Stitches Jr.
-    --BPBID_Arrays.BreedsPerSpecies[1508] = {???} -- TAMER: Manos
-    --BPBID_Arrays.BreedsPerSpecies[1509] = {???} -- TAMER: Hanos
-    --BPBID_Arrays.BreedsPerSpecies[1510] = {???} -- TAMER: Fatos
+    BPBID_Arrays.BreedsPerSpecies[1508] = {3} -- TAMER: Manos
+    BPBID_Arrays.BreedsPerSpecies[1509] = {3} -- TAMER: Hanos
+    BPBID_Arrays.BreedsPerSpecies[1510] = {3} -- TAMER: Fatos
     --BPBID_Arrays.BreedsPerSpecies[1511] = {???} -- NEW: Lovebird Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1514] = {???} -- NEW: Mystical Spring Bouquet
-    --BPBID_Arrays.BreedsPerSpecies[1515] = {???} -- NEW: Stonegrinder
+    BPBID_Arrays.BreedsPerSpecies[1515] = {4} -- NEW: Stonegrinder
     --BPBID_Arrays.BreedsPerSpecies[1516] = {???} -- NEW: Bush Chicken
     --BPBID_Arrays.BreedsPerSpecies[1517] = {???} -- NEW: Blazing Cindercrawler
     --BPBID_Arrays.BreedsPerSpecies[1518] = {???} -- NEW: Stout Alemental
@@ -3095,8 +3095,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1532] = {10} -- NEW: Ikky
     --BPBID_Arrays.BreedsPerSpecies[1533] = {???} -- NEW: Lanticore Spawnling
     --BPBID_Arrays.BreedsPerSpecies[1536] = {???} -- TAMER: Zangar Spore
-    --BPBID_Arrays.BreedsPerSpecies[1537] = {???} -- NEW: Crimson Spore
-    --BPBID_Arrays.BreedsPerSpecies[1538] = {???} -- NEW: Umbrafen Spore
+    BPBID_Arrays.BreedsPerSpecies[1537] = {6} -- NEW: Crimson Spore
+    BPBID_Arrays.BreedsPerSpecies[1538] = {5} -- NEW: Umbrafen Spore
     --BPBID_Arrays.BreedsPerSpecies[1539] = {???} -- TAMER: Seaborne Spore
     BPBID_Arrays.BreedsPerSpecies[1540] = {8} -- NEW: Brilliant Spore
     BPBID_Arrays.BreedsPerSpecies[1541] = {11} -- NEW: Hydraling
@@ -3104,7 +3104,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1543] = {???} -- NEW: Pygmy Cow
     --BPBID_Arrays.BreedsPerSpecies[1544] = {???} -- NEW: Hatespark the Tiny
     --BPBID_Arrays.BreedsPerSpecies[1545] = {???} -- NEW: Firewing
-    --BPBID_Arrays.BreedsPerSpecies[1546] = {???} -- NEW: Stormwing
+    BPBID_Arrays.BreedsPerSpecies[1546] = {10, 12} -- NEW: Stormwing
     BPBID_Arrays.BreedsPerSpecies[1547] = {3} -- TAMER: Pixiebell
     BPBID_Arrays.BreedsPerSpecies[1548] = {6} -- TAMER: Doodle
     BPBID_Arrays.BreedsPerSpecies[1549] = {3} -- TAMER: Tally
@@ -3135,7 +3135,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1575] = {???} -- NEW: Sky Fry
     --BPBID_Arrays.BreedsPerSpecies[1576] = {???} -- NEW: Eye of Observation
     --BPBID_Arrays.BreedsPerSpecies[1577] = {???} -- TAMER: Bloodthorn Hatchling
-    --BPBID_Arrays.BreedsPerSpecies[1578] = {???} -- NEW: Frostshell Pincher
+    BPBID_Arrays.BreedsPerSpecies[1578] = {6} -- NEW: Frostshell Pincher
     BPBID_Arrays.BreedsPerSpecies[1579] = {4, 6} -- NEW: Ironclaw Scuttler
     --BPBID_Arrays.BreedsPerSpecies[1581] = {???} -- TAMER: Fen Crab
     BPBID_Arrays.BreedsPerSpecies[1582] = {4, 6} -- NEW: Zangar Crawler
@@ -3144,7 +3144,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1587] = {3, 8, 9} -- NEW: Royal Moth
     --BPBID_Arrays.BreedsPerSpecies[1588] = {???} -- TAMER: Dusty Sporewing
     --BPBID_Arrays.BreedsPerSpecies[1589] = {???} -- TAMER: Crimsonwing Moth
-    --BPBID_Arrays.BreedsPerSpecies[1590] = {???} -- NEW: Swamplighter Firefly
+    BPBID_Arrays.BreedsPerSpecies[1590] = {11} -- NEW: Swamplighter Firefly
     --BPBID_Arrays.BreedsPerSpecies[1591] = {???} -- TAMER: Violet Firefly
     --BPBID_Arrays.BreedsPerSpecies[1592] = {???} -- TAMER: Sapphire Firefly
     BPBID_Arrays.BreedsPerSpecies[1593] = {10, 12} -- NEW: Waterfly
@@ -3159,10 +3159,10 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1602] = {???} -- NEW: Grommloc
     --BPBID_Arrays.BreedsPerSpecies[1603] = {???} -- NEW: Argi
     --BPBID_Arrays.BreedsPerSpecies[1604] = {???} -- TAMER: Unused
-    --BPBID_Arrays.BreedsPerSpecies[1605] = {???} -- NEW: Trunks
+    BPBID_Arrays.BreedsPerSpecies[1605] = {7} -- NEW: Trunks
     --BPBID_Arrays.BreedsPerSpecies[1607] = {???} -- TAMER: Gorefu
     --BPBID_Arrays.BreedsPerSpecies[1608] = {???} -- TAMER: Carrotus Maximus
     --BPBID_Arrays.BreedsPerSpecies[1609] = {???} -- TAMER: Gnawface
     --BPBID_Arrays.BreedsPerSpecies[1610] = {???} -- TAMER: Unborn Val'kyr
-    --BPBID_Arrays.BreedsPerSpecies[1615] = {???} -- NEW: Parched Lizard
+    BPBID_Arrays.BreedsPerSpecies[1615] = {10} -- NEW: Parched Lizard
 end

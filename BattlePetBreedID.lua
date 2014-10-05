@@ -362,7 +362,7 @@ function internal.CacheAllPets()
                     local wildnum, flyingnum = 1, 1
                     if wild then wildnum = 1.2 end
                     if flying then flyingnum = 1.5 end
-                    print(string.format("NEW Species found; Owner #%i, Pet #%i, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f", iOwner, iIndex, nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1))))))
+                    print(string.format("NEW Species found; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f", iOwner, iIndex, wild, nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1))))))
                     if (breed ~= "NEW") then SELECTED_CHAT_FRAME:AddMessage("NEW Breed found: " .. breed) end
                 elseif (breed ~= "???") and (sub(tostring(breedID), 1, 3) ~= "ERR") then
                     local exists = false
@@ -373,7 +373,7 @@ function internal.CacheAllPets()
                         local wildnum, flyingnum = 1, 1
                         if wild then wildnum = 1.2 end
                         if flying then flyingnum = 1.5 end
-                        print(string.format("Error - Breed does not match known breeds; Owner #%i, Pet #%i, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f, Breed %s", iOwner, iIndex, nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1)))), breed))
+                        print(string.format("NEW Breed found for existing species; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f, Breed %s", iOwner, iIndex, wild, nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1)))), breed))
                     end
                 end
                 
