@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: October 4th, 2014; Patch 6.0.2 PTR/Beta
+Last Update: October 5th, 2014; Patch 6.0.2 PTR/Beta
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -1515,7 +1515,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BasePetStats[1504] = ??? -- TAMER: Blingtron 4999b
     --BPBID_Arrays.BasePetStats[1505] = ??? -- TAMER: Protectron 022481
     --BPBID_Arrays.BasePetStats[1506] = ??? -- TAMER: Protectron 011803
-    --BPBID_Arrays.BasePetStats[1507] = ??? -- TAMER: Stitches Jr.
+    BPBID_Arrays.BasePetStats[1507] = {36.5, 11.75, 6.51} -- NEW: Stitches Jr.
     --BPBID_Arrays.BasePetStats[1508] = ??? -- TAMER: Manos
     --BPBID_Arrays.BasePetStats[1509] = ??? -- TAMER: Hanos
     --BPBID_Arrays.BasePetStats[1510] = ??? -- TAMER: Fatos
@@ -1592,7 +1592,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1596] = {7.5, 9, 7.5} -- NEW: Veilwatcher Hatchling
     BPBID_Arrays.BasePetStats[1597] = {7.5, 9, 7.5} -- NEW: Kaliri Hatchling
     --BPBID_Arrays.BasePetStats[1598] = ??? -- TAMER: Glowing Sporebat
-    --BPBID_Arrays.BasePetStats[1599] = ??? -- NEW: Shadow Sporebat
+    BPBID_Arrays.BasePetStats[1599] = {9, 7.5, 7.5} -- NEW: Shadow Sporebat
     --BPBID_Arrays.BasePetStats[1600] = ??? -- TAMER: Bone Serpent
     --BPBID_Arrays.BasePetStats[1601] = ??? -- NEW: Servant of Demidos
     --BPBID_Arrays.BasePetStats[1602] = ??? -- NEW: Grommloc
@@ -3076,7 +3076,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1504] = {???} -- TAMER: Blingtron 4999b
     --BPBID_Arrays.BreedsPerSpecies[1505] = {???} -- TAMER: Protectron 022481
     --BPBID_Arrays.BreedsPerSpecies[1506] = {???} -- TAMER: Protectron 011803
-    --BPBID_Arrays.BreedsPerSpecies[1507] = {???} -- TAMER: Stitches Jr.
+    BPBID_Arrays.BreedsPerSpecies[1507] = {6} -- NEW: Stitches Jr.
     --BPBID_Arrays.BreedsPerSpecies[1508] = {???} -- TAMER: Manos
     --BPBID_Arrays.BreedsPerSpecies[1509] = {???} -- TAMER: Hanos
     --BPBID_Arrays.BreedsPerSpecies[1510] = {???} -- TAMER: Fatos
@@ -3153,7 +3153,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1596] = {8} -- NEW: Veilwatcher Hatchling
     BPBID_Arrays.BreedsPerSpecies[1597] = {8} -- NEW: Kaliri Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1598] = {???} -- TAMER: Glowing Sporebat
-    --BPBID_Arrays.BreedsPerSpecies[1599] = {???} -- NEW: Shadow Sporebat
+    BPBID_Arrays.BreedsPerSpecies[1599] = {6} -- NEW: Shadow Sporebat
     --BPBID_Arrays.BreedsPerSpecies[1600] = {???} -- TAMER: Bone Serpent
     --BPBID_Arrays.BreedsPerSpecies[1601] = {???} -- NEW: Servant of Demidos
     --BPBID_Arrays.BreedsPerSpecies[1602] = {???} -- NEW: Grommloc
