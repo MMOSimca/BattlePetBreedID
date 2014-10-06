@@ -2995,9 +2995,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1394] = {6} -- NEW: Weebomination
     --BPBID_Arrays.BreedsPerSpecies[1395] = {???} -- NEW: Lil' Leftovers
     BPBID_Arrays.BreedsPerSpecies[1396] = {10} -- NEW: Crazy Carrot
-    --BPBID_Arrays.BreedsPerSpecies[1400] = {???} -- TAMER: Deebs
-    --BPBID_Arrays.BreedsPerSpecies[1401] = {???} -- TAMER: Tyri
-    --BPBID_Arrays.BreedsPerSpecies[1402] = {???} -- TAMER: Puzzle
+    --BPBID_Arrays.BreedsPerSpecies[1400] = {4} -- TAMER: Deebs
+    --BPBID_Arrays.BreedsPerSpecies[1401] = {3} -- TAMER: Tyri
+    --BPBID_Arrays.BreedsPerSpecies[1402] = {9} -- TAMER: Puzzle
     BPBID_Arrays.BreedsPerSpecies[1403] = {10} -- NEW: Mechanical Axebeak
     --BPBID_Arrays.BreedsPerSpecies[1409] = {???} -- TAMER: Eleanor
     --BPBID_Arrays.BreedsPerSpecies[1410] = {???} -- TAMER: Mechanical Training Dummy
