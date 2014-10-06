@@ -1524,7 +1524,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1515] = {8, 8, 8} -- NEW: Stonegrinder
     --BPBID_Arrays.BasePetStats[1516] = ??? -- NEW: Bush Chicken
     --BPBID_Arrays.BasePetStats[1517] = ??? -- NEW: Blazing Cindercrawler
-    --BPBID_Arrays.BasePetStats[1518] = ??? -- NEW: Stout Alemental
+    BPBID_Arrays.BasePetStats[1518] = {8, 8.5, 7.5} -- NEW: Stout Alemental
     --BPBID_Arrays.BasePetStats[1519] = ??? -- TAMER: Limbflayer
     --BPBID_Arrays.BasePetStats[1521] = ??? -- NEW: Cursed Birman
     --BPBID_Arrays.BasePetStats[1523] = ??? -- NEW: Widget the Departed
@@ -2989,7 +2989,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1382] = false
     BPBID_Arrays.BreedsPerSpecies[1383] = false
     BPBID_Arrays.BreedsPerSpecies[1384] = false
-    BPBID_Arrays.BreedsPerSpecies[1385] = {10} -- NEW: Albino Chimaeraling
+    BPBID_Arrays.BreedsPerSpecies[1385] = {4, 10} -- NEW: Albino Chimaeraling
     BPBID_Arrays.BreedsPerSpecies[1386] = {7} -- NEW: Dread Hatchling
     BPBID_Arrays.BreedsPerSpecies[1387] = {4, 7, 8} -- NEW: Iron Starlette
     BPBID_Arrays.BreedsPerSpecies[1394] = {6} -- NEW: Weebomination
@@ -3085,7 +3085,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1515] = {4} -- NEW: Stonegrinder
     --BPBID_Arrays.BreedsPerSpecies[1516] = {???} -- NEW: Bush Chicken
     --BPBID_Arrays.BreedsPerSpecies[1517] = {???} -- NEW: Blazing Cindercrawler
-    --BPBID_Arrays.BreedsPerSpecies[1518] = {???} -- NEW: Stout Alemental
+    BPBID_Arrays.BreedsPerSpecies[1518] = {4} -- NEW: Stout Alemental
     --BPBID_Arrays.BreedsPerSpecies[1519] = {???} -- TAMER: Limbflayer
     --BPBID_Arrays.BreedsPerSpecies[1521] = {???} -- NEW: Cursed Birman
     --BPBID_Arrays.BreedsPerSpecies[1523] = {???} -- NEW: Widget the Departed
@@ -3101,9 +3101,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1540] = {8} -- NEW: Brilliant Spore
     BPBID_Arrays.BreedsPerSpecies[1541] = {11} -- NEW: Hydraling
     BPBID_Arrays.BreedsPerSpecies[1542] = {8} -- NEW: Frostwolf Pup
-    BPBID_Arrays.BreedsPerSpecies[1543] = {4} -- NEW: Pygmy Cow
+    BPBID_Arrays.BreedsPerSpecies[1543] = {4, 7} -- NEW: Pygmy Cow
     --BPBID_Arrays.BreedsPerSpecies[1544] = {???} -- NEW: Hatespark the Tiny
-    BPBID_Arrays.BreedsPerSpecies[1545] = {3} -- NEW: Firewing
+    BPBID_Arrays.BreedsPerSpecies[1545] = {3, 12} -- NEW: Firewing
     BPBID_Arrays.BreedsPerSpecies[1546] = {10, 12} -- NEW: Stormwing
     BPBID_Arrays.BreedsPerSpecies[1547] = {3} -- TAMER: Pixiebell
     BPBID_Arrays.BreedsPerSpecies[1548] = {6} -- TAMER: Doodle
@@ -3129,7 +3129,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1569] = {7} -- NEW: Soul of the Forge
     BPBID_Arrays.BreedsPerSpecies[1570] = {8} -- NEW: Sunfire Kaliri
     --BPBID_Arrays.BreedsPerSpecies[1571] = {???} -- NEW: Albino River Calf
-    BPBID_Arrays.BreedsPerSpecies[1572] = {9, 10} -- NEW: Brilliant Bloodfeather
+    BPBID_Arrays.BreedsPerSpecies[1572] = {5, 9, 10} -- NEW: Brilliant Bloodfeather
     BPBID_Arrays.BreedsPerSpecies[1573] = {5, 9, 10} -- NEW: Golden Dawnfeather
     --BPBID_Arrays.BreedsPerSpecies[1574] = {???} -- NEW: Son of Sethe
     --BPBID_Arrays.BreedsPerSpecies[1575] = {???} -- NEW: Sky Fry
