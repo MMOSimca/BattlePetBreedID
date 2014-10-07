@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: October 6th, 2014; Patch 6.0.2 PTR/Beta
+Last Update: October 7th, 2014; Patch 6.0.2 PTR/Beta
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -2953,7 +2953,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1346] = {9}
     BPBID_Arrays.BreedsPerSpecies[1347] = false
     BPBID_Arrays.BreedsPerSpecies[1348] = {8}
-    BPBID_Arrays.BreedsPerSpecies[1349] = {3}
+    BPBID_Arrays.BreedsPerSpecies[1349] = {4}
     BPBID_Arrays.BreedsPerSpecies[1350] = {3}
     BPBID_Arrays.BreedsPerSpecies[1351] = {7}
     BPBID_Arrays.BreedsPerSpecies[1352] = {6}
@@ -2998,7 +2998,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1400] = {4} -- TAMER: Deebs
     BPBID_Arrays.BreedsPerSpecies[1401] = {3} -- TAMER: Tyri
     BPBID_Arrays.BreedsPerSpecies[1402] = {9} -- TAMER: Puzzle
-    BPBID_Arrays.BreedsPerSpecies[1403] = {10} -- NEW: Mechanical Axebeak
+    BPBID_Arrays.BreedsPerSpecies[1403] = {4, 10} -- NEW: Mechanical Axebeak
     --BPBID_Arrays.BreedsPerSpecies[1409] = {???} -- TAMER: Eleanor
     --BPBID_Arrays.BreedsPerSpecies[1410] = {???} -- TAMER: Mechanical Training Dummy
     BPBID_Arrays.BreedsPerSpecies[1411] = {10} -- NEW: Royal Peacock
@@ -3050,9 +3050,9 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1476] = {???} -- TAMER: Mr. Pointy
     --BPBID_Arrays.BreedsPerSpecies[1477] = {???} -- TAMER: Syd
     BPBID_Arrays.BreedsPerSpecies[1478] = {8} -- NEW: Syd the Squid
-    --BPBID_Arrays.BreedsPerSpecies[1479] = {???} -- TAMER: Brutus
+    BPBID_Arrays.BreedsPerSpecies[1479] = {4} -- TAMER: Brutus
     --BPBID_Arrays.BreedsPerSpecies[1480] = {???} -- TAMER: Quintessence of Light
-    --BPBID_Arrays.BreedsPerSpecies[1482] = {???} -- TAMER: Rukus
+    BPBID_Arrays.BreedsPerSpecies[1482] = {4} -- TAMER: Rukus
     --BPBID_Arrays.BreedsPerSpecies[1483] = {???} -- TAMER: Mr. Terrible
     --BPBID_Arrays.BreedsPerSpecies[1484] = {???} -- TAMER: Carroteye
     --BPBID_Arrays.BreedsPerSpecies[1485] = {???} -- TAMER: Sloppus
@@ -3120,7 +3120,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1560] = {7} -- TAMER: Serendipity
     BPBID_Arrays.BreedsPerSpecies[1561] = {7} -- TAMER: Grace
     BPBID_Arrays.BreedsPerSpecies[1562] = {7} -- TAMER: Atonement
-    BPBID_Arrays.BreedsPerSpecies[1563] = {5} -- NEW: Bronze Whelpling
+    BPBID_Arrays.BreedsPerSpecies[1563] = {4, 5} -- NEW: Bronze Whelpling
     BPBID_Arrays.BreedsPerSpecies[1564] = {7} -- NEW: Doom Bloom
     BPBID_Arrays.BreedsPerSpecies[1565] = {4, 7} -- NEW: Mechanical Scorpid
     BPBID_Arrays.BreedsPerSpecies[1566] = {5} -- NEW: Everbloom Peachick
@@ -3155,7 +3155,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1598] = {???} -- TAMER: Glowing Sporebat
     BPBID_Arrays.BreedsPerSpecies[1599] = {6} -- NEW: Shadow Sporebat
     --BPBID_Arrays.BreedsPerSpecies[1600] = {???} -- TAMER: Bone Serpent
-    --BPBID_Arrays.BreedsPerSpecies[1601] = {???} -- NEW: Servant of Demidos
+    BPBID_Arrays.BreedsPerSpecies[1601] = {4} -- NEW: Servant of Demidos
     --BPBID_Arrays.BreedsPerSpecies[1602] = {???} -- NEW: Grommloc
     --BPBID_Arrays.BreedsPerSpecies[1603] = {???} -- NEW: Argi
     --BPBID_Arrays.BreedsPerSpecies[1604] = {???} -- TAMER: Unused

@@ -506,12 +506,6 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             BPBID_Options.BattleFontFix = false
         end
         
-        -- Delete options removed in v1.0.9 (this doesn't need to be here for long, blanking these is not super important)
-        if (BPBID_Options.BlizzBugChat) or (BPBID_Options.BlizzBugTooltip) then
-            BPBID_Options.BlizzBugChat = nil
-            BPBID_Options.BlizzBugTooltip = nil
-        end
-        
         -- If this addon loads after the Pet Journal
         if (PetJournalPetCardPetInfo) then
             
