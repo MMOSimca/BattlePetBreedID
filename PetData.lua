@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: October 10th, 2014; Patch 6.0.2 PTR/Beta
+Last Update: October 14th, 2014; Patch 6.0.2 Live
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
