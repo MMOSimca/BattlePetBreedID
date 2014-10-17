@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: October 14th, 2014; Patch 6.0.2 Live
+Last Update: October 17th, 2014; Patch 6.0.2 Live
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -2991,7 +2991,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1384] = false
     BPBID_Arrays.BreedsPerSpecies[1385] = {4, 10} -- NEW: Albino Chimaeraling
     BPBID_Arrays.BreedsPerSpecies[1386] = {4} -- NEW: Dread Hatchling
-    BPBID_Arrays.BreedsPerSpecies[1387] = {4, 7, 8} -- NEW: Iron Starlette
+    BPBID_Arrays.BreedsPerSpecies[1387] = {4, 6, 7, 8, 10} -- NEW: Iron Starlette
     BPBID_Arrays.BreedsPerSpecies[1394] = {6} -- NEW: Weebomination
     BPBID_Arrays.BreedsPerSpecies[1395] = {6} -- NEW: Lil' Leftovers
     BPBID_Arrays.BreedsPerSpecies[1396] = {10} -- NEW: Crazy Carrot
@@ -3038,7 +3038,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1464] = {3, 10, 11, 12} -- NEW: Twilight Wasp
     BPBID_Arrays.BreedsPerSpecies[1465] = {3, 11} -- NEW: Amberbarb Wasp
     --BPBID_Arrays.BreedsPerSpecies[1466] = {???} -- TAMER: Runtish Gronnling
-    BPBID_Arrays.BreedsPerSpecies[1467] = {4} -- NEW: Sky-Bo
+    BPBID_Arrays.BreedsPerSpecies[1467] = {4, 5} -- NEW: Sky-Bo
     --BPBID_Arrays.BreedsPerSpecies[1468] = {???} -- TAMER: Bloodbeak
     BPBID_Arrays.BreedsPerSpecies[1469] = {3, 7, 10, 12} -- NEW: Junglebeak
     BPBID_Arrays.BreedsPerSpecies[1470] = {10} -- NEW: Axebeak Hatchling
@@ -3068,11 +3068,11 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1496] = {10} -- TAMER: Jahan
     BPBID_Arrays.BreedsPerSpecies[1497] = {4} -- TAMER: Samm
     BPBID_Arrays.BreedsPerSpecies[1498] = {8} -- TAMER: Archimedes
-    --BPBID_Arrays.BreedsPerSpecies[1499] = {???} -- TAMER: Fiero
-    --BPBID_Arrays.BreedsPerSpecies[1500] = {???} -- TAMER: Tirs
-    --BPBID_Arrays.BreedsPerSpecies[1501] = {???} -- TAMER: Rockbiter
-    --BPBID_Arrays.BreedsPerSpecies[1502] = {???} -- TAMER: Stonechewer
-    --BPBID_Arrays.BreedsPerSpecies[1503] = {???} -- TAMER: Acidtooth
+    BPBID_Arrays.BreedsPerSpecies[1499] = {3} -- TAMER: Fiero
+    BPBID_Arrays.BreedsPerSpecies[1500] = {3} -- TAMER: Tirs
+    BPBID_Arrays.BreedsPerSpecies[1501] = {3} -- TAMER: Rockbiter
+    BPBID_Arrays.BreedsPerSpecies[1502] = {3} -- TAMER: Stonechewer
+    BPBID_Arrays.BreedsPerSpecies[1503] = {3} -- TAMER: Acidtooth
     --BPBID_Arrays.BreedsPerSpecies[1504] = {???} -- TAMER: Blingtron 4999b
     --BPBID_Arrays.BreedsPerSpecies[1505] = {???} -- TAMER: Protectron 022481
     --BPBID_Arrays.BreedsPerSpecies[1506] = {???} -- TAMER: Protectron 011803
@@ -3120,7 +3120,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1560] = {7} -- TAMER: Serendipity
     BPBID_Arrays.BreedsPerSpecies[1561] = {7} -- TAMER: Grace
     BPBID_Arrays.BreedsPerSpecies[1562] = {7} -- TAMER: Atonement
-    BPBID_Arrays.BreedsPerSpecies[1563] = {4, 5} -- NEW: Bronze Whelpling
+    BPBID_Arrays.BreedsPerSpecies[1563] = {4, 5, 7, 9} -- NEW: Bronze Whelpling
     BPBID_Arrays.BreedsPerSpecies[1564] = {7} -- NEW: Doom Bloom
     BPBID_Arrays.BreedsPerSpecies[1565] = {4, 7} -- NEW: Mechanical Scorpid
     BPBID_Arrays.BreedsPerSpecies[1566] = {5} -- NEW: Everbloom Peachick
