@@ -3087,8 +3087,8 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1517] = {???} -- NEW: Blazing Cindercrawler
     BPBID_Arrays.BreedsPerSpecies[1518] = {4} -- NEW: Stout Alemental
     --BPBID_Arrays.BreedsPerSpecies[1519] = {???} -- TAMER: Limbflayer
-    --BPBID_Arrays.BreedsPerSpecies[1521] = {???} -- NEW: Cursed Birman
-    --BPBID_Arrays.BreedsPerSpecies[1523] = {???} -- NEW: Widget the Departed
+    BPBID_Arrays.BreedsPerSpecies[1521] = {8} -- NEW: Cursed Birman
+    BPBID_Arrays.BreedsPerSpecies[1523] = {5} -- NEW: Widget the Departed
     BPBID_Arrays.BreedsPerSpecies[1524] = {9} -- NEW: Netherspawn, Spawn of Netherspawn
     --BPBID_Arrays.BreedsPerSpecies[1530] = {???} -- NEW: Frostwolf Ghostpup
     BPBID_Arrays.BreedsPerSpecies[1531] = {7} -- NEW: Ancient Nest Guardian
