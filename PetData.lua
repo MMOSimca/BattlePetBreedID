@@ -3046,10 +3046,10 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1472] = {3} -- TAMER: Gnawface
     BPBID_Arrays.BreedsPerSpecies[1473] = {3} -- TAMER: Carrotus Maximus
     BPBID_Arrays.BreedsPerSpecies[1474] = {6} -- TAMER: Gorefu
-    --BPBID_Arrays.BreedsPerSpecies[1475] = {???} -- TAMER: Otto
-    --BPBID_Arrays.BreedsPerSpecies[1476] = {???} -- TAMER: Mr. Pointy
-    --BPBID_Arrays.BreedsPerSpecies[1477] = {???} -- TAMER: Syd
-    BPBID_Arrays.BreedsPerSpecies[1478] = {8} -- NEW: Syd the Squid
+    BPBID_Arrays.BreedsPerSpecies[1475] = {6} -- TAMER: Otto
+    BPBID_Arrays.BreedsPerSpecies[1476] = {4} -- TAMER: Mr. Pointy
+    BPBID_Arrays.BreedsPerSpecies[1477] = {8} -- TAMER: Syd
+    BPBID_Arrays.BreedsPerSpecies[1478] = {7} -- NEW: Syd the Squid
     BPBID_Arrays.BreedsPerSpecies[1479] = {4} -- TAMER: Brutus
     --BPBID_Arrays.BreedsPerSpecies[1480] = {???} -- TAMER: Quintessence of Light
     BPBID_Arrays.BreedsPerSpecies[1482] = {4} -- TAMER: Rukus
