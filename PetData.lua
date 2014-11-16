@@ -3030,10 +3030,10 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1453] = {???} -- TAMER: River Calf
     --BPBID_Arrays.BreedsPerSpecies[1454] = {???} -- TAMER: Dwarf Gronnling
     BPBID_Arrays.BreedsPerSpecies[1455] = {3, 10, 11, 12} -- NEW: Mossbite Skitterer
-    BPBID_Arrays.BreedsPerSpecies[1456] = {3, 11, 12} -- NEW: Thicket Skitterer
+    BPBID_Arrays.BreedsPerSpecies[1456] = {3, 10, 11, 12} -- NEW: Thicket Skitterer
     BPBID_Arrays.BreedsPerSpecies[1457] = {3, 10, 11, 12} -- NEW: Icespine Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1458] = {???} -- NEW: Bone Wasp
-    BPBID_Arrays.BreedsPerSpecies[1462] = {3, 10, 11} -- NEW: Bloodsting Wasp
+    BPBID_Arrays.BreedsPerSpecies[1462] = {3, 10, 11, 12} -- NEW: Bloodsting Wasp
     BPBID_Arrays.BreedsPerSpecies[1463] = {3, 10, 11, 12} -- NEW: Wood Wasp
     BPBID_Arrays.BreedsPerSpecies[1464] = {3, 10, 11, 12} -- NEW: Twilight Wasp
     BPBID_Arrays.BreedsPerSpecies[1465] = {3, 10, 11, 12} -- NEW: Amberbarb Wasp
@@ -3130,7 +3130,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1570] = {8} -- NEW: Sunfire Kaliri
     BPBID_Arrays.BreedsPerSpecies[1571] = {3} -- NEW: Albino River Calf
     BPBID_Arrays.BreedsPerSpecies[1572] = {3, 4, 5, 9, 10} -- NEW: Brilliant Bloodfeather
-    BPBID_Arrays.BreedsPerSpecies[1573] = {4, 5, 9, 10} -- NEW: Golden Dawnfeather
+    BPBID_Arrays.BreedsPerSpecies[1573] = {3, 4, 5, 9, 10} -- NEW: Golden Dawnfeather
     BPBID_Arrays.BreedsPerSpecies[1574] = {8} -- NEW: Son of Sethe
     --BPBID_Arrays.BreedsPerSpecies[1575] = {???} -- NEW: Sky Fry
     --BPBID_Arrays.BreedsPerSpecies[1576] = {???} -- NEW: Eye of Observation
@@ -3160,9 +3160,9 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1603] = {???} -- NEW: Argi
     --BPBID_Arrays.BreedsPerSpecies[1604] = {???} -- TAMER: Unused
     BPBID_Arrays.BreedsPerSpecies[1605] = {7} -- NEW: Trunks
-    --BPBID_Arrays.BreedsPerSpecies[1607] = {???} -- TAMER: Gorefu
-    --BPBID_Arrays.BreedsPerSpecies[1608] = {???} -- TAMER: Carrotus Maximus
-    --BPBID_Arrays.BreedsPerSpecies[1609] = {???} -- TAMER: Gnawface
+    BPBID_Arrays.BreedsPerSpecies[1607] = {6} -- TAMER: Gorefu
+    BPBID_Arrays.BreedsPerSpecies[1608] = {3} -- TAMER: Carrotus Maximus
+    BPBID_Arrays.BreedsPerSpecies[1609] = {3} -- TAMER: Gnawface
     --BPBID_Arrays.BreedsPerSpecies[1610] = {???} -- TAMER: Unborn Val'kyr
     BPBID_Arrays.BreedsPerSpecies[1615] = {3, 5, 7} -- NEW: Parched Lizard
 end
