@@ -3013,7 +3013,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1429] = {???} -- TAMER: Autumnal Sproutling
     BPBID_Arrays.BreedsPerSpecies[1430] = {12} -- TAMER: Forest Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1431] = {???} -- TAMER: Kelp Sproutling
-    BPBID_Arrays.BreedsPerSpecies[1432] = {4, 5, 6, 7, 9, 10, 11} -- NEW: Nightshade Sproutling
+    BPBID_Arrays.BreedsPerSpecies[1432] = {3, 4, 5, 6, 7, 9, 10, 11} -- NEW: Nightshade Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1433] = {???} -- TAMER: Sassy Sproutling
     BPBID_Arrays.BreedsPerSpecies[1434] = {5, 10, 12} -- NEW: Sun Sproutling
     BPBID_Arrays.BreedsPerSpecies[1435] = {3, 6} -- NEW: Leatherhide Runt
@@ -3083,7 +3083,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1511] = {???} -- NEW: Lovebird Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1514] = {???} -- NEW: Mystical Spring Bouquet
     BPBID_Arrays.BreedsPerSpecies[1515] = {4, 8} -- NEW: Stonegrinder
-    --BPBID_Arrays.BreedsPerSpecies[1516] = {???} -- NEW: Bush Chicken
+    BPBID_Arrays.BreedsPerSpecies[1516] = {10} -- NEW: Bush Chicken
     --BPBID_Arrays.BreedsPerSpecies[1517] = {???} -- NEW: Blazing Cindercrawler
     BPBID_Arrays.BreedsPerSpecies[1518] = {4} -- NEW: Stout Alemental
     --BPBID_Arrays.BreedsPerSpecies[1519] = {???} -- TAMER: Limbflayer
