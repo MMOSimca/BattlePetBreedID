@@ -3157,7 +3157,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1600] = {???} -- TAMER: Bone Serpent
     BPBID_Arrays.BreedsPerSpecies[1601] = {4} -- NEW: Servant of Demidos
     BPBID_Arrays.BreedsPerSpecies[1602] = {8} -- NEW: Grommloc
-    --BPBID_Arrays.BreedsPerSpecies[1603] = {???} -- NEW: Argi
+    BPBID_Arrays.BreedsPerSpecies[1603] = {9} -- NEW: Argi
     --BPBID_Arrays.BreedsPerSpecies[1604] = {???} -- TAMER: Unused
     BPBID_Arrays.BreedsPerSpecies[1605] = {7} -- NEW: Trunks
     BPBID_Arrays.BreedsPerSpecies[1607] = {6} -- TAMER: Gorefu
