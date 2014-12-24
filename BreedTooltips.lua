@@ -500,9 +500,10 @@ function internal.Hook_ArkInventory(tooltip, h)
     local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
 
     -- Fix width if too small
+    local reloadTooltip = false
     if (tooltip:GetWidth() < 210) then
         tooltip:SetMinimumWidth(210)
-        tooltip:Show()
+        reloadTooltip = true
     end
 
     -- Add the breed to the tooltip's name text
@@ -511,10 +512,10 @@ function internal.Hook_ArkInventory(tooltip, h)
         local currentText = GameTooltipTextLeft1:GetText()
 
         -- Test if we've already written to the tooltip
-        if (not currentText) and (not strfind(currentText, " (" .. breed .. ")")) then
+        if currentText and not strfind(currentText, " (" .. breed .. ")") then
             -- Append breed to tooltip
             GameTooltipTextLeft1:SetText(currentText .. " (" .. breed .. ")")
-            tooltip:Show()
+            reloadTooltip = true
         end
     elseif (BPBID_Options.Names.FBPT) and (tooltip == ItemRefTooltip) then
         local breed = internal.RetrieveBreedName(breedNum)
@@ -522,6 +523,11 @@ function internal.Hook_ArkInventory(tooltip, h)
 
         -- Append breed to tooltip
         ItemRefTooltipTextLeft1:SetText(currentText .. " (" .. breed .. ")")
+        reloadTooltip = true
+    end
+    
+    -- Reshow tooltip if needed
+    if reloadTooltip then
         tooltip:Show()
     end
 
