@@ -67,13 +67,13 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness)
     -- Set line for "Current pet's breed"
     if (BPBID_Options.Breedtip.Current) and (tblBreedID) then
         local current = "\124cFFD4A017Current Breed:\124r "
-        local largest = #tblBreedID
-        for i = 1, largest do
+        local numBreeds = #tblBreedID
+        for i = 1, numBreeds do
             if (i == 1) then
                 current = current .. internal.RetrieveBreedName(tblBreedID[i])
-            elseif (i == 2) and (i == largest) then
+            elseif (i == 2) and (i == numBreeds) then
                 current = current .. " or " .. internal.RetrieveBreedName(tblBreedID[i])
-            elseif (i == largest) then
+            elseif (i == numBreeds) then
                 current = current .. ", or " .. internal.RetrieveBreedName(tblBreedID[i])
             else
                 current = current .. ", " .. internal.RetrieveBreedName(tblBreedID[i])
@@ -86,18 +86,22 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness)
     if (BPBID_Options.Breedtip.Possible) then
         local possible = "\124cFFD4A017Possible Breed"
         if (speciesID) and (BPBID_Arrays.BreedsPerSpecies[speciesID]) then
-            local largest = #BPBID_Arrays.BreedsPerSpecies[speciesID]
-            for i = 1, largest do
-                if (largest == 1) then
-                    possible = possible .. ":\124r " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
-                elseif (i == 1) then
-                    possible = possible .. "s:\124r " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
-                elseif (i == 2) and (i == largest) then
-                    possible = possible .. " and " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
-                elseif (i == largest) then
-                    possible = possible .. ", and " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
-                else
-                    possible = possible .. ", " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+            local numBreeds = #BPBID_Arrays.BreedsPerSpecies[speciesID]
+            if numBreeds == internal.MAX_BREEDS then
+                possible = possible .. "s:\124r All"
+            else
+                for i = 1, numBreeds do
+                    if (numBreeds == 1) then
+                        possible = possible .. ":\124r " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+                    elseif (i == 1) then
+                        possible = possible .. "s:\124r " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+                    elseif (i == 2) and (i == numBreeds) then
+                        possible = possible .. " and " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+                    elseif (i == numBreeds) then
+                        possible = possible .. ", and " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+                    else
+                        possible = possible .. ", " .. internal.RetrieveBreedName(BPBID_Arrays.BreedsPerSpecies[speciesID][i])
+                    end
                 end
             end
         else
