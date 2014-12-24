@@ -32,6 +32,9 @@ internal.speciesCache = {}
 internal.resultsCache = {}
 internal.rarityCache = {}
 
+-- Declare addon-wide constant
+internal.MAX_BREEDS = 10
+
 -- Forward declaration of some simple hook status-check booleans
 local PJHooked = false
 
@@ -51,6 +54,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     
     -- Due to a Blizzard bug, some pets from tooltips will have quality = 0. this means we don't know what the quality is.
     -- So, we'll just test them all by adding another loop for rarity.
+    -- This bug was fixed in Patch 5.2, but there is no harm in having this remain here.
     if (nQuality < 1) then
         nQuality = 2
         minQuality = 1
@@ -261,7 +265,7 @@ function internal.RetrieveBreedName(breedID)
     if (BPBID_Options.format == 1) then -- Return single number
         return numberBreed
     elseif (BPBID_Options.format == 2) then -- Return two numbers
-        return numberBreed .. "/" .. numberBreed + 10
+        return numberBreed .. "/" .. numberBreed + internal.MAX_BREEDS
     else -- Select correct letter breed
         if (numberBreed == 3) then
             return "B/B"
