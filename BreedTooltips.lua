@@ -21,7 +21,7 @@ local BattleNameText = ""
 local BPTNameText = ""
 
 -- This is the new Battle Pet BreedID "Breed Tooltip" creation and setup function
-function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness)
+function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipDistance)
 
     -- Impossible checks (if missing parent, speciesID, or "rareness")
     local rarity
@@ -58,8 +58,8 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness)
     -- Set positioning/parenting/ownership of Breed Tooltip
     breedtip:SetParent(parent)
     breedtip:SetOwner(parent, "ANCHOR_NONE")
-    breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, 2)
-    breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, 2)
+    breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
+    breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
 
     -- Remove backdrop created as part of GameTooltipTemplate
     breedtip:SetBackdrop(nil)
@@ -429,7 +429,11 @@ local function BPBID_Hook_FBPTShow(speciesID, level, rarity, maxHealth, power, s
 
     -- Set up the breed tooltip
     if (BPBID_Options.Tooltips.Enabled) and (BPBID_Options.Tooltips.FBPT) then
-        BPBID_SetBreedTooltip(FloatingBattlePetTooltip, speciesID, resultslist, quality)
+        if petbm and petbm.TooltipHook and petbm.TooltipHook.tooltipFrame and petbm.TooltipHook.tooltipFrame.text then
+            BPBID_SetBreedTooltip(FloatingBattlePetTooltip, speciesID, resultslist, quality, 0 - (petbm.TooltipHook.tooltipFrame.text:GetHeight() + 6))
+        else
+            BPBID_SetBreedTooltip(FloatingBattlePetTooltip, speciesID, resultslist, quality)
+        end
     end
 end
 
