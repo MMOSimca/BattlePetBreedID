@@ -2969,7 +2969,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1362] = false
     BPBID_Arrays.BreedsPerSpecies[1363] = {8}
     BPBID_Arrays.BreedsPerSpecies[1364] = {4}
-    BPBID_Arrays.BreedsPerSpecies[1365] = {9} -- NEW: Treasure Goblin
+    BPBID_Arrays.BreedsPerSpecies[1365] = {9}
     BPBID_Arrays.BreedsPerSpecies[1366] = false
     BPBID_Arrays.BreedsPerSpecies[1367] = false
     BPBID_Arrays.BreedsPerSpecies[1368] = false
@@ -3080,7 +3080,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1508] = {3} -- TAMER: Manos
     BPBID_Arrays.BreedsPerSpecies[1509] = {3} -- TAMER: Hanos
     BPBID_Arrays.BreedsPerSpecies[1510] = {3} -- TAMER: Fatos
-    --BPBID_Arrays.BreedsPerSpecies[1511] = {???} -- NEW: Lovebird Hatchling
+    BPBID_Arrays.BreedsPerSpecies[1511] = {5} -- NEW: Lovebird Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1514] = {???} -- NEW: Mystical Spring Bouquet
     BPBID_Arrays.BreedsPerSpecies[1515] = {8} -- NEW: Stonegrinder
     BPBID_Arrays.BreedsPerSpecies[1516] = {10} -- NEW: Bush Chicken
