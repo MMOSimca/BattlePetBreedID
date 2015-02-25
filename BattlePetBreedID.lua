@@ -527,7 +527,7 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             -- Hook ArkInventory's Battle Pet tooltips
             hooksecurefunc(ArkInventory, "TooltipSetBattlepet", internal.Hook_ArkInventory)
         end
-    elseif (event == "ADDON_LOADED") and (name == "Blizzard_PetJournal") then
+    elseif (event == "ADDON_LOADED") and (name == "Blizzard_Collections") then
         -- If the Pet Journal loads on demand correctly (when the player opens it)
         if (PetJournalPetCardPetInfo) then
             
