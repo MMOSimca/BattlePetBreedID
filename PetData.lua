@@ -3094,7 +3094,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1400] = {4} -- TAMER: Deebs
     BPBID_Arrays.BreedsPerSpecies[1401] = {3} -- TAMER: Tyri
     BPBID_Arrays.BreedsPerSpecies[1402] = {9} -- TAMER: Puzzle
-    BPBID_Arrays.BreedsPerSpecies[1403] = {4, 7, 10, 11} -- NEW: Mechanical Axebeak
+    BPBID_Arrays.BreedsPerSpecies[1403] = {4, 5, 7, 10, 11} -- NEW: Mechanical Axebeak
     BPBID_Arrays.BreedsPerSpecies[1409] = {8} -- TAMER: Eleanor
     --BPBID_Arrays.BreedsPerSpecies[1410] = {???} -- TAMER: Mechanical Training Dummy
     BPBID_Arrays.BreedsPerSpecies[1411] = {10} -- NEW: Royal Peacock
@@ -3119,7 +3119,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1444] = {3} -- TAMER: Wishbright Lantern
     BPBID_Arrays.BreedsPerSpecies[1446] = {10} -- NEW: Meadowstomper Calf
     BPBID_Arrays.BreedsPerSpecies[1447] = {4, 6, 7, 8} -- NEW: Moonshell Crab
-    BPBID_Arrays.BreedsPerSpecies[1448] = {10, 11, 12} -- NEW: Sea Calf
+    BPBID_Arrays.BreedsPerSpecies[1448] = {3, 10, 11, 12} -- NEW: Sea Calf
     BPBID_Arrays.BreedsPerSpecies[1449] = {4} -- NEW: Deathwatch Hatchling
     BPBID_Arrays.BreedsPerSpecies[1450] = {8} -- NEW: Draenei Micro Defender
     BPBID_Arrays.BreedsPerSpecies[1451] = {5} -- NEW: Molten Corgi
@@ -3250,7 +3250,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1597] = {8} -- NEW: Kaliri Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1598] = {???} -- TAMER: Glowing Sporebat
     BPBID_Arrays.BreedsPerSpecies[1599] = {3, 6, 9} -- NEW: Shadow Sporebat
-    BPBID_Arrays.BreedsPerSpecies[1600] = {3, 5} -- TAMER: Bone Serpent
+    BPBID_Arrays.BreedsPerSpecies[1600] = {3, 5, 6, 8} -- NEW: Bone Serpent
     BPBID_Arrays.BreedsPerSpecies[1601] = {4} -- NEW: Servant of Demidos
     BPBID_Arrays.BreedsPerSpecies[1602] = {8} -- NEW: Grommloc
     BPBID_Arrays.BreedsPerSpecies[1603] = {9} -- NEW: Argi
@@ -3273,7 +3273,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1632] = {6, 7, 9} -- NEW: Sunblade Micro-Defender
     BPBID_Arrays.BreedsPerSpecies[1633] = {10} -- NEW: Chaos Pup
     BPBID_Arrays.BreedsPerSpecies[1634] = {3} -- NEW: Wretched Servant
-    --BPBID_Arrays.BreedsPerSpecies[1635] = {???} -- NEW: K'ute
+    BPBID_Arrays.BreedsPerSpecies[1635] = {3} -- NEW: K'ute
     --BPBID_Arrays.BreedsPerSpecies[1636] = {???} -- NEW: Race MiniZep
     --BPBID_Arrays.BreedsPerSpecies[1637] = {???} -- TAMER: Moon
     --BPBID_Arrays.BreedsPerSpecies[1639] = {???} -- NEW: Graves
@@ -3292,5 +3292,5 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1653] = {???} -- TAMER: Brisby
     --BPBID_Arrays.BreedsPerSpecies[1654] = {???} -- TAMER: Nicodemus
     BPBID_Arrays.BreedsPerSpecies[1655] = {3, 4, 5, 7, 11, 12} -- NEW: Slithershock Elver
-    BPBID_Arrays.BreedsPerSpecies[1656] = {3, 4, 5, 6, 7, 8, 9, 10, 11} -- NEW: Young Talbuk
+    BPBID_Arrays.BreedsPerSpecies[1656] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12} -- NEW: Young Talbuk
 end
