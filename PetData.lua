@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 6.0.2 Live; @file-date-iso@
+Last Update: Patch 6.1.0 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -3288,9 +3288,9 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1648] = {???} -- TAMER: Sprouts
     --BPBID_Arrays.BreedsPerSpecies[1649] = {???} -- TAMER: Runts
     --BPBID_Arrays.BreedsPerSpecies[1651] = {???} -- TAMER: Prince Charming
-    --BPBID_Arrays.BreedsPerSpecies[1652] = {???} -- TAMER: Jenner
-    --BPBID_Arrays.BreedsPerSpecies[1653] = {???} -- TAMER: Brisby
-    --BPBID_Arrays.BreedsPerSpecies[1654] = {???} -- TAMER: Nicodemus
+    BPBID_Arrays.BreedsPerSpecies[1652] = {8} -- TAMER: Jenner
+    BPBID_Arrays.BreedsPerSpecies[1653] = {8} -- TAMER: Brisby
+    BPBID_Arrays.BreedsPerSpecies[1654] = {8} -- TAMER: Nicodemus
     BPBID_Arrays.BreedsPerSpecies[1655] = {3, 4, 5, 7, 11, 12} -- NEW: Slithershock Elver
     BPBID_Arrays.BreedsPerSpecies[1656] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12} -- NEW: Young Talbuk
 end
