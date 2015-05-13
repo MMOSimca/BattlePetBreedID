@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 6.1.0 Live; @file-date-iso@
+Last Update: Patch 6.1.2 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -13,7 +13,7 @@ Huge shoutout to Warla for his website http://petsear.ch/ - extremely useful in 
 -- GLOBALS: BPBID_Arrays
 
 -- Expose information globally
-BPBID_Arrays = {}
+_G.BPBID_Arrays = {}
 
 function BPBID_Arrays.InitializeArrays()
 
@@ -3177,7 +3177,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1509] = {3} -- TAMER: Hanos
     BPBID_Arrays.BreedsPerSpecies[1510] = {3} -- TAMER: Fatos
     BPBID_Arrays.BreedsPerSpecies[1511] = {5} -- NEW: Lovebird Hatchling
-    --BPBID_Arrays.BreedsPerSpecies[1514] = {???} -- NEW: Mystical Spring Bouquet
+    BPBID_Arrays.BreedsPerSpecies[1514] = {3} -- NEW: Mystical Spring Bouquet
     BPBID_Arrays.BreedsPerSpecies[1515] = {8} -- NEW: Stonegrinder
     BPBID_Arrays.BreedsPerSpecies[1516] = {10} -- NEW: Bush Chicken
     --BPBID_Arrays.BreedsPerSpecies[1517] = {???} -- NEW: Blazing Cindercrawler
@@ -3274,7 +3274,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1633] = {10} -- NEW: Chaos Pup
     BPBID_Arrays.BreedsPerSpecies[1634] = {3} -- NEW: Wretched Servant
     BPBID_Arrays.BreedsPerSpecies[1635] = {3} -- NEW: K'ute
-    --BPBID_Arrays.BreedsPerSpecies[1636] = {???} -- NEW: Race MiniZep
+    BPBID_Arrays.BreedsPerSpecies[1636] = {17} -- NEW: Race MiniZep
     --BPBID_Arrays.BreedsPerSpecies[1637] = {???} -- TAMER: Moon
     --BPBID_Arrays.BreedsPerSpecies[1639] = {???} -- NEW: Graves
     --BPBID_Arrays.BreedsPerSpecies[1640] = {???} -- TAMER: Spores
@@ -3282,9 +3282,9 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1642] = {???} -- TAMER: Salad
     --BPBID_Arrays.BreedsPerSpecies[1643] = {???} -- TAMER: Mouthy
     --BPBID_Arrays.BreedsPerSpecies[1644] = {???} -- TAMER: Carl
-    --BPBID_Arrays.BreedsPerSpecies[1645] = {???} -- TAMER: Mal
-    --BPBID_Arrays.BreedsPerSpecies[1646] = {???} -- TAMER: Enbi'see
-    --BPBID_Arrays.BreedsPerSpecies[1647] = {???} -- TAMER: Bones
+    BPBID_Arrays.BreedsPerSpecies[1645] = {9} -- TAMER: Mal
+    BPBID_Arrays.BreedsPerSpecies[1646] = {5} -- TAMER: Enbi'see
+    BPBID_Arrays.BreedsPerSpecies[1647] = {8} -- TAMER: Bones
     --BPBID_Arrays.BreedsPerSpecies[1648] = {???} -- TAMER: Sprouts
     --BPBID_Arrays.BreedsPerSpecies[1649] = {???} -- TAMER: Runts
     --BPBID_Arrays.BreedsPerSpecies[1651] = {???} -- TAMER: Prince Charming
