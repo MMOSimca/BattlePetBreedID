@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 6.1.2 Live; @file-date-iso@
+Last Update: Patch 6.2.0 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -843,7 +843,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[797] = false
     BPBID_Arrays.BasePetStats[798] = false
     BPBID_Arrays.BasePetStats[799] = false
-    BPBID_Arrays.BasePetStats[800] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[800] = {18, 8, 8}
     BPBID_Arrays.BasePetStats[801] = false
     BPBID_Arrays.BasePetStats[802] = {8.5, 8.5, 7}
     BPBID_Arrays.BasePetStats[803] = false
@@ -1647,7 +1647,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1601] = {6.75, 9.25, 8}
     BPBID_Arrays.BasePetStats[1602] = {6.75, 9.25, 8}
     BPBID_Arrays.BasePetStats[1603] = {7, 8, 9}
-    BPBID_Arrays.BasePetStats[1604] = {10, 7.5, 6.5}
+    BPBID_Arrays.BasePetStats[1604] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1605] = {8, 9.5, 6.5}
     BPBID_Arrays.BasePetStats[1606] = false
     BPBID_Arrays.BasePetStats[1607] = {8.625, 8, 7.375}
@@ -1700,6 +1700,43 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1654] = {7.625, 7.875, 8.5}
     BPBID_Arrays.BasePetStats[1655] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1656] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1657] = false
+    BPBID_Arrays.BasePetStats[1658] = false
+    BPBID_Arrays.BasePetStats[1659] = false
+    BPBID_Arrays.BasePetStats[1660] = {7.5, 8.5, 8}
+    BPBID_Arrays.BasePetStats[1661] = {7.75, 7.75, 8.5}
+    BPBID_Arrays.BasePetStats[1662] = {7, 8.5, 8.5}
+    BPBID_Arrays.BasePetStats[1663] = {8.5, 8, 7.5}
+    BPBID_Arrays.BasePetStats[1664] = {7.5, 8.5, 8}
+    BPBID_Arrays.BasePetStats[1665] = {8.75, 8, 7.25}
+    BPBID_Arrays.BasePetStats[1666] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1667] = false
+    BPBID_Arrays.BasePetStats[1668] = false
+    BPBID_Arrays.BasePetStats[1669] = false
+    BPBID_Arrays.BasePetStats[1670] = false
+    BPBID_Arrays.BasePetStats[1671] = {11.75, 9.25, 8}
+    BPBID_Arrays.BasePetStats[1672] = {8.5, 8.75, 6.75}
+    BPBID_Arrays.BasePetStats[1673] = {10.5, 10.5, 8}
+    BPBID_Arrays.BasePetStats[1674] = {8, 11.75, 9.25}
+    BPBID_Arrays.BasePetStats[1675] = {9.25, 10.5, 9.25}
+    BPBID_Arrays.BasePetStats[1676] = {9.25, 8, 11.75}
+    BPBID_Arrays.BasePetStats[1677] = {10.5, 9.25, 9.25}
+    BPBID_Arrays.BasePetStats[1678] = {9.25, 9.25, 10.5}
+    BPBID_Arrays.BasePetStats[1679] = {8, 10.5, 10.5}
+    BPBID_Arrays.BasePetStats[1680] = {11.75, 8, 9.25}
+    BPBID_Arrays.BasePetStats[1681] = {10.5, 8, 10.5}
+    BPBID_Arrays.BasePetStats[1682] = {9.665, 9.665, 9.665}
+    BPBID_Arrays.BasePetStats[1683] = {8, 13, 8}
+    BPBID_Arrays.BasePetStats[1684] = {9.25, 11.75, 8}
+    BPBID_Arrays.BasePetStats[1685] = {8, 9.25, 11.75}
+    BPBID_Arrays.BasePetStats[1686] = {13, 8, 8}
+    BPBID_Arrays.BasePetStats[1687] = {7.75, 8.5, 7.75}
+    BPBID_Arrays.BasePetStats[1688] = {8.25, 8.25, 7.5}
+    BPBID_Arrays.BasePetStats[1689] = false
+    BPBID_Arrays.BasePetStats[1690] = {7.25, 8.75, 8}
+    BPBID_Arrays.BasePetStats[1691] = false
+    BPBID_Arrays.BasePetStats[1692] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1693] = {8, 8, 8}
 
     BPBID_Arrays.BreedsPerSpecies[1] = false
     BPBID_Arrays.BreedsPerSpecies[2] = false
