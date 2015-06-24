@@ -1852,7 +1852,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[112] = false
     BPBID_Arrays.BreedsPerSpecies[113] = false
     BPBID_Arrays.BreedsPerSpecies[114] = {12}
-    BPBID_Arrays.BreedsPerSpecies[115] = false
+    BPBID_Arrays.BreedsPerSpecies[115] = {3} -- NEW: Land Shark
     BPBID_Arrays.BreedsPerSpecies[116] = {12}
     BPBID_Arrays.BreedsPerSpecies[117] = {3}
     BPBID_Arrays.BreedsPerSpecies[118] = {3}
