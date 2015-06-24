@@ -3347,8 +3347,8 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1677] = {???} -- TAMER: 
     --BPBID_Arrays.BreedsPerSpecies[1678] = {???} -- TAMER: 
     --BPBID_Arrays.BreedsPerSpecies[1679] = {???} -- TAMER: 
-    --BPBID_Arrays.BreedsPerSpecies[1680] = {???} -- TAMER: 
-    --BPBID_Arrays.BreedsPerSpecies[1681] = {???} -- TAMER: 
+    BPBID_Arrays.BreedsPerSpecies[1680] = {3} -- TAMER: Dark Gazer
+    BPBID_Arrays.BreedsPerSpecies[1681] = {3} -- TAMER: Bleakwing
     --BPBID_Arrays.BreedsPerSpecies[1682] = {???} -- TAMER: 
     --BPBID_Arrays.BreedsPerSpecies[1683] = {???} -- TAMER: 
     --BPBID_Arrays.BreedsPerSpecies[1684] = {???} -- TAMER: 
