@@ -81,12 +81,11 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     local ipower = BPBID_Arrays.BasePetStats[nSpeciesID][2] * 10
     local ispeed = BPBID_Arrays.BasePetStats[nSpeciesID][3] * 10
     
-    -- Account for wild pet HP / Power / Speed reductions
-    local wildHPFactor, wildPowerFactor, wildSpeedFactor = 1, 1, 1
+    -- Account for wild pet HP / Power reductions
+    local wildHPFactor, wildPowerFactor = 1, 1
     if wild then
         wildHPFactor = 1.2
         wildPowerFactor = 1.25
-        wildSpeedFactor = 1.25
     end
     
     -- Upconvert to avoid floating point errors
@@ -102,20 +101,20 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     for i = minQuality, maxQuality do -- Accounting for BlizzBug with rarity
         nQL = BPBID_Arrays.RealRarityValues[i] * 20 * nLevel
         
-        -- Higher level pets can never have conflicting breed possibilities, so calculations can be less accurate and faster
+        -- Higher level pets can never have duplicate breeds, so calculations can be less accurate and faster (they remain the same since version 0.7)
         if (nLevel > 2) then
         
             -- Calculate diffs
-            local diff3 = (abs(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 5) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 5) * nQL) / wildSpeedFactor - tspeed)
-            local diff4 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 20) * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) / wildSpeedFactor - tspeed)
-            local diff5 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 20) * nQL) / wildSpeedFactor - tspeed)
-            local diff6 = (abs(((ihp + 20) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) / wildSpeedFactor - tspeed)
-            local diff7 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) / wildSpeedFactor - tspeed)
-            local diff8 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) / wildSpeedFactor - tspeed)
-            local diff9 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) / wildSpeedFactor - tspeed)
-            local diff10 = (abs(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 4) * nQL) / wildSpeedFactor - tspeed)
-            local diff11 = (abs(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 4) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) / wildSpeedFactor - tspeed)
-            local diff12 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 4) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 4) * nQL) / wildSpeedFactor - tspeed)
+            local diff3 = (abs(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 5) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 5) * nQL) - tspeed)
+            local diff4 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 20) * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) - tspeed)
+            local diff5 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 20) * nQL) - tspeed)
+            local diff6 = (abs(((ihp + 20) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) - tspeed)
+            local diff7 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs((ispeed * nQL) - tspeed)
+            local diff8 = (abs((ihp * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) - tspeed)
+            local diff9 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs((ipower * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) - tspeed)
+            local diff10 = (abs(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 9) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 4) * nQL) - tspeed)
+            local diff11 = (abs(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 4) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 9) * nQL) - tspeed)
+            local diff12 = (abs(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor - thp) / 5) + abs(((ipower + 4) * nQL) / wildPowerFactor - tpower) + abs(((ispeed + 4) * nQL) - tspeed)
             
             -- Calculate min diff
             local current = min(diff3, diff4, diff5, diff6, diff7, diff8, diff9, diff10, diff11, diff12)
@@ -144,16 +143,16 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
         -- Lowbie pets go here, the bane of my existance. calculations must be intense and logic loops numerous
         else
             -- Calculate diffs much more intensely. Round calculations with 10^-2 and math.floor. Also, properly devalue HP by dividing its absolute value by 5
-            local diff3 = (abs((floor(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 5) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 5) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff4 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 20) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff5 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 20) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff6 = (abs((floor(((ihp + 20) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff7 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff8 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff9 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff10 = (abs((floor(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 4) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff11 = (abs((floor(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 4) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
-            local diff12 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 4) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 4) * nQL) / wildSpeedFactor * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff3 = (abs((floor(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 5) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 5) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff4 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 20) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff5 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 20) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff6 = (abs((floor(((ihp + 20) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff7 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff8 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff9 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff10 = (abs((floor(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 9) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 4) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff11 = (abs((floor(((ihp + 4) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 4) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 9) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
+            local diff12 = (abs((floor(((ihp + 9) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 4) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 4) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
             
             -- Use custom replacement code for math.min to find duplicate breed possibilities
             local numberlist = { diff3, diff4, diff5, diff6, diff7, diff8, diff9, diff10, diff11, diff12 }
