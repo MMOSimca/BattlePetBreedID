@@ -3356,7 +3356,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1686] = {3} -- TAMER: Defiled Earth
     BPBID_Arrays.BreedsPerSpecies[1687] = {3} -- NEW: Left Shark
     BPBID_Arrays.BreedsPerSpecies[1688] = {4, 6, 7, 8} -- NEW: Crusher
-    --BPBID_Arrays.BreedsPerSpecies[1690] = {???} -- NEW: Shard of Cyrukh
+    BPBID_Arrays.BreedsPerSpecies[1690] = {8} -- NEW: Shard of Cyrukh
     BPBID_Arrays.BreedsPerSpecies[1692] = {10} -- NEW: Savage Cub
     BPBID_Arrays.BreedsPerSpecies[1693] = {4} -- NEW: Blazing Firehawk
 end
