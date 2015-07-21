@@ -495,7 +495,7 @@ function internal.Hook_ArkInventory(tooltip, h)
     if (not ArkInventory.db.global.option.tooltip.battlepet.enable) or ((tooltip ~= GameTooltip) and (tooltip ~= ItemRefTooltip)) then return end
 
     -- Decode string
-    local class, speciesID, level, rarity, maxHealth, power, speed = ArkInventory.ObjectStringDecode( h )
+    local class, speciesID, level, rarity, maxHealth, power, speed = unpack( ArkInventory.ObjectStringDecode( h ) )
 
     -- Escape if not a battlepet link
     if class ~= "battlepet" then return end
