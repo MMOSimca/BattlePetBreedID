@@ -3183,13 +3183,13 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1476] = {4} -- TAMER: Mr. Pointy
     BPBID_Arrays.BreedsPerSpecies[1477] = {8} -- TAMER: Syd
     BPBID_Arrays.BreedsPerSpecies[1478] = {7} -- NEW: Syd the Squid
-    BPBID_Arrays.BreedsPerSpecies[1479] = {4} -- TAMER: Brutus
+    BPBID_Arrays.BreedsPerSpecies[1479] = {3} -- TAMER: Brutus
     BPBID_Arrays.BreedsPerSpecies[1480] = {3} -- TAMER: Quintessence of Light
-    BPBID_Arrays.BreedsPerSpecies[1482] = {4} -- TAMER: Rukus
-    BPBID_Arrays.BreedsPerSpecies[1483] = {8} -- TAMER: Mr. Terrible
+    BPBID_Arrays.BreedsPerSpecies[1482] = {3} -- TAMER: Rukus
+    BPBID_Arrays.BreedsPerSpecies[1483] = {3} -- TAMER: Mr. Terrible
     BPBID_Arrays.BreedsPerSpecies[1484] = {3} -- TAMER: Carroteye
-    BPBID_Arrays.BreedsPerSpecies[1485] = {6} -- TAMER: Sloppus
-    BPBID_Arrays.BreedsPerSpecies[1486] = {11} -- TAMER: The Beakinator
+    BPBID_Arrays.BreedsPerSpecies[1485] = {3} -- TAMER: Sloppus
+    BPBID_Arrays.BreedsPerSpecies[1486] = {3} -- TAMER: The Beakinator
     BPBID_Arrays.BreedsPerSpecies[1487] = {3} -- TAMER: King Floret
     BPBID_Arrays.BreedsPerSpecies[1488] = {3} -- TAMER: Queen Floret
     BPBID_Arrays.BreedsPerSpecies[1489] = {3} -- TAMER: Kromli
@@ -3291,7 +3291,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1601] = {4} -- NEW: Servant of Demidos
     BPBID_Arrays.BreedsPerSpecies[1602] = {8} -- NEW: Grommloc
     BPBID_Arrays.BreedsPerSpecies[1603] = {9} -- NEW: Argi
-    --BPBID_Arrays.BreedsPerSpecies[1604] = {???} -- NEW: Nethaera's Light
+    BPBID_Arrays.BreedsPerSpecies[1604] = {7} -- NEW: Nethaera's Light
     BPBID_Arrays.BreedsPerSpecies[1605] = {7} -- NEW: Trunks
     BPBID_Arrays.BreedsPerSpecies[1607] = {3} -- TAMER: Gorefu
     BPBID_Arrays.BreedsPerSpecies[1608] = {3} -- TAMER: Carrotus Maximus
@@ -3336,7 +3336,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1663] = {6, 7} -- NEW: Periwinkle Calf
     BPBID_Arrays.BreedsPerSpecies[1664] = {3} -- NEW: Nightmare Bell
     BPBID_Arrays.BreedsPerSpecies[1665] = {9} -- NEW: Ghostshell Crab
-    --BPBID_Arrays.BreedsPerSpecies[1666] = {???} -- NEW: Blorp
+    BPBID_Arrays.BreedsPerSpecies[1666] = {3} -- NEW: Blorp
     --BPBID_Arrays.BreedsPerSpecies[1668] = {???} -- TAMER: 
     BPBID_Arrays.BreedsPerSpecies[1671] = {3} -- TAMER: Felsworn Sentry
     BPBID_Arrays.BreedsPerSpecies[1672] = {6} -- NEW: Corrupted Nest Guardian
