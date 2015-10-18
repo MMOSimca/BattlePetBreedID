@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 6.2.0 Live; @file-date-iso@
+Last Update: Patch 6.2.3 PTR; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -1298,7 +1298,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1252] = false
     BPBID_Arrays.BasePetStats[1253] = false
     BPBID_Arrays.BasePetStats[1254] = false
-    BPBID_Arrays.BasePetStats[1255] = {7.75, 8.375, 7.875}
+    BPBID_Arrays.BasePetStats[1255] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1256] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1257] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1258] = {8, 9, 7}
@@ -1497,7 +1497,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1451] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1452] = false
     BPBID_Arrays.BasePetStats[1453] = {8, 8, 8}
-    BPBID_Arrays.BasePetStats[1454] = {8, 8.5, 7.5}
+    BPBID_Arrays.BasePetStats[1454] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1455] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1456] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1457] = {8, 8, 8}
@@ -1509,7 +1509,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1463] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1464] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1465] = {8, 8, 8}
-    BPBID_Arrays.BasePetStats[1466] = {8, 8.5, 7.5}
+    BPBID_Arrays.BasePetStats[1466] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1467] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1468] = {7.625, 8.25, 8.125}
     BPBID_Arrays.BasePetStats[1469] = {7.625, 8.25, 8.125}
@@ -1734,9 +1734,82 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1688] = {8.25, 8.25, 7.5}
     BPBID_Arrays.BasePetStats[1689] = false
     BPBID_Arrays.BasePetStats[1690] = {7.25, 8.75, 8}
-    BPBID_Arrays.BasePetStats[1691] = false
+    BPBID_Arrays.BasePetStats[1691] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1692] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1693] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1694] = false
+    BPBID_Arrays.BasePetStats[1695] = false
+    BPBID_Arrays.BasePetStats[1696] = false
+    BPBID_Arrays.BasePetStats[1697] = false
+    BPBID_Arrays.BasePetStats[1698] = false
+    BPBID_Arrays.BasePetStats[1699] = false
+    BPBID_Arrays.BasePetStats[1700] = false
+    BPBID_Arrays.BasePetStats[1701] = false
+    BPBID_Arrays.BasePetStats[1702] = false
+    BPBID_Arrays.BasePetStats[1703] = false
+    BPBID_Arrays.BasePetStats[1704] = false
+    BPBID_Arrays.BasePetStats[1705] = false
+    BPBID_Arrays.BasePetStats[1706] = false
+    BPBID_Arrays.BasePetStats[1707] = false
+    BPBID_Arrays.BasePetStats[1708] = false
+    BPBID_Arrays.BasePetStats[1709] = false
+    BPBID_Arrays.BasePetStats[1710] = false
+    BPBID_Arrays.BasePetStats[1711] = false
+    BPBID_Arrays.BasePetStats[1712] = false
+    BPBID_Arrays.BasePetStats[1713] = false
+    BPBID_Arrays.BasePetStats[1714] = false
+    BPBID_Arrays.BasePetStats[1715] = false
+    BPBID_Arrays.BasePetStats[1716] = false
+    BPBID_Arrays.BasePetStats[1717] = false
+    BPBID_Arrays.BasePetStats[1718] = false
+    BPBID_Arrays.BasePetStats[1719] = false
+    BPBID_Arrays.BasePetStats[1720] = false
+    BPBID_Arrays.BasePetStats[1721] = false
+    BPBID_Arrays.BasePetStats[1722] = false
+    BPBID_Arrays.BasePetStats[1723] = false
+    BPBID_Arrays.BasePetStats[1724] = false
+    BPBID_Arrays.BasePetStats[1725] = {8.25, 8.5, 7.25}
+    BPBID_Arrays.BasePetStats[1726] = false
+    BPBID_Arrays.BasePetStats[1727] = false
+    BPBID_Arrays.BasePetStats[1728] = false
+    BPBID_Arrays.BasePetStats[1729] = false
+    BPBID_Arrays.BasePetStats[1730] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1731] = false
+    BPBID_Arrays.BasePetStats[1732] = false
+    BPBID_Arrays.BasePetStats[1733] = false
+    BPBID_Arrays.BasePetStats[1734] = false
+    BPBID_Arrays.BasePetStats[1735] = false
+    BPBID_Arrays.BasePetStats[1736] = false
+    BPBID_Arrays.BasePetStats[1737] = false
+    BPBID_Arrays.BasePetStats[1738] = false
+    BPBID_Arrays.BasePetStats[1739] = false
+    BPBID_Arrays.BasePetStats[1740] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1741] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[1742] = false
+    BPBID_Arrays.BasePetStats[1743] = false
+    BPBID_Arrays.BasePetStats[1744] = false
+    BPBID_Arrays.BasePetStats[1745] = false
+    BPBID_Arrays.BasePetStats[1746] = false
+    BPBID_Arrays.BasePetStats[1747] = false
+    BPBID_Arrays.BasePetStats[1748] = false
+    BPBID_Arrays.BasePetStats[1749] = false
+    BPBID_Arrays.BasePetStats[1750] = false
+    BPBID_Arrays.BasePetStats[1751] = false
+    BPBID_Arrays.BasePetStats[1752] = false
+    BPBID_Arrays.BasePetStats[1753] = false
+    BPBID_Arrays.BasePetStats[1754] = false
+    BPBID_Arrays.BasePetStats[1755] = false
+    BPBID_Arrays.BasePetStats[1756] = false
+    BPBID_Arrays.BasePetStats[1757] = false
+    BPBID_Arrays.BasePetStats[1758] = false
+    BPBID_Arrays.BasePetStats[1759] = false
+    BPBID_Arrays.BasePetStats[1760] = false
+    BPBID_Arrays.BasePetStats[1761] = false
+    BPBID_Arrays.BasePetStats[1762] = false
+    BPBID_Arrays.BasePetStats[1763] = false
+    BPBID_Arrays.BasePetStats[1764] = {7.625, 8.375, 8}
+    BPBID_Arrays.BasePetStats[1765] = {7.625, 8.375, 8}
+    BPBID_Arrays.BasePetStats[1766] = {7.625, 8.375, 8}
 
     BPBID_Arrays.BreedsPerSpecies[1] = false
     BPBID_Arrays.BreedsPerSpecies[2] = false
@@ -2992,7 +3065,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1252] = false
     BPBID_Arrays.BreedsPerSpecies[1253] = false
     BPBID_Arrays.BreedsPerSpecies[1254] = false
-    BPBID_Arrays.BreedsPerSpecies[1255] = {8}
+    --BPBID_Arrays.BreedsPerSpecies[1255] = {???} -- NEW: Zeradar -- formerly a breed 8 dev pet, Murkimus Tyrannicus
     BPBID_Arrays.BreedsPerSpecies[1256] = {10, 11}
     BPBID_Arrays.BreedsPerSpecies[1257] = {3}
     BPBID_Arrays.BreedsPerSpecies[1258] = {8}
@@ -3161,7 +3234,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1450] = {8} -- NEW: Draenei Micro Defender
     BPBID_Arrays.BreedsPerSpecies[1451] = {5} -- NEW: Molten Corgi
     --BPBID_Arrays.BreedsPerSpecies[1453] = {???} -- TAMER: River Calf
-    --BPBID_Arrays.BreedsPerSpecies[1454] = {???} -- TAMER: Dwarf Gronnling
+    --BPBID_Arrays.BreedsPerSpecies[1454] = {???} -- NEW: Murkidan
     BPBID_Arrays.BreedsPerSpecies[1455] = {3, 10, 11, 12} -- NEW: Mossbite Skitterer
     BPBID_Arrays.BreedsPerSpecies[1456] = {3, 10, 11, 12} -- NEW: Thicket Skitterer
     BPBID_Arrays.BreedsPerSpecies[1457] = {3, 10, 11, 12} -- NEW: Icespine Hatchling
@@ -3170,7 +3243,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1463] = {3, 10, 11, 12} -- NEW: Wood Wasp
     BPBID_Arrays.BreedsPerSpecies[1464] = {3, 10, 11, 12} -- NEW: Twilight Wasp
     BPBID_Arrays.BreedsPerSpecies[1465] = {3, 10, 11, 12} -- NEW: Amberbarb Wasp
-    --BPBID_Arrays.BreedsPerSpecies[1466] = {???} -- TAMER: Runtish Gronnling
+    --BPBID_Arrays.BreedsPerSpecies[1466] = {???} -- NEW: Brightpaw
     BPBID_Arrays.BreedsPerSpecies[1467] = {4, 5} -- NEW: Sky-Bo
     BPBID_Arrays.BreedsPerSpecies[1468] = {3, 4, 7, 10, 12} -- NEW: Bloodbeak
     BPBID_Arrays.BreedsPerSpecies[1469] = {3, 4, 7, 10, 12} -- NEW: Junglebeak
@@ -3357,6 +3430,15 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1687] = {3} -- NEW: Left Shark
     BPBID_Arrays.BreedsPerSpecies[1688] = {4, 6, 7, 8} -- NEW: Crusher
     BPBID_Arrays.BreedsPerSpecies[1690] = {8} -- NEW: Shard of Cyrukh
+    --BPBID_Arrays.BreedsPerSpecies[1691] = {???} -- NEW: Nibbles
     BPBID_Arrays.BreedsPerSpecies[1692] = {10} -- NEW: Savage Cub
     BPBID_Arrays.BreedsPerSpecies[1693] = {4} -- NEW: Blazing Firehawk
+    --BPBID_Arrays.BreedsPerSpecies[1725] = {???} -- NEW: Grumpling
+    BPBID_Arrays.BreedsPerSpecies[1730] = {5, 8, 9, 10, 11} -- NEW: Spectral Spinner
+    BPBID_Arrays.BreedsPerSpecies[1740] = {3, 5, 8, 10} -- NEW: Ghost Maggot
+    BPBID_Arrays.BreedsPerSpecies[1741] = {9, 10, 11, 12} -- NEW: Ghastly Rat
+    BPBID_Arrays.BreedsPerSpecies[1764] = {5} -- NEW: Energized Manafiend
+    BPBID_Arrays.BreedsPerSpecies[1765] = {6} -- NEW: Empyreal Manafiend
+    BPBID_Arrays.BreedsPerSpecies[1766] = {4} -- NEW: Empowered Manafiend
+
 end
