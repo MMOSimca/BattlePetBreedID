@@ -3065,7 +3065,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1252] = false
     BPBID_Arrays.BreedsPerSpecies[1253] = false
     BPBID_Arrays.BreedsPerSpecies[1254] = false
-    --BPBID_Arrays.BreedsPerSpecies[1255] = {???} -- NEW: Zeradar -- formerly a breed 8 dev pet, Murkimus Tyrannicus
+    BPBID_Arrays.BreedsPerSpecies[1255] = {7} -- NEW: Zeradar -- formerly a breed 8 dev pet, Murkimus Tyrannicus
     BPBID_Arrays.BreedsPerSpecies[1256] = {10, 11}
     BPBID_Arrays.BreedsPerSpecies[1257] = {3}
     BPBID_Arrays.BreedsPerSpecies[1258] = {8}
@@ -3440,5 +3440,4 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1764] = {5} -- NEW: Energized Manafiend
     BPBID_Arrays.BreedsPerSpecies[1765] = {6} -- NEW: Empyreal Manafiend
     BPBID_Arrays.BreedsPerSpecies[1766] = {4} -- NEW: Empowered Manafiend
-
 end
