@@ -3234,7 +3234,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1450] = {8} -- NEW: Draenei Micro Defender
     BPBID_Arrays.BreedsPerSpecies[1451] = {5} -- NEW: Molten Corgi
     --BPBID_Arrays.BreedsPerSpecies[1453] = {???} -- TAMER: River Calf
-    --BPBID_Arrays.BreedsPerSpecies[1454] = {???} -- NEW: Murkidan
+    BPBID_Arrays.BreedsPerSpecies[1454] = {3} -- NEW: Murkidan
     BPBID_Arrays.BreedsPerSpecies[1455] = {3, 10, 11, 12} -- NEW: Mossbite Skitterer
     BPBID_Arrays.BreedsPerSpecies[1456] = {3, 10, 11, 12} -- NEW: Thicket Skitterer
     BPBID_Arrays.BreedsPerSpecies[1457] = {3, 10, 11, 12} -- NEW: Icespine Hatchling
@@ -3430,7 +3430,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1687] = {3} -- NEW: Left Shark
     BPBID_Arrays.BreedsPerSpecies[1688] = {4, 6, 7, 8} -- NEW: Crusher
     BPBID_Arrays.BreedsPerSpecies[1690] = {8} -- NEW: Shard of Cyrukh
-    --BPBID_Arrays.BreedsPerSpecies[1691] = {???} -- NEW: Nibbles
+    BPBID_Arrays.BreedsPerSpecies[1691] = {8} -- NEW: Nibbles
     BPBID_Arrays.BreedsPerSpecies[1692] = {10} -- NEW: Savage Cub
     BPBID_Arrays.BreedsPerSpecies[1693] = {4} -- NEW: Blazing Firehawk
     --BPBID_Arrays.BreedsPerSpecies[1725] = {???} -- NEW: Grumpling
