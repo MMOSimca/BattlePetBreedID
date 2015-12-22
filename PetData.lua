@@ -3243,7 +3243,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1463] = {3, 10, 11, 12} -- NEW: Wood Wasp
     BPBID_Arrays.BreedsPerSpecies[1464] = {3, 10, 11, 12} -- NEW: Twilight Wasp
     BPBID_Arrays.BreedsPerSpecies[1465] = {3, 10, 11, 12} -- NEW: Amberbarb Wasp
-    --BPBID_Arrays.BreedsPerSpecies[1466] = {???} -- NEW: Brightpaw
+    BPBID_Arrays.BreedsPerSpecies[1466] = {11} -- NEW: Brightpaw
     BPBID_Arrays.BreedsPerSpecies[1467] = {4, 5} -- NEW: Sky-Bo
     BPBID_Arrays.BreedsPerSpecies[1468] = {3, 4, 7, 10, 12} -- NEW: Bloodbeak
     BPBID_Arrays.BreedsPerSpecies[1469] = {3, 4, 7, 10, 12} -- NEW: Junglebeak
@@ -3433,7 +3433,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1691] = {8} -- NEW: Nibbles
     BPBID_Arrays.BreedsPerSpecies[1692] = {10} -- NEW: Savage Cub
     BPBID_Arrays.BreedsPerSpecies[1693] = {4} -- NEW: Blazing Firehawk
-    --BPBID_Arrays.BreedsPerSpecies[1725] = {???} -- NEW: Grumpling
+    BPBID_Arrays.BreedsPerSpecies[1725] = {4, 8, 10} -- NEW: Grumpling
     BPBID_Arrays.BreedsPerSpecies[1730] = {5, 8, 9, 10, 11} -- NEW: Spectral Spinner
     BPBID_Arrays.BreedsPerSpecies[1740] = {3, 5, 8, 10} -- NEW: Ghost Maggot
     BPBID_Arrays.BreedsPerSpecies[1741] = {9, 10, 11, 12} -- NEW: Ghastly Rat
