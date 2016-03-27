@@ -4,10 +4,13 @@ Written by: Hugh@Burning Blade-US and Simca@Malfurion-US
 Special thanks to Nullberri, Ro, and Warla for helping at various points throughout the addon's development.
 ]]--
 
---GLOBALS: BPBID_Options, GetBreedID_Battle, GetBreedID_Journal, SLASH_BATTLEPETBREEDID1, SLASH_BATTLEPETBREEDID2, SLASH_BATTLEPETBREEDID3
+--GLOBALS: BPBID_Internal, BPBID_Options, GetBreedID_Battle, GetBreedID_Journal, SLASH_BATTLEPETBREEDID1, SLASH_BATTLEPETBREEDID2, SLASH_BATTLEPETBREEDID3
 
 -- Get folder path and set addon namespace
 local addonname, internal = ...
+
+-- Give access to the internal namespace through a specified global variable
+_G["BPBID_Internal"] = internal;
 
 -- These global tables are used everywhere in the code and are absolutely required to be localized
 local CPB = _G.C_PetBattles
