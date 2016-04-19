@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 6.2.3 PTR; @file-date-iso@
+Last Update: Patch 6.2.4 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -1810,6 +1810,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1764] = {7.625, 8.375, 8}
     BPBID_Arrays.BasePetStats[1765] = {7.625, 8.375, 8}
     BPBID_Arrays.BasePetStats[1766] = {7.625, 8.375, 8}
+    BPBID_Arrays.BasePetStats[1828] = {7.75, 8.25, 8}
 
     BPBID_Arrays.BreedsPerSpecies[1] = false
     BPBID_Arrays.BreedsPerSpecies[2] = false
@@ -3440,4 +3441,5 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1764] = {5} -- NEW: Energized Manafiend
     BPBID_Arrays.BreedsPerSpecies[1765] = {6} -- NEW: Empyreal Manafiend
     BPBID_Arrays.BreedsPerSpecies[1766] = {4} -- NEW: Empowered Manafiend
+    BPBID_Arrays.BreedsPerSpecies[1828] = {7} -- NEW: Baby Winston
 end
