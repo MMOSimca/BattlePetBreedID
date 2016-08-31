@@ -492,7 +492,7 @@ end
 -- Hook for ArkInventory compability, following the example of BattlePetTooltip
 function internal.Hook_ArkInventory(tooltip, h, i)
     -- If the user has chosen not to let ArkInventory handle Battle Pets then we won't need to intervene
-    if (not ArkInventory.db.option.tooltip.battlepet.enable) or ((tooltip ~= GameTooltip) and (tooltip ~= ItemRefTooltip)) then return end
+    if ((tooltip ~= GameTooltip) and (tooltip ~= ItemRefTooltip)) or (not ArkInventory or not ArkInventory.db or not ArkInventory.db.option or not ArkInventory.db.option.tooltip or not ArkInventory.db.option.tooltip.battlepet or not ArkInventory.db.option.tooltip.battlepet.enable) then return end
 
     -- Decode string
     local class, speciesID, level, rarity, maxHealth, power, speed = unpack( ArkInventory.ObjectStringDecode( h ) )
