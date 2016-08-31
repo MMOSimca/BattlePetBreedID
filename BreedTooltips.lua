@@ -490,9 +490,9 @@ function internal.Hook_PJTLeave(self, motion)
 end
 
 -- Hook for ArkInventory compability, following the example of BattlePetTooltip
-function internal.Hook_ArkInventory(tooltip, h)
+function internal.Hook_ArkInventory(tooltip, h, i)
     -- If the user has chosen not to let ArkInventory handle Battle Pets then we won't need to intervene
-    if (not ArkInventory.db.global.option.tooltip.battlepet.enable) or ((tooltip ~= GameTooltip) and (tooltip ~= ItemRefTooltip)) then return end
+    if (not ArkInventory.db.option.tooltip.battlepet.enable) or ((tooltip ~= GameTooltip) and (tooltip ~= ItemRefTooltip)) then return end
 
     -- Decode string
     local class, speciesID, level, rarity, maxHealth, power, speed = unpack( ArkInventory.ObjectStringDecode( h ) )
