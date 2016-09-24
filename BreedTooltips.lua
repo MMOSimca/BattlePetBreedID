@@ -58,8 +58,15 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
     -- Set positioning/parenting/ownership of Breed Tooltip
     breedtip:SetParent(parent)
     breedtip:SetOwner(parent, "ANCHOR_NONE")
-    breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
-    breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
+
+    -- Temporary workaround for TradeSkillMaster's tooltip - better solution pending
+    if (_G.IsAddOnLoaded("TradeSkillMaster")) then
+        breedtip:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, tooltipDistance or 2)
+        breedtip:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", 0, tooltipDistance or 2)
+    else
+        breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
+        breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
+    end
 
     -- Remove backdrop created as part of GameTooltipTemplate
     breedtip:SetBackdrop(nil)
