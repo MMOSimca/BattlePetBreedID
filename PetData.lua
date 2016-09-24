@@ -3634,8 +3634,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1719] = {7} -- NEW: Eye of Inquisition
     BPBID_Arrays.BreedsPerSpecies[1720] = {8} -- NEW: Emmigosa
     BPBID_Arrays.BreedsPerSpecies[1721] = {8} -- NEW: Stormborne Whelpling
-    --BPBID_Arrays.BreedsPerSpecies[1722] = {???} -- NEW: Dream Whelpling
-    --BPBID_Arrays.BreedsPerSpecies[1723] = {???} -- NEW: Nightmare Whelpling
+    BPBID_Arrays.BreedsPerSpecies[1722] = {4, 8, 10} -- NEW: Dream Whelpling
+    BPBID_Arrays.BreedsPerSpecies[1723] = {7} -- NEW: Nightmare Whelpling
     BPBID_Arrays.BreedsPerSpecies[1726] = {3, 5, 8, 11} -- NEW: Burrow Spiderling
     BPBID_Arrays.BreedsPerSpecies[1727] = {11} -- NEW: Nursery Spider
     BPBID_Arrays.BreedsPerSpecies[1728] = {6, 8, 9, 10} -- NEW: Juvenile Scuttleback
@@ -3692,9 +3692,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1796] = {8} -- TAMER: Coach
     BPBID_Arrays.BreedsPerSpecies[1797] = {10} -- TAMER: Greatest Foe
     BPBID_Arrays.BreedsPerSpecies[1798] = {12} -- TAMER: Gulp
-    --BPBID_Arrays.BreedsPerSpecies[1799] = {???} -- TAMER: Grommet
-    --BPBID_Arrays.BreedsPerSpecies[1800] = {???} -- TAMER: Itchy
-    --BPBID_Arrays.BreedsPerSpecies[1801] = {???} -- TAMER: Salty Bird
+    BPBID_Arrays.BreedsPerSpecies[1799] = {3} -- TAMER: Grommet
+    BPBID_Arrays.BreedsPerSpecies[1800] = {7} -- TAMER: Itchy
+    BPBID_Arrays.BreedsPerSpecies[1801] = {5} -- TAMER: Salty Bird
     BPBID_Arrays.BreedsPerSpecies[1802] = {12} -- NEW: Fetid Waveling
     BPBID_Arrays.BreedsPerSpecies[1803] = {9} -- NEW: Thistleleaf Adventurer
     BPBID_Arrays.BreedsPerSpecies[1804] = {3} -- NEW: Risen Saber Kitten
@@ -3732,8 +3732,8 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1863] = {???} -- TAMER: Font of Mana
     --BPBID_Arrays.BreedsPerSpecies[1864] = {???} -- TAMER: Seed of Mana
     --BPBID_Arrays.BreedsPerSpecies[1865] = {???} -- TAMER: Essence of Mana
-    --BPBID_Arrays.BreedsPerSpecies[1866] = {???} -- TAMER: Baby Bjorn
-    --BPBID_Arrays.BreedsPerSpecies[1867] = {???} -- TAMER: Mini Musken
+    BPBID_Arrays.BreedsPerSpecies[1866] = {4} -- TAMER: Baby Bjorn
+    BPBID_Arrays.BreedsPerSpecies[1867] = {6} -- TAMER: Mini Musken
     --BPBID_Arrays.BreedsPerSpecies[1868] = {???} -- TAMER: Mist Wraith
     --BPBID_Arrays.BreedsPerSpecies[1869] = {???} -- TAMER: Crawdead
     --BPBID_Arrays.BreedsPerSpecies[1870] = {???} -- TAMER: Gnaw
