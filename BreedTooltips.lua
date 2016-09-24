@@ -10,10 +10,10 @@ Special thanks to Ro for letting me bounce solutions off him regarding tooltip c
 local addonname, internal = ...
 
 -- The only localized functions needed here
-local CPBGN = _G.C_PetBattles.GetName
-local GPII = C_PetJournal.GetPetInfoByPetID
-local GPIS = C_PetJournal.GetPetInfoBySpeciesID
-local GPS = C_PetJournal.GetPetStats
+local PB_GetName = _G.C_PetBattles.GetName
+local PJ_GetPetInfoByPetID = C_PetJournal.GetPetInfoByPetID
+local PJ_GetPetInfoBySpeciesID = C_PetJournal.GetPetInfoBySpeciesID
+local PJ_GetPetStats = C_PetJournal.GetPetStats
 local ceil = math.ceil
 
 -- Initalize AddOn locals used in this section
@@ -269,7 +269,7 @@ local function BPBID_Hook_BattleUpdate(self)
     local breed = internal.RetrieveBreedName(internal.breedCache[self.petIndex + offset])
 
     -- Get pet's name
-    local name = CPBGN(self.petOwner, self.petIndex)
+    local name = PB_GetName(self.petOwner, self.petIndex)
 
     if not tooltip then
         -- Set the name header if the user wants
@@ -404,7 +404,7 @@ local function BPBID_Hook_FBPTShow(speciesID, level, rarity, maxHealth, power, s
         -- Account for possibility of not having the name passed to us
         local realname
         if (not name) then
-            realname = GPIS(speciesID)
+            realname = PJ_GetPetInfoBySpeciesID(speciesID)
         else
             realname = name
         end
@@ -444,8 +444,8 @@ function internal.Hook_PJTEnter(self, motion)
 
     if (PetJournalPetCard.petID) then
         -- Get data from PetID (which can get from the current PetCard since we know the current PetCard has to be responsible for the tooltip too)
-        local speciesID, _, level = GPII(PetJournalPetCard.petID)
-        local _, maxHealth, power, speed, rarity = GPS(PetJournalPetCard.petID)
+        local speciesID, _, level = PJ_GetPetInfoByPetID(PetJournalPetCard.petID)
+        local _, maxHealth, power, speed, rarity = PJ_GetPetStats(PetJournalPetCard.petID)
 
         -- Calculate breedID and breedname
         local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
