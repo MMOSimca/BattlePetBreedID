@@ -58,14 +58,25 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
     -- Set positioning/parenting/ownership of Breed Tooltip
     breedtip:SetParent(parent)
     breedtip:SetOwner(parent, "ANCHOR_NONE")
+    breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
+    breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
 
-    -- Temporary workaround for TradeSkillMaster's tooltip - better solution pending
+    -- Workaround for TradeSkillMaster's tooltip - better solution pending
     if (_G.IsAddOnLoaded("TradeSkillMaster")) then
-        breedtip:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, tooltipDistance or 2)
-        breedtip:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", 0, tooltipDistance or 2)
-    else
-        breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
-        breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
+        for i = 1, 10 do
+            local t = _G["TSMExtraTip" .. i]
+            if t then
+                if (t:GetParent() == BattlePetTooltip) then
+                    t:ClearAllPoints()
+                    t:SetPoint("TOPLEFT", BPBID_BreedTooltip, "BOTTOMLEFT", 0, -1)
+                    t:SetPoint("TOPRIGHT", BPBID_BreedTooltip, "BOTTOMRIGHT", 0, 1)
+                elseif (t:GetParent() == FloatingBattlePetTooltip) then
+                    t:ClearAllPoints()
+                    t:SetPoint("TOPLEFT", BPBID_BreedTooltip2, "BOTTOMLEFT", 0, -1)
+                    t:SetPoint("TOPRIGHT", BPBID_BreedTooltip2, "BOTTOMRIGHT", 0, 1)
+                end
+            end
+        end
     end
 
     -- Remove backdrop created as part of GameTooltipTemplate
