@@ -3288,7 +3288,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1252] = false
     BPBID_Arrays.BreedsPerSpecies[1253] = false
     BPBID_Arrays.BreedsPerSpecies[1254] = false
-    BPBID_Arrays.BreedsPerSpecies[1255] = {7} -- NEW: Zeradar -- formerly a breed 8 dev pet, Murkimus Tyrannicus
+    BPBID_Arrays.BreedsPerSpecies[1255] = {7}
     BPBID_Arrays.BreedsPerSpecies[1256] = {10, 11}
     BPBID_Arrays.BreedsPerSpecies[1257] = {3}
     BPBID_Arrays.BreedsPerSpecies[1258] = {8}
@@ -3728,9 +3728,9 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1780] = {???} -- TAMER: Kiazor the Destroyer
     --BPBID_Arrays.BreedsPerSpecies[1781] = {???} -- TAMER: Scuttles
     --BPBID_Arrays.BreedsPerSpecies[1782] = {???} -- TAMER: Clamps
-    --BPBID_Arrays.BreedsPerSpecies[1787] = {???} -- TAMER: Roots
-    --BPBID_Arrays.BreedsPerSpecies[1788] = {???} -- TAMER: Beaky
-    --BPBID_Arrays.BreedsPerSpecies[1789] = {???} -- TAMER: Sunny
+    BPBID_Arrays.BreedsPerSpecies[1787] = {3} -- TAMER: Roots
+    BPBID_Arrays.BreedsPerSpecies[1788] = {3} -- TAMER: Beaky
+    BPBID_Arrays.BreedsPerSpecies[1789] = {12} -- TAMER: Sunny
     BPBID_Arrays.BreedsPerSpecies[1790] = {4} -- TAMER: Lil' Spirit Guide
     BPBID_Arrays.BreedsPerSpecies[1791] = {9} -- TAMER: Quillino
     BPBID_Arrays.BreedsPerSpecies[1792] = {10} -- TAMER: Fethyr
@@ -3767,9 +3767,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1848] = {3} -- TAMER: Nightmare Sprout
     BPBID_Arrays.BreedsPerSpecies[1849] = {7} -- TAMER: The Maw
     BPBID_Arrays.BreedsPerSpecies[1850] = {9} -- TAMER: Thistleleaf Bully
-    --BPBID_Arrays.BreedsPerSpecies[1851] = {???} -- TAMER: Cackling Flame
-    --BPBID_Arrays.BreedsPerSpecies[1852] = {???} -- TAMER: Devouring Blaze
-    --BPBID_Arrays.BreedsPerSpecies[1853] = {???} -- TAMER: Living Coals
+    BPBID_Arrays.BreedsPerSpecies[1851] = {8} -- TAMER: Cackling Flame
+    BPBID_Arrays.BreedsPerSpecies[1852] = {10} -- TAMER: Devouring Blaze
+    BPBID_Arrays.BreedsPerSpecies[1853] = {7} -- TAMER: Living Coals
     BPBID_Arrays.BreedsPerSpecies[1855] = {11} -- TAMER: Splint Jr.
     BPBID_Arrays.BreedsPerSpecies[1857] = {3} -- TAMER: Beauty
     BPBID_Arrays.BreedsPerSpecies[1858] = {7} -- TAMER: Conviction
@@ -3790,9 +3790,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1873] = {11} -- TAMER: Gusteau
     BPBID_Arrays.BreedsPerSpecies[1874] = {5} -- TAMER: Remy
     BPBID_Arrays.BreedsPerSpecies[1875] = {12} -- TAMER: Dinner
-    --BPBID_Arrays.BreedsPerSpecies[1877] = {???} -- TAMER: Eye of Inquisition
-    --BPBID_Arrays.BreedsPerSpecies[1878] = {???} -- TAMER: Eye of Interrogation
-    --BPBID_Arrays.BreedsPerSpecies[1879] = {???} -- TAMER: Eye of Impetration
+    BPBID_Arrays.BreedsPerSpecies[1877] = {12} -- TAMER: Eye of Inquisition
+    BPBID_Arrays.BreedsPerSpecies[1878] = {10} -- TAMER: Eye of Interrogation
+    BPBID_Arrays.BreedsPerSpecies[1879] = {5} -- TAMER: Eye of Impetration
     BPBID_Arrays.BreedsPerSpecies[1880] = {3} -- TAMER: Stitches Jr. Jr.
     BPBID_Arrays.BreedsPerSpecies[1881] = {3} -- TAMER: Lil'idan
     BPBID_Arrays.BreedsPerSpecies[1882] = {6} -- TAMER: Chromadon
@@ -3836,7 +3836,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1930] = {12} -- NEW: Lagan
     BPBID_Arrays.BreedsPerSpecies[1931] = {8} -- NEW: Court Scribe
     BPBID_Arrays.BreedsPerSpecies[1932] = {7} -- NEW: Nightmare Lasher
-    --BPBID_Arrays.BreedsPerSpecies[1933] = {???} -- NEW: Nightmare Treant
+    BPBID_Arrays.BreedsPerSpecies[1933] = {11} -- NEW: Nightmare Treant
     BPBID_Arrays.BreedsPerSpecies[1934] = {7} -- NEW: Benax
     --BPBID_Arrays.BreedsPerSpecies[1935] = {???} -- NEW: Squirky
     --BPBID_Arrays.BreedsPerSpecies[1937] = {???} -- NEW: Wonderous Wisdomball
