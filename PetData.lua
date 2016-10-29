@@ -3866,7 +3866,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1972] = {???} -- TAMER: Cosmos
     --BPBID_Arrays.BreedsPerSpecies[1973] = {???} -- TAMER: Constellatius
     BPBID_Arrays.BreedsPerSpecies[1974] = {5} -- NEW: Snowfeather Hatchling
-    --BPBID_Arrays.BreedsPerSpecies[1975] = {???} -- NEW: Direbeak Hatchling
+    BPBID_Arrays.BreedsPerSpecies[1975] = {7} -- NEW: Direbeak Hatchling
     BPBID_Arrays.BreedsPerSpecies[1976] = {4} -- NEW: Sharptalon Hatchling
     BPBID_Arrays.BreedsPerSpecies[1977] = {8} -- NEW: Bloodgazer Hatchling
     --BPBID_Arrays.BreedsPerSpecies[1978] = {???} -- NEW: Dutiful Squire
