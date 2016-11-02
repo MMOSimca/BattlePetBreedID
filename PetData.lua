@@ -3841,6 +3841,8 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1935] = {???} -- NEW: Squirky
     --BPBID_Arrays.BreedsPerSpecies[1937] = {???} -- NEW: Wonderous Wisdomball
     BPBID_Arrays.BreedsPerSpecies[1938] = {7} -- NEW: Rescued Fawn
+    BPBID_Arrays.BreedsPerSpecies[1939] = {10} -- NEW: Legionnaire Murky
+    BPBID_Arrays.BreedsPerSpecies[1940] = {10} -- NEW: Knight-Captain Murky
     BPBID_Arrays.BreedsPerSpecies[1941] = {4} -- NEW: Snowfang
     --BPBID_Arrays.BreedsPerSpecies[1943] = {???} -- NEW: Noblegarden Bunny
     --BPBID_Arrays.BreedsPerSpecies[1949] = {???} -- NEW: Igneous Flameling
