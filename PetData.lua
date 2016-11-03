@@ -3439,7 +3439,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1426] = {6} -- NEW: Elekk Plushie
     BPBID_Arrays.BreedsPerSpecies[1427] = {3, 4, 5, 6, 7, 8, 12} -- NEW: Frostfur Rat
     BPBID_Arrays.BreedsPerSpecies[1428] = {7} -- NEW: Zomstrok
-    --BPBID_Arrays.BreedsPerSpecies[1429] = {???} -- TAMER: Autumnal Sproutling
+    BPBID_Arrays.BreedsPerSpecies[1429] = {4} -- NEW: Autumnal Sproutling
     BPBID_Arrays.BreedsPerSpecies[1430] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12} -- NEW: Forest Sproutling
     --BPBID_Arrays.BreedsPerSpecies[1431] = {???} -- TAMER: Kelp Sproutling
     BPBID_Arrays.BreedsPerSpecies[1432] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12} -- NEW: Nightshade Sproutling
@@ -3456,7 +3456,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1449] = {4} -- NEW: Deathwatch Hatchling
     BPBID_Arrays.BreedsPerSpecies[1450] = {8} -- NEW: Draenei Micro Defender
     BPBID_Arrays.BreedsPerSpecies[1451] = {5} -- NEW: Molten Corgi
-    --BPBID_Arrays.BreedsPerSpecies[1453] = {???} -- TAMER: River Calf
+    BPBID_Arrays.BreedsPerSpecies[1453] = {9} -- NEW: River Calf
     BPBID_Arrays.BreedsPerSpecies[1454] = {3} -- NEW: Murkidan
     BPBID_Arrays.BreedsPerSpecies[1455] = {3, 10, 11, 12} -- NEW: Mossbite Skitterer
     BPBID_Arrays.BreedsPerSpecies[1456] = {3, 10, 11, 12} -- NEW: Thicket Skitterer
