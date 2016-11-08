@@ -3841,8 +3841,8 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1935] = {???} -- NEW: Squirky
     --BPBID_Arrays.BreedsPerSpecies[1937] = {???} -- NEW: Wonderous Wisdomball
     BPBID_Arrays.BreedsPerSpecies[1938] = {7} -- NEW: Rescued Fawn
-    BPBID_Arrays.BreedsPerSpecies[1939] = {10} -- NEW: Legionnaire Murky
-    BPBID_Arrays.BreedsPerSpecies[1940] = {10} -- NEW: Knight-Captain Murky
+    BPBID_Arrays.BreedsPerSpecies[1939] = {8} -- NEW: Legionnaire Murky
+    BPBID_Arrays.BreedsPerSpecies[1940] = {8} -- NEW: Knight-Captain Murky
     BPBID_Arrays.BreedsPerSpecies[1941] = {4} -- NEW: Snowfang
     --BPBID_Arrays.BreedsPerSpecies[1943] = {???} -- NEW: Noblegarden Bunny
     --BPBID_Arrays.BreedsPerSpecies[1949] = {???} -- NEW: Igneous Flameling
@@ -3876,5 +3876,5 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1981] = {???} -- TAMER: Swoop
     --BPBID_Arrays.BreedsPerSpecies[1982] = {???} -- TAMER: Buzz
     --BPBID_Arrays.BreedsPerSpecies[1983] = {???} -- TAMER: Cherry
-    --BPBID_Arrays.BreedsPerSpecies[1984] = {???} -- NEW: Albino Buzzard
+    BPBID_Arrays.BreedsPerSpecies[1984] = {6, 7, 9} -- NEW: Albino Buzzard
 end
