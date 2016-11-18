@@ -3803,7 +3803,7 @@ function BPBID_Arrays.InitializeArrays()
     --BPBID_Arrays.BreedsPerSpecies[1887] = {???} -- NEW: Wyrmy Tunkins
     BPBID_Arrays.BreedsPerSpecies[1888] = {7} -- NEW: Celestial Calf
     BPBID_Arrays.BreedsPerSpecies[1889] = {11} -- NEW: Felbat Pup
-    --BPBID_Arrays.BreedsPerSpecies[1890] = {???} -- NEW: Corgi Pup
+    BPBID_Arrays.BreedsPerSpecies[1890] = {5} -- NEW: Corgi Pup
     BPBID_Arrays.BreedsPerSpecies[1891] = {4} -- TAMER: Vinu
     BPBID_Arrays.BreedsPerSpecies[1892] = {3} -- TAMER: Subjugated Tadpole
     BPBID_Arrays.BreedsPerSpecies[1893] = {3} -- TAMER: Allured Tadpole
