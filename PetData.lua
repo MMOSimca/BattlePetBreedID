@@ -1982,7 +1982,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[1933] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1934] = {8.5, 8, 7.5}
     BPBID_Arrays.BasePetStats[1935] = {7.75, 7.75, 8.5}
-    BPBID_Arrays.BasePetStats[1936] = false
+    BPBID_Arrays.BasePetStats[1936] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1937] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[1938] = {8, 8.25, 7.75}
     BPBID_Arrays.BasePetStats[1939] = {8, 8, 8}
@@ -3839,6 +3839,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1933] = {11} -- NEW: Nightmare Treant
     BPBID_Arrays.BreedsPerSpecies[1934] = {7} -- NEW: Benax
     --BPBID_Arrays.BreedsPerSpecies[1935] = {???} -- NEW: Squirky
+    BPBID_Arrays.BreedsPerSpecies[1936] = {8} -- NEW: Mischief
     --BPBID_Arrays.BreedsPerSpecies[1937] = {???} -- NEW: Wonderous Wisdomball
     BPBID_Arrays.BreedsPerSpecies[1938] = {7} -- NEW: Rescued Fawn
     BPBID_Arrays.BreedsPerSpecies[1939] = {8} -- NEW: Legionnaire Murky
