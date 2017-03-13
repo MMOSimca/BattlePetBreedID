@@ -4113,8 +4113,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2014] = false
     BPBID_Arrays.BreedsPerSpecies[2015] = false
     BPBID_Arrays.BreedsPerSpecies[2016] = false
-    BPBID_Arrays.BreedsPerSpecies[2017] = false
-    BPBID_Arrays.BreedsPerSpecies[2018] = false
+    BPBID_Arrays.BreedsPerSpecies[2017] = {4}
+    BPBID_Arrays.BreedsPerSpecies[2018] = {10}
     BPBID_Arrays.BreedsPerSpecies[2019] = false
     BPBID_Arrays.BreedsPerSpecies[2020] = false
     BPBID_Arrays.BreedsPerSpecies[2021] = false
