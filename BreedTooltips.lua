@@ -68,10 +68,12 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             if t then
                 if (t:GetParent() == BattlePetTooltip) then
                     t:ClearAllPoints()
+                    t:SetParent(BPBID_BreedTooltip)
                     t:SetPoint("TOPLEFT", BPBID_BreedTooltip, "BOTTOMLEFT", 0, -1)
                     t:SetPoint("TOPRIGHT", BPBID_BreedTooltip, "BOTTOMRIGHT", 0, 1)
                 elseif (t:GetParent() == FloatingBattlePetTooltip) then
                     t:ClearAllPoints()
+                    t:SetParent(BPBID_BreedTooltip2)
                     t:SetPoint("TOPLEFT", BPBID_BreedTooltip2, "BOTTOMLEFT", 0, -1)
                     t:SetPoint("TOPRIGHT", BPBID_BreedTooltip2, "BOTTOMRIGHT", 0, 1)
                 end
