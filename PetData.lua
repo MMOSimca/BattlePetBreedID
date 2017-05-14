@@ -4039,7 +4039,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1940] = {8}
     BPBID_Arrays.BreedsPerSpecies[1941] = {4}
     BPBID_Arrays.BreedsPerSpecies[1942] = false
-    BPBID_Arrays.BreedsPerSpecies[1943] = false
+    BPBID_Arrays.BreedsPerSpecies[1943] = {5}
     BPBID_Arrays.BreedsPerSpecies[1944] = false
     BPBID_Arrays.BreedsPerSpecies[1945] = false
     BPBID_Arrays.BreedsPerSpecies[1946] = false
@@ -4093,7 +4093,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1994] = false
     BPBID_Arrays.BreedsPerSpecies[1995] = false
     BPBID_Arrays.BreedsPerSpecies[1996] = false
-    BPBID_Arrays.BreedsPerSpecies[1997] = false
+    BPBID_Arrays.BreedsPerSpecies[1997] = {4}
     BPBID_Arrays.BreedsPerSpecies[1998] = false
     BPBID_Arrays.BreedsPerSpecies[1999] = {5, 8, 9, 11}
     BPBID_Arrays.BreedsPerSpecies[2000] = {7, 8, 10}
@@ -4107,12 +4107,12 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2008] = {12}
     BPBID_Arrays.BreedsPerSpecies[2009] = {4}
     BPBID_Arrays.BreedsPerSpecies[2010] = {7}
-    BPBID_Arrays.BreedsPerSpecies[2011] = false
-    BPBID_Arrays.BreedsPerSpecies[2012] = false
-    BPBID_Arrays.BreedsPerSpecies[2013] = false
-    BPBID_Arrays.BreedsPerSpecies[2014] = false
-    BPBID_Arrays.BreedsPerSpecies[2015] = false
-    BPBID_Arrays.BreedsPerSpecies[2016] = false
+    BPBID_Arrays.BreedsPerSpecies[2011] = {5}
+    BPBID_Arrays.BreedsPerSpecies[2012] = {10}
+    BPBID_Arrays.BreedsPerSpecies[2013] = {3}
+    BPBID_Arrays.BreedsPerSpecies[2014] = {12}
+    BPBID_Arrays.BreedsPerSpecies[2015] = {7}
+    BPBID_Arrays.BreedsPerSpecies[2016] = {7}
     BPBID_Arrays.BreedsPerSpecies[2017] = {4}
     BPBID_Arrays.BreedsPerSpecies[2018] = {10}
     BPBID_Arrays.BreedsPerSpecies[2019] = false
@@ -4138,7 +4138,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2039] = false
     BPBID_Arrays.BreedsPerSpecies[2040] = false
     BPBID_Arrays.BreedsPerSpecies[2041] = false
-    BPBID_Arrays.BreedsPerSpecies[2042] = false
+    BPBID_Arrays.BreedsPerSpecies[2042] = {8}
     BPBID_Arrays.BreedsPerSpecies[2043] = false
     BPBID_Arrays.BreedsPerSpecies[2044] = false
     BPBID_Arrays.BreedsPerSpecies[2045] = false
