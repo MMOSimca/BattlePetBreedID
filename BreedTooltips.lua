@@ -61,21 +61,22 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
     breedtip:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, tooltipDistance or 2)
     breedtip:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, tooltipDistance or 2)
 
-    -- Workaround for TradeSkillMaster's tooltip - better solution pending
+    -- Workaround for TradeSkillMaster's tooltip
+    -- Note that setting parent breaks floating tooltip, setting both points breaks borders on TSM tooltip
     if (_G.IsAddOnLoaded("TradeSkillMaster")) then
         for i = 1, 10 do
             local t = _G["TSMExtraTip" .. i]
             if t then
                 if (t:GetParent() == BattlePetTooltip) then
                     t:ClearAllPoints()
-                    t:SetParent(BPBID_BreedTooltip)
+                    --t:SetParent(BPBID_BreedTooltip)
                     t:SetPoint("TOPLEFT", BPBID_BreedTooltip, "BOTTOMLEFT", 0, -1)
-                    t:SetPoint("TOPRIGHT", BPBID_BreedTooltip, "BOTTOMRIGHT", 0, 1)
+                    --t:SetPoint("TOPRIGHT", BPBID_BreedTooltip, "BOTTOMRIGHT", 0, 1)
                 elseif (t:GetParent() == FloatingBattlePetTooltip) then
                     t:ClearAllPoints()
-                    t:SetParent(BPBID_BreedTooltip2)
+                    --t:SetParent(BPBID_BreedTooltip2)
                     t:SetPoint("TOPLEFT", BPBID_BreedTooltip2, "BOTTOMLEFT", 0, -1)
-                    t:SetPoint("TOPRIGHT", BPBID_BreedTooltip2, "BOTTOMRIGHT", 0, 1)
+                    --t:SetPoint("TOPRIGHT", BPBID_BreedTooltip2, "BOTTOMRIGHT", 0, 1)
                 end
             end
         end
