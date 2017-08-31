@@ -105,6 +105,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
         nQL = BPBID_Arrays.RealRarityValues[i] * 20 * nLevel
         
         -- Higher level pets can never have duplicate breeds, so calculations can be less accurate and faster (they remain the same since version 0.7)
+        nLevel = tonumber(nLevel)
         if (nLevel > 2) then
         
             -- Calculate diffs
