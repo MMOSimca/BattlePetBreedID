@@ -32,6 +32,9 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
         rarity = 4
     end
 
+    -- Arrays are now initialized if they weren't before
+    if (not BPBID_Arrays.BasePetStats) then BPBID_Arrays.InitializeArrays() end
+
     -- Set local reference to my tooltip or create it if it doesn't exist
     -- It inherits TooltipBorderedFrameTemplate AND GameTooltipTemplate to match Blizzard's "psuedo-tooltips" yet still make it easy to use 
     local breedtip
