@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 7.3.2 Live; @file-date-iso@
+Last Update: Patch 7.3.5 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact MMOSimca / Simca@Malfurion - either through MMO-Champion, through Curse, or in-game
@@ -2189,7 +2189,27 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[2140] = false
     BPBID_Arrays.BasePetStats[2141] = false
     BPBID_Arrays.BasePetStats[2142] = false
-    BPBID_Arrays.BasePetStats[2143] = {8, 8, 8}
+    BPBID_Arrays.BasePetStats[2143] = false
+    BPBID_Arrays.BasePetStats[2144] = false
+    BPBID_Arrays.BasePetStats[2145] = false
+    BPBID_Arrays.BasePetStats[2146] = false
+    BPBID_Arrays.BasePetStats[2147] = false
+    BPBID_Arrays.BasePetStats[2148] = false
+    BPBID_Arrays.BasePetStats[2149] = false
+    BPBID_Arrays.BasePetStats[2150] = false
+    BPBID_Arrays.BasePetStats[2151] = false
+    BPBID_Arrays.BasePetStats[2152] = false
+    BPBID_Arrays.BasePetStats[2153] = false
+    BPBID_Arrays.BasePetStats[2154] = false
+    BPBID_Arrays.BasePetStats[2155] = false
+    BPBID_Arrays.BasePetStats[2156] = false
+    BPBID_Arrays.BasePetStats[2157] = false
+    BPBID_Arrays.BasePetStats[2158] = {7.625, 8.375, 8}
+    BPBID_Arrays.BasePetStats[2159] = false
+    BPBID_Arrays.BasePetStats[2160] = false
+    BPBID_Arrays.BasePetStats[2161] = false
+    BPBID_Arrays.BasePetStats[2162] = false
+    BPBID_Arrays.BasePetStats[2163] = {7.75, 8, 8.25}
 
 
     -- AVAILABLE BREEDS
@@ -4336,4 +4356,24 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2141] = false
     BPBID_Arrays.BreedsPerSpecies[2142] = false
     BPBID_Arrays.BreedsPerSpecies[2143] = false
+    BPBID_Arrays.BreedsPerSpecies[2144] = false
+    BPBID_Arrays.BreedsPerSpecies[2145] = false
+    BPBID_Arrays.BreedsPerSpecies[2146] = false
+    BPBID_Arrays.BreedsPerSpecies[2147] = false
+    BPBID_Arrays.BreedsPerSpecies[2148] = false
+    BPBID_Arrays.BreedsPerSpecies[2149] = false
+    BPBID_Arrays.BreedsPerSpecies[2150] = false
+    BPBID_Arrays.BreedsPerSpecies[2151] = false
+    BPBID_Arrays.BreedsPerSpecies[2152] = false
+    BPBID_Arrays.BreedsPerSpecies[2153] = false
+    BPBID_Arrays.BreedsPerSpecies[2154] = false
+    BPBID_Arrays.BreedsPerSpecies[2155] = false
+    BPBID_Arrays.BreedsPerSpecies[2156] = false
+    BPBID_Arrays.BreedsPerSpecies[2157] = false
+    BPBID_Arrays.BreedsPerSpecies[2158] = {11}
+    BPBID_Arrays.BreedsPerSpecies[2159] = false
+    BPBID_Arrays.BreedsPerSpecies[2160] = false
+    BPBID_Arrays.BreedsPerSpecies[2161] = false
+    BPBID_Arrays.BreedsPerSpecies[2162] = false
+    BPBID_Arrays.BreedsPerSpecies[2163] = {7}
 end
