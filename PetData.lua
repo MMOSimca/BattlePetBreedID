@@ -2189,7 +2189,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[2140] = false
     BPBID_Arrays.BasePetStats[2141] = false
     BPBID_Arrays.BasePetStats[2142] = false
-    BPBID_Arrays.BasePetStats[2143] = false
+    BPBID_Arrays.BasePetStats[2143] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[2144] = false
     BPBID_Arrays.BasePetStats[2145] = false
     BPBID_Arrays.BasePetStats[2146] = false
@@ -4355,7 +4355,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2140] = false
     BPBID_Arrays.BreedsPerSpecies[2141] = false
     BPBID_Arrays.BreedsPerSpecies[2142] = false
-    BPBID_Arrays.BreedsPerSpecies[2143] = false
+    BPBID_Arrays.BreedsPerSpecies[2143] = {9}
     BPBID_Arrays.BreedsPerSpecies[2144] = false
     BPBID_Arrays.BreedsPerSpecies[2145] = false
     BPBID_Arrays.BreedsPerSpecies[2146] = false
