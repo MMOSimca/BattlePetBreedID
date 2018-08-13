@@ -528,10 +528,10 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
         end
         
         -- If this addon loads after ArkInventory
-        if (ArkInventory) and (ArkInventory.TooltipSetBattlepet) then
+        if (ArkInventory) and (ArkInventory.TooltipBuildBattlepet) then
             
             -- Hook ArkInventory's Battle Pet tooltips
-            hooksecurefunc(ArkInventory, "TooltipSetBattlepet", internal.Hook_ArkInventory)
+            hooksecurefunc(ArkInventory, "TooltipBuildBattlepet", internal.Hook_ArkInventory)
         end
     elseif (event == "ADDON_LOADED") and (name == "Blizzard_Collections") then
         -- If the Pet Journal loads on demand correctly (when the player opens it)
@@ -546,10 +546,10 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
         end
     elseif (event == "ADDON_LOADED") and (name == "ArkInventory") then    
         -- If this addon loads before ArkInventory
-        if (ArkInventory) and (ArkInventory.TooltipSetBattlepet) then
+        if (ArkInventory) and (ArkInventory.TooltipBuildBattlepet) then
             
             -- Hook ArkInventory's Battle Pet tooltips
-            hooksecurefunc(ArkInventory, "TooltipSetBattlepet", internal.Hook_ArkInventory)
+            hooksecurefunc(ArkInventory, "TooltipBuildBattlepet", internal.Hook_ArkInventory)
         end
     elseif (event == "PLAYER_LOGIN") then
         -- Hook PJ PetCard here
