@@ -5233,4 +5233,3 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[2590] = false
     BPBID_Arrays.BreedsPerSpecies[2591] = false
 end
-end
