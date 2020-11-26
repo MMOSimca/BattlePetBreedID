@@ -11,6 +11,7 @@ local addonname, internal = ...
 
 -- The only localized functions needed here
 local PB_GetName = _G.C_PetBattles.GetName
+local PB_GetNumPets = _G.C_PetBattles.GetNumPets
 local PJ_GetPetInfoByPetID = C_PetJournal.GetPetInfoByPetID
 local PJ_GetPetInfoBySpeciesID = C_PetJournal.GetPetInfoBySpeciesID
 local PJ_GetPetStats = C_PetJournal.GetPetStats
@@ -276,7 +277,7 @@ end
 
 -- Display breed, quality if necessary, and breed tooltips on pet frames/tooltips in Pet Battles
 local function BPBID_Hook_BattleUpdate(self)
-    if not self.petOwner or not self.petIndex or not self.Name then return end
+    if not self.petOwner or not self.petIndex or not self.Name or self.petIndex > PB_GetNumPets(petOwner) then return end
 
     -- Cache all pets if it is the start of a battle
     if (internal.cacheTime == true) then internal.CacheAllPets() internal.cacheTime = false end
