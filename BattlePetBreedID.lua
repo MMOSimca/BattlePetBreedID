@@ -374,7 +374,7 @@ function internal.CacheAllPets()
                     if flying then flyingnum = 1.5 end
                     print(string.format("NEW Species found; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f", iOwner, iIndex, wild and "true" or "false", nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1))))))
                     if (breed ~= "NEW") then SELECTED_CHAT_FRAME:AddMessage("NEW Breed found: " .. breed) end
-                elseif (breed ~= "???") and (sub(tostring(breedID), 1, 3) ~= "ERR") then
+                elseif (breed ~= "???") and (sub(tostring(breed), 1, 3) ~= "ERR") then
                     local exists = false
                     if BPBID_Arrays.BreedsPerSpecies[nSpeciesID] then
                         for i = 1, #BPBID_Arrays.BreedsPerSpecies[nSpeciesID] do
@@ -514,6 +514,11 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
         -- Disable option unless user has manually changed it
         if (not BPBID_Options.ManualChange) or (BPBID_Options.ManualChange ~= GetAddOnMetadata(addonname, "Version")) then
             BPBID_Options.BattleFontFix = false
+        end
+        
+        -- Load Dev Tools for later if we're in debug mode
+        if (BPBID_Options.Debug) then
+            LoadAddOn("Blizzard_DebugTools")
         end
         
         -- If this addon loads after the Pet Journal
