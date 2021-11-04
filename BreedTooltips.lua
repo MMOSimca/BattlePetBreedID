@@ -40,12 +40,12 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
     local breedtip
     local breedtiptext
     if (parent == FloatingBattlePetTooltip) then
-        breedtip = _G["BPBID_BreedTooltip2"] or CreateFrame("GameTooltip", "BPBID_BreedTooltip2", nil, "TooltipBorderedFrameTemplate,GameTooltipTemplate")
         breedtiptext = "BPBID_BreedTooltip2"
     else
-        breedtip = _G["BPBID_BreedTooltip"] or CreateFrame("GameTooltip", "BPBID_BreedTooltip", nil, "TooltipBorderedFrameTemplate,GameTooltipTemplate")
         breedtiptext = "BPBID_BreedTooltip"
     end
+
+    breedtip = _G[breedtiptext] or CreateFrame("GameTooltip", breedtiptext, nil, "GameTooltipTemplate")
 
     -- Check for existence of LibExtraTip
     local extratip = false
@@ -83,9 +83,6 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             end
         end
     end
-
-    -- Remove backdrop created as part of GameTooltipTemplate
-    breedtip:SetBackdrop(nil)
 
     -- Set line for "Current pet's breed"
     if (BPBID_Options.Breedtip.Current) and (tblBreedID) then
