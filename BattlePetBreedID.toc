@@ -1,4 +1,4 @@
-## Interface: 90100
+## Interface: 90105
 ## Title: Battle Pet BreedID
 ## Author: Simca@Malfurion and Hugh@Burning Blade
 ## Notes: Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.
