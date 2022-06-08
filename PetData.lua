@@ -6519,7 +6519,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[3222] = {3}
     BPBID_Arrays.BreedsPerSpecies[3223] = {3}
     BPBID_Arrays.BreedsPerSpecies[3224] = {3}
-    BPBID_Arrays.BreedsPerSpecies[3225] = false
+    BPBID_Arrays.BreedsPerSpecies[3225] = {5}
     BPBID_Arrays.BreedsPerSpecies[3226] = {5}
     BPBID_Arrays.BreedsPerSpecies[3227] = {3}
     BPBID_Arrays.BreedsPerSpecies[3228] = false
