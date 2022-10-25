@@ -15,6 +15,7 @@ BPBID_Options.Names.BattleTooltip: In PrimaryBattlePetUnitTooltip's header (in-b
 BPBID_Options.Names.BPT: In BattlePetTooltip's header (items)
 BPBID_Options.Names.FBPT: In FloatingBattlePetTooltip's header (chat links)
 BPBID_Options.Names.HSFUpdate: In the Pet Journal scrolling frame
+    BPBID_Options.Names.HSFUpdateRarity: Color Pet Journal scrolling frame by rarity
 BPBID_Options.Names.PJT: In the Pet Journal tooltips
     BPBID_Options.Names.PJTRarity: Color Pet Journal tooltip headers by rarity
 
@@ -42,11 +43,7 @@ local addonname, internal = ...
 
 -- Create options panel
 local Options = CreateFrame("Frame")
-Options.name = "Battle Pet BreedID"
-
--- Add the options panel to the Blizzard list
-local category = Settings.RegisterCanvasLayoutCategory(Options, Options.name)
-Settings.RegisterAddOnCategory(category)
+local properName = "Battle Pet BreedID"
 
 -- Variable for easy positioning
 local lastcheckbox
@@ -81,17 +78,23 @@ local function CreateCheckbox(text, height, width, anchorPoint, relativeTo, rela
     return checkbox
 end
 
+-- Similar function for buttons
+local function CreateButton(text, height, width, anchorPoint, relativeTo, relativePoint, xoff, yoff)
+    local button = CreateFrame("Button", nil, Options, "UIPanelButtonTemplate")
+    button:SetPoint(anchorPoint, relativeTo, relativePoint, xoff, yoff)
+    button:SetSize(height, width)
+    button:SetText(text)
+    return button
+end
+
 -- Create title, version, author, and description fields
-local title = CreateFont("GameFontNormalLarge", "Battle Pet BreedID")
+local title = CreateFont("GameFontNormalLarge", properName)
 title:SetPoint("TOPLEFT", 16, -16)
 local ver = CreateFont("GameFontNormalSmall", "version "..GetAddOnMetadata(addonname, "Version"))
 ver:SetPoint("BOTTOMLEFT", title, "BOTTOMRIGHT", 4, 0)
 local auth = CreateFont("GameFontNormalSmall", "created by "..GetAddOnMetadata(addonname, "Author"))
 auth:SetPoint("BOTTOMLEFT", ver, "BOTTOMRIGHT", 3, 0)
 local desc = CreateFont("GameFontHighlight", nil, nil, nil, "TOPLEFT", title, "BOTTOMLEFT", 580, 40, 0, -8, "Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in item tooltips.")
-
--- Create temp format variable
-local tempformat = 3
 
 -- Create dropdownmenu
 if not BPBID_OptionsFormatMenu then
@@ -112,8 +115,8 @@ local formats = {
 
 -- Create array for text blurb
 local formatTexts = {
-    "The number system was created by Blizzard developers and is used internally (it was discovered via the Web API). As such, it is fairly arbitrary (why does it start at 3?), but it was all we had at first. However, a lot of people have learned the system by numbers, and a few of the first-created resources and addons use it, such as Warla's popular website, PetSear.ch.",
-    "Same as numbers but for people who like a reminder that we cannot figure out the sex of pets. Male pets are the first number (3 - 12) and female pets are the second number (13 - 22). Remember that not all pets can be both sexes. For example, all (?) Elemental type pets are exclusively male.",
+    "The number system was created by Blizzard developers and is used internally (it was discovered via the Web API). As such, it is fairly arbitrary (why does it start at 3?), but it was all we had at first. However, some people have learned the system by numbers, and a few older resources and addons use it.",
+    "Same as numbers but for people who like a reminder that we cannot figure out the sex of pets in-game. Male pets are the first number (3 - 12) and female pets are the second number (13 - 22). Remember that not all pets can be both sexes. For example, all (?) Elemental type pets are exclusively male.",
     "The letter system was developed as a way to more quickly tell breeds apart from each other. Each letter represents one half of the stat contribution that makes up a breed. A few examples: S/S (#5) is a pure Speed breed. S/B (#11) is half Speed with the other half Balanced between all three stats. H/P (#7) is half Health and half Power.",
 }
 
@@ -121,16 +124,18 @@ local formatTexts = {
 local FormatTextBlurb = CreateFont("GameFontNormal", nil, nil, nil, "TOPLEFT", BPBID_OptionsFormatMenu, "TOPRIGHT" , 350, 100, 16, 24, formatTexts[tempformat])
 FormatTextBlurb:SetTextColor(1, 1, 1, 1)
 
+
+
 -- OnClick function for dropdownmenu
 local function BPBID_OptionsFormatMenu_OnClick(self, arg1, arg2, checked)
     -- Update temp variable
-    tempformat = arg1
+    BPBID_Options.format = arg1
     
     -- Update dropdownmenu text
-    UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[tempformat])
+    UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[BPBID_Options.format])
     
     -- Update text blurb to the new choice
-    FormatTextBlurb:SetText(formatTexts[tempformat])
+    FormatTextBlurb:SetText(formatTexts[BPBID_Options.format])
 end
 
 -- Initialization function for dropdownmenu
@@ -205,121 +210,15 @@ blizzbugTitle:SetTextColor(1, 1, 1, 1)
 
 local OptBugBattleFontFix = CreateCheckbox("Test old Pet Battle rarity coloring", 32, 32, "TOPLEFT", blizzbugTitle, "BOTTOMLEFT", 0, 0)
 
--- To disable rarity checkbox since it is dependent
-local function BPBID_OptNamesHSFUpdate_OnClick(self, button, down)
-    
-    -- If the checkbox is checked
-    if (OptNamesHSFUpdate:GetChecked()) then
-        
-        -- Enable and check rarity checkbox
-        OptNamesHSFUpdateRarity:Enable()
-        OptNamesHSFUpdateRarity:SetChecked(true)
-        
-    elseif (not OptNamesHSFUpdate:GetChecked()) then
-        
-        -- Disable and uncheck rarity checkbox
-        OptNamesHSFUpdateRarity:Disable()
-        OptNamesHSFUpdateRarity:SetChecked(nil)
-    end
-end
+local OptDefaultButton = CreateButton("Defaults", 80, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, -32)
 
--- Variable to store settings until window is closed in case user wants to 
-local tempstorage
-
--- Disable dependent checkboxes if unchecked
-local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
-    
-    -- If the checkbox is checked AND it was unchecked at one point in time (to create tempstorage!)
-    if (OptTooltipsEnabled:GetChecked()) and (tempstorage) then
-        
-        -- Enable all tooltip-related checkboxes
-        OptTooltipsBattleTooltip:Enable()
-        OptTooltipsBPT:Enable()
-        OptTooltipsFBPT:Enable()
-        OptTooltipsPJT:Enable()
-        OptBreedtipCurrent:Enable()
-        OptBreedtipPossible:Enable()
-        OptBreedtipSpeciesBase:Enable()
-        OptBreedtipCurrentStats:Enable()
-        OptBreedtipAllStats:Enable()
-        OptBreedtipCurrentStats25:Enable()
-        OptBreedtipCurrentStats25Rare:Enable()
-        OptBreedtipAllStats25:Enable()
-        OptBreedtipAllStats25Rare:Enable()
-        
-        -- Set them to their old values
-        OptTooltipsBattleTooltip:SetChecked(tempstorage[1])
-        OptTooltipsBPT:SetChecked(tempstorage[2])
-        OptTooltipsFBPT:SetChecked(tempstorage[3])
-        OptTooltipsPJT:SetChecked(tempstorage[4])
-        OptBreedtipCurrent:SetChecked(tempstorage[5])
-        OptBreedtipPossible:SetChecked(tempstorage[6])
-        OptBreedtipSpeciesBase:SetChecked(tempstorage[7])
-        OptBreedtipCurrentStats:SetChecked(tempstorage[8])
-        OptBreedtipAllStats:SetChecked(tempstorage[9])
-        OptBreedtipCurrentStats25:SetChecked(tempstorage[10])
-        OptBreedtipCurrentStats25Rare:SetChecked(tempstorage[11])
-        OptBreedtipAllStats25:SetChecked(tempstorage[12])
-        OptBreedtipAllStats25Rare:SetChecked(tempstorage[13])
-        
-    elseif (not OptTooltipsEnabled:GetChecked()) then
-        
-        -- Update tempstorage with the current values from the checkboxes (before they get wiped)
-        tempstorage = {
-            OptTooltipsBattleTooltip:GetChecked(),
-            OptTooltipsBPT:GetChecked(),
-            OptTooltipsFBPT:GetChecked(),
-            OptTooltipsPJT:GetChecked(),
-            OptBreedtipCurrent:GetChecked(),
-            OptBreedtipPossible:GetChecked(),
-            OptBreedtipSpeciesBase:GetChecked(),
-            OptBreedtipCurrentStats:GetChecked(),
-            OptBreedtipAllStats:GetChecked(),
-            OptBreedtipCurrentStats25:GetChecked(),
-            OptBreedtipCurrentStats25Rare:GetChecked(),
-            OptBreedtipAllStats25:GetChecked(),
-            OptBreedtipAllStats25Rare:GetChecked(),
-        }
-        
-        -- Disable any tooltip-related checkboxes
-        OptTooltipsBattleTooltip:Disable()
-        OptTooltipsBPT:Disable()
-        OptTooltipsFBPT:Disable()
-        OptTooltipsPJT:Disable()
-        OptBreedtipCurrent:Disable()
-        OptBreedtipPossible:Disable()
-        OptBreedtipSpeciesBase:Disable()
-        OptBreedtipCurrentStats:Disable()
-        OptBreedtipAllStats:Disable()
-        OptBreedtipCurrentStats25:Disable()
-        OptBreedtipCurrentStats25Rare:Disable()
-        OptBreedtipAllStats25:Disable()
-        OptBreedtipAllStats25Rare:Disable()
-        
-        -- Uncheck all tooltip-related checkboxes
-        OptTooltipsBattleTooltip:SetChecked(nil)
-        OptTooltipsBPT:SetChecked(nil)
-        OptTooltipsFBPT:SetChecked(nil)
-        OptTooltipsPJT:SetChecked(nil)
-        OptBreedtipCurrent:SetChecked(nil)
-        OptBreedtipPossible:SetChecked(nil)
-        OptBreedtipSpeciesBase:SetChecked(nil)
-        OptBreedtipCurrentStats:SetChecked(nil)
-        OptBreedtipAllStats:SetChecked(nil)
-        OptBreedtipCurrentStats25:SetChecked(nil)
-        OptBreedtipCurrentStats25Rare:SetChecked(nil)
-        OptBreedtipAllStats25:SetChecked(nil)
-        OptBreedtipAllStats25Rare:SetChecked(nil)
-    end
-end
-
+-- Refresh all settings from storage
 local function BPBID_Options_Refresh()
     -- Reset the dropdownmenu to the old value
-    tempformat = BPBID_Options.format
-    UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[tempformat])
+    UIDropDownMenu_SetText(BPBID_OptionsFormatMenu, formats[BPBID_Options.format])
     
     -- Reset the text blurb to the old value
-    FormatTextBlurb:SetText(formatTexts[tempformat])
+    FormatTextBlurb:SetText(formatTexts[BPBID_Options.format])
     
     -- Reset all the checkboxes to the old value
     OptNamesPrimaryBattle:SetChecked(BPBID_Options.Names.PrimaryBattle)
@@ -345,18 +244,228 @@ local function BPBID_Options_Refresh()
     OptBreedtipAllStats25:SetChecked(BPBID_Options.Breedtip.AllStats25)
     OptBreedtipAllStats25Rare:SetChecked(BPBID_Options.Breedtip.AllStats25Rare)
     OptBugBattleFontFix:SetChecked(BPBID_Options.BattleFontFix)
-    
-    -- Call this to fix the checkboxes to their correct enabled state
-    BPBID_OptTooltipsEnabled_OnClick()
+
+    -- Enable/disable dependent checkboxes
+    if (OptNamesHSFUpdate:GetChecked()) then
+        OptNamesHSFUpdateRarity:Enable()
+    elseif (not OptNamesHSFUpdate:GetChecked()) then
+        OptNamesHSFUpdateRarity:Disable()
+    end
+    if (OptNamesPJT:GetChecked()) then
+        OptNamesPJTRarity:Enable()
+    elseif (not OptNamesPJT:GetChecked()) then
+        OptNamesPJTRarity:Disable()
+    end
+    if (OptTooltipsEnabled:GetChecked()) then
+        OptTooltipsBattleTooltip:Enable()
+        OptTooltipsBPT:Enable()
+        OptTooltipsFBPT:Enable()
+        OptTooltipsPJT:Enable()
+        OptBreedtipCurrent:Enable()
+        OptBreedtipPossible:Enable()
+        OptBreedtipSpeciesBase:Enable()
+        OptBreedtipCurrentStats:Enable()
+        OptBreedtipAllStats:Enable()
+        OptBreedtipCurrentStats25:Enable()
+        OptBreedtipCurrentStats25Rare:Enable()
+        OptBreedtipAllStats25:Enable()
+        OptBreedtipAllStats25Rare:Enable()
+    elseif (not OptTooltipsEnabled:GetChecked()) then
+        OptTooltipsBattleTooltip:Disable()
+        OptTooltipsBPT:Disable()
+        OptTooltipsFBPT:Disable()
+        OptTooltipsPJT:Disable()
+        OptBreedtipCurrent:Disable()
+        OptBreedtipPossible:Disable()
+        OptBreedtipSpeciesBase:Disable()
+        OptBreedtipCurrentStats:Disable()
+        OptBreedtipAllStats:Disable()
+        OptBreedtipCurrentStats25:Disable()
+        OptBreedtipCurrentStats25Rare:Disable()
+        OptBreedtipAllStats25:Disable()
+        OptBreedtipAllStats25Rare:Disable()
+    end
+
+    if (OptBreedtipCurrentStats25:GetChecked()) then
+        OptBreedtipCurrentStats25Rare:Enable()
+    elseif (not OptBreedtipCurrentStats25:GetChecked()) then
+        OptBreedtipCurrentStats25Rare:Disable()
+    end
+
+    if (OptBreedtipAllStats25:GetChecked()) then
+        OptBreedtipAllStats25Rare:Enable()
+    elseif (not OptBreedtipAllStats25:GetChecked()) then
+        OptBreedtipAllStats25Rare:Disable()
+    end
 end
 
-function Options.refresh()
+-- Enable/disable dependent checkboxes
+local function BPBID_OptNamesHSFUpdate_OnClick(self, button, down)
+    
+    -- Change value of dependent checkbox accordingly (default sub-checkbox to true)
+    if (OptNamesHSFUpdate:GetChecked()) then
+        BPBID_Options.Names.HSFUpdate = true
+        BPBID_Options.Names.HSFUpdateRarity = true
+    elseif (not OptNamesHSFUpdate:GetChecked()) then
+        BPBID_Options.Names.HSFUpdate = false
+        BPBID_Options.Names.HSFUpdateRarity = false
+    end
+    
+    -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
+    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    
+    -- Refresh the options page to display the new values
+    BPBID_Options_Refresh()
+end
+local function BPBID_OptNamesPJT_OnClick(self, button, down)
+    
+    -- Change value of dependent checkbox accordingly (default sub-checkbox to false)
+    if (OptNamesPJT:GetChecked()) then
+        BPBID_Options.Names.PJT = true
+        BPBID_Options.Names.PJTRarity = false
+    elseif (not OptNamesPJT:GetChecked()) then
+        BPBID_Options.Names.PJT = false
+        BPBID_Options.Names.PJTRarity = false
+    end
+    
+    -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
+    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    
+    -- Refresh the options page to display the new values
+    BPBID_Options_Refresh()
+end
+local function BPBID_OptBreedtipCurrentStats25_OnClick(self, button, down)
+    
+    -- Change value of dependent checkbox accordingly (default sub-checkbox to true)
+    if (OptBreedtipCurrentStats25:GetChecked()) then
+        BPBID_Options.Breedtip.CurrentStats25 = true
+        BPBID_Options.Breedtip.CurrentStats25Rare = true
+    elseif (not OptBreedtipCurrentStats25:GetChecked()) then
+        BPBID_Options.Breedtip.CurrentStats25 = false
+        BPBID_Options.Breedtip.CurrentStats25Rare = false
+    end
+    
+    -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
+    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    
+    -- Refresh the options page to display the new values
+    BPBID_Options_Refresh()
+end
+local function BPBID_OptBreedtipAllStats25_OnClick(self, button, down)
+    
+    -- Change value of dependent checkbox accordingly (default sub-checkbox to true)
+    if (OptBreedtipAllStats25:GetChecked()) then
+        BPBID_Options.Breedtip.AllStats25 = true
+        BPBID_Options.Breedtip.AllStats25Rare = true
+    elseif (not OptBreedtipAllStats25:GetChecked()) then
+        BPBID_Options.Breedtip.AllStats25 = false
+        BPBID_Options.Breedtip.AllStats25Rare = false
+    end
+    
+    -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
+    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    
+    -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
 end
 
-function Options.default()
+-- Disable dependent checkboxes if unchecked
+local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
     
-    tempstorage = nil
+    -- If the checkbox is checked
+    if (OptTooltipsEnabled:GetChecked()) then
+        
+        -- Enable all tooltip-related checkboxes
+        OptTooltipsBattleTooltip:Enable()
+        OptTooltipsBPT:Enable()
+        OptTooltipsFBPT:Enable()
+        OptTooltipsPJT:Enable()
+        OptBreedtipCurrent:Enable()
+        OptBreedtipPossible:Enable()
+        OptBreedtipSpeciesBase:Enable()
+        OptBreedtipCurrentStats:Enable()
+        OptBreedtipAllStats:Enable()
+        OptBreedtipCurrentStats25:Enable()
+        OptBreedtipCurrentStats25Rare:Enable()
+        OptBreedtipAllStats25:Enable()
+        OptBreedtipAllStats25Rare:Enable()
+        
+        -- Restore defaults for previously disabled checkboxes
+        BPBID_Options.Tooltips.Enabled = true -- Enable Battle Pet BreedID Tooltips
+        BPBID_Options.Tooltips.BattleTooltip = true -- In Battle (PrimaryBattlePetUnitTooltip)
+        BPBID_Options.Tooltips.BPT = true -- On Items (BattlePetTooltip)
+        BPBID_Options.Tooltips.FBPT = true -- On Chat Links (FloatingBattlePetTooltip)
+        BPBID_Options.Tooltips.PJT = true -- In the Pet Journal (GameTooltip)
+        BPBID_Options.Breedtip.Current = true -- Current pet's breed
+        BPBID_Options.Breedtip.Possible = true -- Current pet's possible breeds
+        BPBID_Options.Breedtip.SpeciesBase = false -- Pet species' base stats
+        BPBID_Options.Breedtip.CurrentStats = false -- Current breed's base stats (level 1 Poor)
+        BPBID_Options.Breedtip.AllStats = false -- All breed's base stats (level 1 Poor)
+        BPBID_Options.Breedtip.CurrentStats25 = true -- Current breed's stats at level 25
+        BPBID_Options.Breedtip.CurrentStats25Rare = true -- Always assume pet will be Rare at level 25
+        BPBID_Options.Breedtip.AllStats25 = true -- All breeds' stats at level 25
+        BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
+        
+    elseif (not OptTooltipsEnabled:GetChecked()) then
+        
+        -- Disable any tooltip-related checkboxes
+        OptTooltipsBattleTooltip:Disable()
+        OptTooltipsBPT:Disable()
+        OptTooltipsFBPT:Disable()
+        OptTooltipsPJT:Disable()
+        OptBreedtipCurrent:Disable()
+        OptBreedtipPossible:Disable()
+        OptBreedtipSpeciesBase:Disable()
+        OptBreedtipCurrentStats:Disable()
+        OptBreedtipAllStats:Disable()
+        OptBreedtipCurrentStats25:Disable()
+        OptBreedtipCurrentStats25Rare:Disable()
+        OptBreedtipAllStats25:Disable()
+        OptBreedtipAllStats25Rare:Disable()
+        
+        -- Uncheck all tooltip-related checkboxes
+        BPBID_Options.Tooltips.Enabled = false -- Enable Battle Pet BreedID Tooltips
+        BPBID_Options.Tooltips.BattleTooltip = false -- In Battle (PrimaryBattlePetUnitTooltip)
+        BPBID_Options.Tooltips.BPT = false -- On Items (BattlePetTooltip)
+        BPBID_Options.Tooltips.FBPT = false -- On Chat Links (FloatingBattlePetTooltip)
+        BPBID_Options.Tooltips.PJT = false -- In the Pet Journal (GameTooltip)
+        BPBID_Options.Breedtip.Current = false -- Current pet's breed
+        BPBID_Options.Breedtip.Possible = false -- Current pet's possible breeds
+        BPBID_Options.Breedtip.SpeciesBase = false -- Pet species' base stats
+        BPBID_Options.Breedtip.CurrentStats = false -- Current breed's base stats (level 1 Poor)
+        BPBID_Options.Breedtip.AllStats = false -- All breed's base stats (level 1 Poor)
+        BPBID_Options.Breedtip.CurrentStats25 = false -- Current breed's stats at level 25
+        BPBID_Options.Breedtip.CurrentStats25Rare = false -- Always assume pet will be Rare at level 25
+        BPBID_Options.Breedtip.AllStats25 = false -- All breeds' stats at level 25
+        BPBID_Options.Breedtip.AllStats25Rare = false -- Always assume pet will be Rare at level 25
+    end
+    
+    -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
+    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    
+    -- Refresh the options page to display the new values
+    BPBID_Options_Refresh()
+end
+
+local function BPBID_Options_EnableAll()
+    OptNamesHSFUpdateRarity:Enable()
+    OptNamesPJTRarity:Enable()
+    OptTooltipsBattleTooltip:Enable()
+    OptTooltipsBPT:Enable()
+    OptTooltipsFBPT:Enable()
+    OptTooltipsPJT:Enable()
+    OptBreedtipCurrent:Enable()
+    OptBreedtipPossible:Enable()
+    OptBreedtipSpeciesBase:Enable()
+    OptBreedtipCurrentStats:Enable()
+    OptBreedtipAllStats:Enable()
+    OptBreedtipCurrentStats25:Enable()
+    OptBreedtipCurrentStats25Rare:Enable()
+    OptBreedtipAllStats25:Enable()
+    OptBreedtipAllStats25Rare:Enable()
+end
+
+local function BPBID_Options_Default()
     
     BPBID_Options = {}
 
@@ -391,20 +500,17 @@ function Options.default()
     BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
     
     BPBID_Options.BattleFontFix = false -- Use alternate rarity coloring method in-battle
+
+    -- Enable all checkboxes that can be enabled (defaults would enable them)
+    BPBID_Options_EnableAll()
     
     -- Refresh the options page to display the new defaults
     BPBID_Options_Refresh()
 end
 
-function Options.okay()
+local function BPBID_GeneralCheckbox_OnClick(self, button, down)
     -- IF THE LAST TOOLTIP CALLED BEFORE THE OPTIONS ARE CHANGED HAS CHANGED FONT,
-    -- BAD STUFF WILL HAPPEN SO CALL ORIGINAL FONT CHANGING FUNCTIONS IN OKAY BOX
-    
-    -- Clear storage for TooltipsEnabled remembering
-    tempstorage = nil
-    
-    -- Store format setting
-    BPBID_Options.format = tempformat
+    -- BAD STUFF WILL HAPPEN SO CALL ORIGINAL FONT CHANGING FUNCTIONS HERE
     
     -- Retrieve the rest of the settings from the checkboxes
     BPBID_Options.Names.PrimaryBattle = OptNamesPrimaryBattle:GetChecked()
@@ -462,19 +568,49 @@ function Options.okay()
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
     BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
     
-    -- Refresh the options page to display the new values
+    -- Refresh the options page to display the new defaults
     BPBID_Options_Refresh()
 end
 
-function Options.cancel()
-    
-    -- Clear storage for TooltipsEnabled remembering
-    tempstorage = nil
-    
-    -- Refresh the options page to display the old settings
-    BPBID_Options_Refresh()
-end
+-- Refresh on show
+Options:SetScript("OnShow", BPBID_Options_Refresh)
 
--- Set script for needed checkbox
+-- Enable/disable dependent checkboxes
 OptNamesHSFUpdate:SetScript("OnClick", BPBID_OptNamesHSFUpdate_OnClick)
+OptNamesPJT:SetScript("OnClick", BPBID_OptNamesPJT_OnClick)
 OptTooltipsEnabled:SetScript("OnClick", BPBID_OptTooltipsEnabled_OnClick)
+OptBreedtipCurrentStats25:SetScript("OnClick", BPBID_OptBreedtipCurrentStats25_OnClick)
+OptBreedtipAllStats25:SetScript("OnClick", BPBID_OptBreedtipAllStats25_OnClick)
+
+-- Toggle settings
+OptNamesPrimaryBattle:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptNamesBattleTooltip:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptNamesBPT:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptNamesFBPT:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptNamesHSFUpdateRarity:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptNamesPJTRarity:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptTooltipsBattleTooltip:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptTooltipsBPT:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptTooltipsFBPT:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptTooltipsPJT:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipCurrent:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipPossible:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipSpeciesBase:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipCurrentStats:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipAllStats:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipCurrentStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipAllStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBugBattleFontFix:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+
+-- Reset to Defaults button
+OptDefaultButton:SetScript("OnClick", BPBID_Options_Default)
+
+-- Set up required functions on frame
+Options.OnCommit = BPBID_GeneralCheckbox_OnClick
+Options.OnDefault = BPBID_Options_Default
+Options.OnRefresh = BPBID_Options_Refresh
+
+-- Add the options panel to the Blizzard list
+local category = Settings.RegisterCanvasLayoutCategory(Options, properName, properName)
+category.ID = addonname
+Settings.RegisterAddOnCategory(category)

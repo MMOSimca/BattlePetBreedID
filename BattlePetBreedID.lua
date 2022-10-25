@@ -611,14 +611,5 @@ SLASH_BATTLEPETBREEDID1 = "/battlepetbreedID"
 SLASH_BATTLEPETBREEDID2 = "/BPBID"
 SLASH_BATTLEPETBREEDID3 = "/breedID"
 SlashCmdList["BATTLEPETBREEDID"] = function(msg)
-    InterfaceOptionsFrame:Show()
-    InterfaceOptionsFrameTab2:Click()
-    
-    local i = 1
-    local currAddon = "InterfaceOptionsFrameAddOnsButton" .. i
-    while _G[currAddon] do
-        if (_G[currAddon]:GetText() == "Battle Pet BreedID") then _G[currAddon]:Click() break end
-        i = i + 1
-        currAddon = "InterfaceOptionsFrameAddOnsButton" .. i
-    end
+    Settings.OpenToCategory(addonname)
 end
