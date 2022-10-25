@@ -41,9 +41,12 @@ BPBID_Options.Breedtip.AllStats25: All breeds' stats at level 25
 local addonname, internal = ...
 
 -- Create options panel
-local Options = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
-Options:Hide()
+local Options = CreateFrame("Frame")
 Options.name = "Battle Pet BreedID"
+
+-- Add the options panel to the Blizzard list
+local category = Settings.RegisterCanvasLayoutCategory(Options, Options.name)
+Settings.RegisterAddOnCategory(category)
 
 -- Variable for easy positioning
 local lastcheckbox
@@ -78,9 +81,6 @@ local function CreateCheckbox(text, height, width, anchorPoint, relativeTo, rela
     return checkbox
 end
 
-local panelWidth = InterfaceOptionsFramePanelContainer:GetWidth() -- ~623
-local wideWidth = panelWidth - 40
-
 -- Create title, version, author, and description fields
 local title = CreateFont("GameFontNormalLarge", "Battle Pet BreedID")
 title:SetPoint("TOPLEFT", 16, -16)
@@ -88,7 +88,7 @@ local ver = CreateFont("GameFontNormalSmall", "version "..GetAddOnMetadata(addon
 ver:SetPoint("BOTTOMLEFT", title, "BOTTOMRIGHT", 4, 0)
 local auth = CreateFont("GameFontNormalSmall", "created by "..GetAddOnMetadata(addonname, "Author"))
 auth:SetPoint("BOTTOMLEFT", ver, "BOTTOMRIGHT", 3, 0)
-local desc = CreateFont("GameFontHighlight", nil, nil, nil, "TOPLEFT", title, "BOTTOMLEFT", wideWidth, 40, 0, -8, "Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in item tooltips.")
+local desc = CreateFont("GameFontHighlight", nil, nil, nil, "TOPLEFT", title, "BOTTOMLEFT", 580, 40, 0, -8, "Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in item tooltips.")
 
 -- Create temp format variable
 local tempformat = 3
@@ -478,6 +478,3 @@ end
 -- Set script for needed checkbox
 OptNamesHSFUpdate:SetScript("OnClick", BPBID_OptNamesHSFUpdate_OnClick)
 OptTooltipsEnabled:SetScript("OnClick", BPBID_OptTooltipsEnabled_OnClick)
-
--- Add the options panel to the Blizzard list
-InterfaceOptions_AddCategory(Options)
