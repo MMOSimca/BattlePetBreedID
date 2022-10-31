@@ -1,5 +1,7 @@
 --[[
-Written by: Hugh@Burning Blade-US and Simca@Malfurion-US
+Written by: Simca@Malfurion-US
+
+Thanks to Hugh@Burning-Blade, a co-author for the first few versions of the AddOn.
 
 Special thanks to Ro for letting me bounce solutions off him regarding tooltip conflicts.
 ]]--
