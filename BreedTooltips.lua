@@ -73,7 +73,10 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
         for i = 1, 10 do
             local t = _G["TSMExtraTip" .. i]
             if t then
-                local _, relativeFrame = t:GetPoint("TOP")
+				-- It probably never matters which point we check to learn the relative frame
+				-- This is because TSM tooltips should only be relative to one frame each
+				-- If this changes in the future or this assumption is wrong, we'll have to iterate points here
+                local _, relativeFrame = t:GetPoint()
                 if (relativeFrame == BattlePetTooltip) then
                     t:ClearAllPoints()
                     t:SetParent(BPBID_BreedTooltip)
