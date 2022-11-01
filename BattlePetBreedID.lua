@@ -402,8 +402,10 @@ end
 
 -- Display breed on PetJournal's ScrollFrame
 local function BPBID_Hook_HSFUpdate(scrollFrame)
+	-- Does not work correctly for Default UI right now. Only works if using Rematch or PJE.
+	-- TODO: Fix.
     -- Safety check AND make sure the user wants us here
-    if (not ((scrollFrame == PetJournalListScrollFrame) or (scrollFrame == PetJournalEnhancedListScrollFrame))) or (not PetJournal:IsShown()) or (not BPBID_Options.Names.HSFUpdate) then return end
+    if (not ((scrollFrame == PetJournalEnhancedListScrollFrame))) or (not PetJournal:IsShown()) or (not BPBID_Options.Names.HSFUpdate) then return end
     
     -- Loop for all shown buttons
     for i = 1, #scrollFrame.buttons do
@@ -427,7 +429,7 @@ local function BPBID_Hook_HSFUpdate(scrollFrame)
                 
                 -- If user doesn't want rarity coloring then use default
                 if (not BPBID_Options.Names.HSFUpdateRarity) then hex = "|cffffd100" end
-                    
+                
                 -- Display breed as part of the nickname if the pet has one, otherwise use the real name
                 if (customName) then
                     thisPet.name:SetText(hex..customName.." ("..GetBreedID_Journal(petID)..")".."|r")
