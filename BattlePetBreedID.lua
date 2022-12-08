@@ -87,10 +87,15 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     local ispeed = BPBID_Arrays.BasePetStats[nSpeciesID][3] * 10
     
     -- Account for wild pet HP / Power reductions
+	nLevel = tonumber(nLevel)
     local wildHPFactor, wildPowerFactor = 1, 1
     if wild then
         wildHPFactor = 1.2
-        wildPowerFactor = 1.25
+		if nLevel < 6 then
+			wildPowerFactor = 1.4
+		else
+			wildPowerFactor = 1.25
+		end if
     end
     
     -- Upconvert to avoid floating point errors
@@ -107,7 +112,6 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
         nQL = BPBID_Arrays.RealRarityValues[i] * 20 * nLevel
         
         -- Higher level pets can never have duplicate breeds, so calculations can be less accurate and faster (they remain the same since version 0.7)
-        nLevel = tonumber(nLevel)
         if (nLevel > 2) then
         
             -- Calculate diffs
