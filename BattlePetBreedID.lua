@@ -87,15 +87,15 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     local ispeed = BPBID_Arrays.BasePetStats[nSpeciesID][3] * 10
     
     -- Account for wild pet HP / Power reductions
-	nLevel = tonumber(nLevel)
+    nLevel = tonumber(nLevel)
     local wildHPFactor, wildPowerFactor = 1, 1
     if wild then
         wildHPFactor = 1.2
-		if nLevel < 6 then
-			wildPowerFactor = 1.4
-		else
-			wildPowerFactor = 1.25
-		end if
+        if nLevel < 6 then
+            wildPowerFactor = 1.4
+        else
+            wildPowerFactor = 1.25
+        end
     end
     
     -- Upconvert to avoid floating point errors
