@@ -576,4 +576,4 @@ hooksecurefunc("BattlePetToolTip_Show", BPBID_Hook_BPTShow)
 hooksecurefunc("FloatingBattlePet_Show", BPBID_Hook_FBPTShow)
 -- Internal.Hook_PJTEnter is called by the ADDON_LOADED event for Blizzard_Collections in BattlePetBreedID's Core
 -- Internal.Hook_PJTLeave is called by the ADDON_LOADED event for Blizzard_Collections in BattlePetBreedID's Core
--- HSFUpdate is handled in BattlePetBreedID's Core entirely because it is unrelated to tooltips
+-- Pet Journal's list button initialization hook is handled in BattlePetBreedID's Core entirely because it is unrelated to tooltips

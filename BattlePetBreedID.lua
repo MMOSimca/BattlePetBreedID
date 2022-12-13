@@ -404,53 +404,41 @@ function internal.CacheAllPets()
     end
 end
 
--- Display breed on PetJournal's ScrollFrame
-local function BPBID_Hook_HSFUpdate(scrollFrame)
-	-- Does not work correctly for Default UI right now. Only works if using Rematch or PJE.
-	-- TODO: Fix.
-    -- Safety check AND make sure the user wants us here
-    if (not ((scrollFrame == PetJournalEnhancedListScrollFrame))) or (not PetJournal:IsShown()) or (not BPBID_Options.Names.HSFUpdate) then return end
+-- Display breed on PetJournal's ScrollBox frames
+local function BPBID_Hook_PetJournal_InitPetButton(petScrollListFrame, elementData)
+    -- Shouldn't apply if using Rematch or PJE    
+    -- Make sure the option is enabled
+    if not BPBID_Options.Names.HSFUpdate then return end
+
+    -- Ensure petID and name are not bogus
+    local petID, _, _, customName, _, _, _, name = CPJ.GetPetInfoByIndex(elementData.index)
     
-    -- Loop for all shown buttons
-    for i = 1, #scrollFrame.buttons do
+    if (name) then
         
-        -- Set specifics for this button
-        local thisPet = scrollFrame.buttons[i]
-        local petID = thisPet.petID
+        -- Get pet hex color
+        local _, _, _, _, rarity = CPJ.GetPetStats(petID)
+        local hex = ITEM_QUALITY_COLORS[rarity - 1].hex
         
-        -- Assure petID is not bogus
-        if (petID ~= nil) then
-            
-            -- Get pet name to assure petID is not bogus
-            local _, customName, _, _, _, _, _, name = CPJ.GetPetInfoByPetID(petID)
-            if (name) then
-                
-                -- Get pet hex color
-                local _, _, _, _, rarity = CPJ.GetPetStats(petID)
-                local hex = ITEM_QUALITY_COLORS[rarity - 1].hex
-                
-                -- FONT DOWNSIZING ROUTINE HERE COULD USE SOME WORK
-                
-                -- If user doesn't want rarity coloring then use default
-                if (not BPBID_Options.Names.HSFUpdateRarity) then hex = "|cffffd100" end
-                
-                -- Display breed as part of the nickname if the pet has one, otherwise use the real name
-                if (customName) then
-                    thisPet.name:SetText(hex..customName.." ("..GetBreedID_Journal(petID)..")".."|r")
-                    thisPet.subName:Show()
-                    thisPet.subName:SetText(name)
-                else
-                    thisPet.name:SetText(hex..name.." ("..GetBreedID_Journal(petID)..")".."|r")
-                    thisPet.subName:Hide()
-                end
-                
-                -- Downside font if the name/breed gets chopped off
-                if (thisPet.name:IsTruncated()) then
-                    thisPet.name:SetFontObject("GameFontNormalSmall")
-                else
-                    thisPet.name:SetFontObject("GameFontNormal")
-                end
-            end
+        -- FONT DOWNSIZING ROUTINE HERE COULD USE SOME WORK
+        
+        -- If user doesn't want rarity coloring then use default
+        if (not BPBID_Options.Names.HSFUpdateRarity) then hex = "|cffffd100" end
+        
+        -- Display breed as part of the nickname if the pet has one, otherwise use the real name
+        if (customName) then
+            petScrollListFrame.name:SetText(hex..customName.." ("..GetBreedID_Journal(petID)..")".."|r")
+            petScrollListFrame.subName:Show()
+            petScrollListFrame.subName:SetText(name)
+        else
+            petScrollListFrame.name:SetText(hex..name.." ("..GetBreedID_Journal(petID)..")".."|r")
+            petScrollListFrame.subName:Hide()
+        end
+        
+        -- Downside font if the name/breed gets chopped off
+        if (petScrollListFrame.name:IsTruncated()) then
+            petScrollListFrame.name:SetFontObject("GameFontNormalSmall")
+        else
+            petScrollListFrame.name:SetFontObject("GameFontNormal")
         end
     end
 end
@@ -480,7 +468,7 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
         if (BPBID_Options.format == 4) or (BPBID_Options.format == 5) or (BPBID_Options.format == 6) then BPBID_Options.format = 3 end
         
         -- Set the rest of the defaults
-        if not (BPBID_Options.Names) then
+        if (not BPBID_Options.Names) then
             BPBID_Options.Names = {}
             BPBID_Options.Names.PrimaryBattle = true -- In Battle (on primary pets for both owners)
             BPBID_Options.Names.BattleTooltip = true -- In PrimaryBattlePetUnitTooltip's header (in-battle tooltips)
@@ -535,6 +523,9 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             -- Hook into the OnEnter script for the frame that calls GameTooltip in the Pet Journal
             PetJournalPetCardPetInfo:HookScript("OnEnter", internal.Hook_PJTEnter)
             PetJournalPetCardPetInfo:HookScript("OnLeave", internal.Hook_PJTLeave)
+			
+			-- Hook into the Pet Journal's list button initialization
+			hooksecurefunc("PetJournal_InitPetButton", BPBID_Hook_PetJournal_InitPetButton)
             
             -- Set boolean
             PJHooked = true
@@ -553,6 +544,9 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             -- Hook into the OnEnter script for the frame that calls GameTooltip in the Pet Journal
             PetJournalPetCardPetInfo:HookScript("OnEnter", internal.Hook_PJTEnter)
             PetJournalPetCardPetInfo:HookScript("OnLeave", internal.Hook_PJTLeave)
+			
+			-- Hook into the Pet Journal's list button initialization
+			hooksecurefunc("PetJournal_InitPetButton", BPBID_Hook_PetJournal_InitPetButton)
             
             -- Set boolean
             PJHooked = true
@@ -571,6 +565,9 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             -- Hook into the OnEnter script for the frame that calls GameTooltip in the Pet Journal
             PetJournalPetCardPetInfo:HookScript("OnEnter", internal.Hook_PJTEnter)
             PetJournalPetCardPetInfo:HookScript("OnLeave", internal.Hook_PJTLeave)
+			
+			-- Hook into the Pet Journal's list button initialization
+			hooksecurefunc("PetJournal_InitPetButton", BPBID_Hook_PetJournal_InitPetButton)
             
             -- Set boolean
             PJHooked = true
@@ -610,9 +607,6 @@ end
 
 -- Set our event handler function
 BPBID_Events:SetScript("OnEvent", BPBID_Events_OnEvent)
-
--- Hook non-tooltip functions (almost all other hooks are in BreedTooltips.lua)
-hooksecurefunc("HybridScrollFrame_Update", BPBID_Hook_HSFUpdate)
 
 -- Create slash commands
 SLASH_BATTLEPETBREEDID1 = "/battlepetbreedID"
