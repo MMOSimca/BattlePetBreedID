@@ -408,38 +408,41 @@ end
 local function BPBID_Hook_PetJournal_InitPetButton(petScrollListFrame, elementData)
     -- Shouldn't apply if using Rematch or PJE    
     -- Make sure the option is enabled
-    if not BPBID_Options.Names.HSFUpdate then return end
+    if not BPBID_Options.Names.HSFUpdate or not petScrollListFrame or not elementData or not elementData.index then return end
 
     -- Ensure petID and name are not bogus
     local petID, _, _, customName, _, _, _, name = CPJ.GetPetInfoByIndex(elementData.index)
+    if not petID or not name then return end
+        
+    -- Get pet hex color from rarity
+    local _, _, _, _, rarity = CPJ.GetPetStats(petID)
+    if not rarity then return end
+    local hex = ITEM_QUALITY_COLORS[rarity - 1].hex
+    if not hex then return end
     
-    if (name) then
-        
-        -- Get pet hex color
-        local _, _, _, _, rarity = CPJ.GetPetStats(petID)
-        local hex = ITEM_QUALITY_COLORS[rarity - 1].hex
-        
-        -- FONT DOWNSIZING ROUTINE HERE COULD USE SOME WORK
-        
-        -- If user doesn't want rarity coloring then use default
-        if (not BPBID_Options.Names.HSFUpdateRarity) then hex = "|cffffd100" end
-        
-        -- Display breed as part of the nickname if the pet has one, otherwise use the real name
-        if (customName) then
-            petScrollListFrame.name:SetText(hex..customName.." ("..GetBreedID_Journal(petID)..")".."|r")
-            petScrollListFrame.subName:Show()
-            petScrollListFrame.subName:SetText(name)
-        else
-            petScrollListFrame.name:SetText(hex..name.." ("..GetBreedID_Journal(petID)..")".."|r")
-            petScrollListFrame.subName:Hide()
-        end
-        
-        -- Downside font if the name/breed gets chopped off
-        if (petScrollListFrame.name:IsTruncated()) then
-            petScrollListFrame.name:SetFontObject("GameFontNormalSmall")
-        else
-            petScrollListFrame.name:SetFontObject("GameFontNormal")
-        end
+    -- FONT DOWNSIZING ROUTINE HERE COULD USE SOME WORK
+    
+    -- If user doesn't want rarity coloring then use default
+    if not BPBID_Options.Names.HSFUpdateRarity then hex = "|cffffd100" end
+    
+    local breedID = GetBreedID_Journal(petID)
+    if not breedID then return end
+    
+    -- Display breed as part of the nickname if the pet has one, otherwise use the real name
+    if customName then
+        petScrollListFrame.name:SetText(hex..customName.." ("..GetBreedID_Journal(petID)..")".."|r")
+        petScrollListFrame.subName:Show()
+        petScrollListFrame.subName:SetText(name)
+    else
+        petScrollListFrame.name:SetText(hex..name.." ("..GetBreedID_Journal(petID)..")".."|r")
+        petScrollListFrame.subName:Hide()
+    end
+    
+    -- Downside font if the name/breed gets chopped off
+    if petScrollListFrame.name:IsTruncated() then
+        petScrollListFrame.name:SetFontObject("GameFontNormalSmall")
+    else
+        petScrollListFrame.name:SetFontObject("GameFontNormal")
     end
 end
 
