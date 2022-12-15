@@ -3292,7 +3292,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[3245] = false
     BPBID_Arrays.BasePetStats[3246] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[3247] = {8, 8, 8}
-    BPBID_Arrays.BasePetStats[3248] = false
+    BPBID_Arrays.BasePetStats[3248] = {8.625, 8.125, 7.25}
     BPBID_Arrays.BasePetStats[3249] = {8, 8.5, 7.5}
     BPBID_Arrays.BasePetStats[3250] = false
     BPBID_Arrays.BasePetStats[3251] = false
