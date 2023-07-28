@@ -197,6 +197,7 @@ breedtipTitle:SetTextColor(1, 1, 1, 1)
 -- Make Breedtip checkboxes
 local OptBreedtipCurrent = CreateCheckbox("Current pet's breed", 32, 32, "TOPLEFT", breedtipTitle, "BOTTOMLEFT", 0, 0)
 local OptBreedtipPossible = CreateCheckbox("Current pet's possible breeds", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
+local OptBreedtipCollected = CreateCheckbox("Current's pet collected breeds", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptBreedtipSpeciesBase = CreateCheckbox("Pet species' base stats", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptBreedtipCurrentStats = CreateCheckbox("Current breed's base stats", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
 local OptBreedtipAllStats = CreateCheckbox("All breed's base stats", 32, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, 0)
@@ -246,6 +247,7 @@ local function BPBID_Options_Refresh()
     OptBreedtipAllStats25:SetChecked(BPBID_Options.Breedtip.AllStats25)
     OptBreedtipAllStats25Rare:SetChecked(BPBID_Options.Breedtip.AllStats25Rare)
     OptBugBattleFontFix:SetChecked(BPBID_Options.BattleFontFix)
+    OptBreedtipCollected:SetChecked(BPBID_Options.Breedtip.Collected)
 
     -- Enable/disable dependent checkboxes
     if (OptNamesHSFUpdate:GetChecked()) then
@@ -272,6 +274,7 @@ local function BPBID_Options_Refresh()
         OptBreedtipCurrentStats25Rare:Enable()
         OptBreedtipAllStats25:Enable()
         OptBreedtipAllStats25Rare:Enable()
+        OptBreedtipCollected:Enable()
     elseif (not OptTooltipsEnabled:GetChecked()) then
         OptTooltipsBattleTooltip:Disable()
         OptTooltipsBPT:Disable()
@@ -286,6 +289,7 @@ local function BPBID_Options_Refresh()
         OptBreedtipCurrentStats25Rare:Disable()
         OptBreedtipAllStats25:Disable()
         OptBreedtipAllStats25Rare:Disable()
+        OptBreedtipCollected:Disable()
     end
 
     if (OptBreedtipCurrentStats25:GetChecked()) then
@@ -391,6 +395,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
         OptBreedtipCurrentStats25Rare:Enable()
         OptBreedtipAllStats25:Enable()
         OptBreedtipAllStats25Rare:Enable()
+        OptBreedtipCollected:Enable()
         
         -- Restore defaults for previously disabled checkboxes
         BPBID_Options.Tooltips.Enabled = true -- Enable Battle Pet BreedID Tooltips
@@ -424,6 +429,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
         OptBreedtipCurrentStats25Rare:Disable()
         OptBreedtipAllStats25:Disable()
         OptBreedtipAllStats25Rare:Disable()
+        OptBreedtipCollected:Disable()
         
         -- Uncheck all tooltip-related checkboxes
         BPBID_Options.Tooltips.Enabled = false -- Enable Battle Pet BreedID Tooltips
@@ -465,6 +471,7 @@ local function BPBID_Options_EnableAll()
     OptBreedtipCurrentStats25Rare:Enable()
     OptBreedtipAllStats25:Enable()
     OptBreedtipAllStats25Rare:Enable()
+    OptBreedtipCollected:Enable()
 end
 
 local function BPBID_Options_Default()
@@ -537,6 +544,7 @@ local function BPBID_GeneralCheckbox_OnClick(self, button, down)
     BPBID_Options.Breedtip.CurrentStats25Rare = OptBreedtipCurrentStats25Rare:GetChecked()
     BPBID_Options.Breedtip.AllStats25 = OptBreedtipAllStats25:GetChecked()
     BPBID_Options.Breedtip.AllStats25Rare = OptBreedtipAllStats25Rare:GetChecked()
+    BPBID_Options.Breedtip.Collected = OptBreedtipCollected:GetChecked()
     BPBID_Options.BattleFontFix = OptBugBattleFontFix:GetChecked()
     
     -- Fix fontsize for PrimaryBattlePetUnitTooltip (TODO: PetFrame)
@@ -595,6 +603,7 @@ OptBreedtipCurrentStats:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipAllStats:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipCurrentStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipAllStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
+OptBreedtipCollected:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBugBattleFontFix:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 
 -- Reset to Defaults button
