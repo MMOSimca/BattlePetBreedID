@@ -319,7 +319,7 @@ function GetBreedID_Journal(nPetID)
     end
 end
 
--- Retrieve pre-determined Breed ID from cache for pet being moused over
+-- Retrieve pre-determined Breed ID from cache for pet being moused over (requires Blizzard Pet tooltip to be passed)
 function GetBreedID_Battle(self)
     if (self) then
         -- Determine index of internal.breedCache array. accepted values are 1-6 with 1-3 being your pets and 4-6 being enemy pets
