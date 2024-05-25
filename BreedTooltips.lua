@@ -107,6 +107,27 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
         breedtip:AddLine(current, 1, 1, 1, 1)
     end
 
+    if (BPBID_Options.Breedtip.Collected) then
+        C_PetJournal.ClearSearchFilter()
+        numPets, numOwned = C_PetJournal.GetNumPets()
+        local collectedPets = {}
+        for i = 1, numPets do
+            local petID, speciesID2, owned, customName, level, favorite, isRevoked, speciesName, icon, petType, companionID, tooltip, description, isWild, canBattle, isTradeable, isUnique, obtainable = C_PetJournal.GetPetInfoByIndex(i)
+            if speciesID2 == speciesID then 
+                local speciesID, customName, level, xp, maxXp, displayID, isFavorite, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique, obtainable = C_PetJournal.GetPetInfoByPetID(petID)
+                local health, maxHealth, power, speed, rarity = C_PetJournal.GetPetStats(petID)
+
+                local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
+
+                local breed = internal.RetrieveBreedName(breedNum)
+                table.insert(collectedPets, ITEM_QUALITY_COLORS[quality-1].hex .. "L" .. level .. " (" .. breed .. ")"  .. "|r")
+            end
+        end
+        if (#collectedPets > 0) then
+            breedtip:AddLine("\124cFFD4A017Collected:\124r " .. table.concat(collectedPets, ", "), 1, 1, 1, 1)
+        end
+    end
+
     -- Set line for "Current pet's possible breeds"
     if (BPBID_Options.Breedtip.Possible) then
         local possible = "\124cFFD4A017Possible Breed"

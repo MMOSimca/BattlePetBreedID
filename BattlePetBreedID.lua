@@ -501,6 +501,7 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             BPBID_Options.Breedtip.CurrentStats25Rare = true -- Always assume pet will be Rare at level 25
             BPBID_Options.Breedtip.AllStats25 = true -- All breeds' stats at level 25
             BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
+            BPBID_Options.Breedtip.Collected = true -- Collected breeds for current pet
             
             BPBID_Options.BattleFontFix = false -- Test old Pet Battle rarity coloring
         end
