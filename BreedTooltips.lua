@@ -107,13 +107,14 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
         breedtip:AddLine(current, 1, 1, 1, 1)
     end
 
+	-- Set line for "Collected"
     if (BPBID_Options.Breedtip.Collected) then
         C_PetJournal.ClearSearchFilter()
         numPets, numOwned = C_PetJournal.GetNumPets()
         local collectedPets = {}
         for i = 1, numPets do
             local petID, speciesID2, owned, customName, level, favorite, isRevoked, speciesName, icon, petType, companionID, tooltip, description, isWild, canBattle, isTradeable, isUnique, obtainable = C_PetJournal.GetPetInfoByIndex(i)
-            if speciesID2 == speciesID then 
+            if petID and speciesID2 == speciesID then 
                 local speciesID, customName, level, xp, maxXp, displayID, isFavorite, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique, obtainable = C_PetJournal.GetPetInfoByPetID(petID)
                 local health, maxHealth, power, speed, rarity = C_PetJournal.GetPetStats(petID)
 
