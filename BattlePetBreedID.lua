@@ -44,7 +44,7 @@ internal.MAX_BREEDS = 10
 local PJHooked = false
 
 -- Check if on future build or PTR to enable additional developer functions
-local is_ptr = select(4, _G.GetBuildInfo()) ~= GetAddOnMetadata(addonname, "Interface")
+local is_ptr = select(4, _G.GetBuildInfo()) ~= C_AddOns.GetAddOnMetadata(addonname, "Interface")
 
 -- Takes in lots of information, returns Breed ID as a number (or an error), and the rarity as a number
 function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower, nSpeed, wild, flying)

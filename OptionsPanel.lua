@@ -92,9 +92,9 @@ end
 -- Create title, version, author, and description fields
 local title = CreateFont("GameFontNormalLarge", properName)
 title:SetPoint("TOPLEFT", 16, -16)
-local ver = CreateFont("GameFontNormalSmall", "version "..GetAddOnMetadata(addonname, "Version"))
+local ver = CreateFont("GameFontNormalSmall", "version "..C_AddOns.GetAddOnMetadata(addonname, "Version"))
 ver:SetPoint("BOTTOMLEFT", title, "BOTTOMRIGHT", 4, 0)
-local auth = CreateFont("GameFontNormalSmall", "created by "..GetAddOnMetadata(addonname, "Author"))
+local auth = CreateFont("GameFontNormalSmall", "created by "..C_AddOns.GetAddOnMetadata(addonname, "Author"))
 auth:SetPoint("BOTTOMLEFT", ver, "BOTTOMRIGHT", 3, 0)
 local desc = CreateFont("GameFontHighlight", nil, nil, nil, "TOPLEFT", title, "BOTTOMLEFT", 580, 40, 0, -8, "Battle Pet BreedID displays the BreedID of pets in your journal, in battle, in chat links, and in item tooltips.")
 
@@ -318,7 +318,7 @@ local function BPBID_OptNamesHSFUpdate_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
@@ -335,7 +335,7 @@ local function BPBID_OptNamesPJT_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
@@ -352,7 +352,7 @@ local function BPBID_OptBreedtipCurrentStats25_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
@@ -369,7 +369,7 @@ local function BPBID_OptBreedtipAllStats25_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
@@ -449,7 +449,7 @@ local function BPBID_OptTooltipsEnabled_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new values
     BPBID_Options_Refresh()
@@ -569,7 +569,7 @@ local function BPBID_GeneralCheckbox_OnClick(self, button, down)
     end
     
     -- A manual change has occurred (added in v1.0.8 to help update values added in new versions)
-    BPBID_Options.ManualChange = GetAddOnMetadata(addonname, "Version")
+    BPBID_Options.ManualChange = C_AddOns.GetAddOnMetadata(addonname, "Version")
     
     -- Refresh the options page to display the new defaults
     BPBID_Options_Refresh()
