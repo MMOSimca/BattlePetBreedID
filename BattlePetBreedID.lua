@@ -150,7 +150,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
                 trueresults[1] = breedID
             end
         
-        -- Lowbie pets go here, the bane of my existance. calculations must be intense and logic loops numerous
+        -- Lowbie pets go here, the bane of my existence. Calculations must be intense and logic loops numerous.
         else
             -- Calculate diffs much more intensely. Round calculations with 10^-2 and math.floor. Also, properly devalue HP by dividing its absolute value by 5
             local diff3 = (abs((floor(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 5) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 5) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
@@ -343,7 +343,9 @@ function internal.CacheAllPets()
             local nMaxHP = CPB.GetMaxHealth(iOwner, iIndex)
             local nPower = CPB.GetPower(iOwner, iIndex)
             local nSpeed = CPB.GetSpeed(iOwner, iIndex)
-            local nQuality = CPB.GetBreedQuality(iOwner, iIndex)
+			-- In Patch 11.0.0, Blizzard decreased the natural quality values passed from this function by 1.
+			-- This is inconsistent with all other quality APIs.
+            local nQuality = CPB.GetBreedQuality(iOwner, iIndex) + 1
             local wild = false
             local flying = false
             
@@ -378,7 +380,7 @@ function internal.CacheAllPets()
                     local wildnum, flyingnum = 1, 1
                     if wild then wildnum = 1.2 end
                     if flying then flyingnum = 1.5 end
-                    print(string.format("NEW Species found; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f", iOwner, iIndex, wild and "true" or "false", nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1))))))
+                    print(string.format("NEW Species found; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base+Breed Stats %4.4f / %4.4f / %4.4f", iOwner, iIndex, wild and "true" or "false", nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1))))))
                     if (breed ~= "NEW") then SELECTED_CHAT_FRAME:AddMessage("NEW Breed found: " .. breed) end
                 elseif (breed ~= "???") and (sub(tostring(breed), 1, 3) ~= "ERR") then
                     local exists = false
@@ -391,7 +393,7 @@ function internal.CacheAllPets()
                         local wildnum, flyingnum = 1, 1
                         if wild then wildnum = 1.2 end
                         if flying then flyingnum = 1.5 end
-                        print(string.format("NEW Breed found for existing species; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base Stats %4.2f / %4.2f / %4.2f, Breed %s", iOwner, iIndex, wild and "true" or "false", nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1)))), breed))
+                        print(string.format("NEW Breed found for existing species; Owner #%i, Pet #%i, Wild status %s, SpeciesID %u, Base+Breed Stats %4.4f / %4.4f / %4.4f, Breed %s", iOwner, iIndex, wild and "true" or "false", nSpeciesID, ((nMaxHP * wildnum - 100) / 5) / (nLevel * (1 + (0.1 * (nQuality - 1)))), nPower / (nLevel * (1 + (0.1 * (nQuality - 1)))), (nSpeed / flyingnum) / (nLevel * (1 + (0.1 * (nQuality - 1)))), breed))
                     end
                 end
                 
