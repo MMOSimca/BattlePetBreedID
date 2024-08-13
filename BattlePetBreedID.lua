@@ -514,7 +514,7 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
         end
         
         -- Disable option unless user has manually changed it
-        if (not BPBID_Options.ManualChange) or (BPBID_Options.ManualChange ~= GetAddOnMetadata(addonname, "Version")) then
+        if (not BPBID_Options.ManualChange) or (BPBID_Options.ManualChange ~= C_AddOns.GetAddOnMetadata(addonname, "Version")) then
             BPBID_Options.BattleFontFix = false
         end
         
