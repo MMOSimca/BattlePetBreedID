@@ -621,3 +621,21 @@ SLASH_BATTLEPETBREEDID3 = "/breedID"
 SlashCmdList["BATTLEPETBREEDID"] = function(msg)
     Settings.OpenToCategory(addonname)
 end
+
+local mouseButtonNote = "\nEasily display your pets BreedIDs!";
+AddonCompartmentFrame:RegisterAddon({
+	text = addonname,
+	icon = "Interface/Icons/petjournalportrait.blp",
+	notCheckable = true,
+	func = function(button, menuInputData, menu)
+		Settings.OpenToCategory(addonname)
+	end,
+	funcOnEnter = function(button)
+		MenuUtil.ShowTooltip(button, function(tooltip)
+			tooltip:SetText(addonname .. mouseButtonNote)
+		end)
+	end,
+	funcOnLeave = function(button)
+		MenuUtil.HideTooltip(button)
+	end,
+})
