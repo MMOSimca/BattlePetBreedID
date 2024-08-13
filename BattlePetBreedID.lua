@@ -622,7 +622,7 @@ SlashCmdList["BATTLEPETBREEDID"] = function(msg)
     Settings.OpenToCategory(addonname)
 end
 
-local mouseButtonNote = "\nEasily display your pets BreedIDs!";
+local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
 AddonCompartmentFrame:RegisterAddon({
 	text = addonname,
 	icon = "Interface/Icons/petjournalportrait.blp",
