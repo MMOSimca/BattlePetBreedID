@@ -518,11 +518,6 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             BPBID_Options.BattleFontFix = false
         end
         
-        -- Load Dev Tools for later if we're in debug mode
-        if (BPBID_Options.Debug) then
-            LoadAddOn("Blizzard_DebugTools")
-        end
-        
         -- If this addon loads after the Pet Journal
         if (PetJournalPetCardPetInfo) then
             
