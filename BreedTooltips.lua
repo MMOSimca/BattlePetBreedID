@@ -68,10 +68,10 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
 
     -- Workaround for TradeSkillMaster's tooltip
     -- Note that setting parent breaks floating tooltip and setting two corner points breaks borders on TSM tooltip
-    -- Setting parent is also required for BattlePetTooltip because TSMExtraTip constantly reanchors itself on its parent
+    -- Setting parent is also required for BattlePetTooltip because TSMExtraTooltip constantly reanchors itself on its parent
     if (C_AddOns.IsAddOnLoaded("TradeSkillMaster")) then
         for i = 1, 10 do
-            local t = _G["TSMExtraTip" .. i]
+            local t = _G["TSMExtraTooltip" .. i]
             if t then
 				-- It probably never matters which point we check to learn the relative frame
 				-- This is because TSM tooltips should only be relative to one frame each
