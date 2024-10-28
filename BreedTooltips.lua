@@ -179,8 +179,8 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             end
         end
 
-        -- Set line for "Current breed's base stats (level 1 Poor)" (have to have tblBreedID for this)
-        if (BPBID_Options.Breedtip.CurrentStats) and (tblBreedID) then
+        -- Set line for "Current breed's base stats (level 1 Poor)" (have to have BreedsPerSpecies and tblBreedID for this)
+        if (BPBID_Options.Breedtip.CurrentStats) and (BPBID_Arrays.BreedsPerSpecies[speciesID]) and (tblBreedID) then
             for i = 1, #tblBreedID do
                 local currentbreed = tblBreedID[i]
                 local currentstats = "\124cFFD4A017Breed " .. internal.RetrieveBreedName(currentbreed) .. "*:\124r " .. (BPBID_Arrays.BasePetStats[speciesID][1] + BPBID_Arrays.BreedStats[currentbreed][1]) .. "/" .. (BPBID_Arrays.BasePetStats[speciesID][2] + BPBID_Arrays.BreedStats[currentbreed][2]) .. "/" .. (BPBID_Arrays.BasePetStats[speciesID][3] + BPBID_Arrays.BreedStats[currentbreed][3])
@@ -216,8 +216,8 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             end
         end
 
-        -- Set line for "Current breed's stats at level 25" (have to have tblBreedID for this)
-        if (BPBID_Options.Breedtip.CurrentStats25) and (tblBreedID) then
+        -- Set line for "Current breed's stats at level 25" (have to have BreedsPerSpecies and tblBreedID for this)
+        if (BPBID_Options.Breedtip.CurrentStats25) and (BPBID_Arrays.BreedsPerSpecies[speciesID]) and (tblBreedID) then
             for i = 1, #tblBreedID do
                 local currentbreed = tblBreedID[i]
                 local hex = "\124cFF0070DD" -- Always use rare color by default
