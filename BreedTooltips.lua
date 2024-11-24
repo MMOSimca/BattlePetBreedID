@@ -109,7 +109,13 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
 
 	-- Set line for "Collected"
     if (BPBID_Options.Breedtip.Collected) then
-        C_PetJournal.ClearSearchFilter()
+		-- Only clear the search filter if we aren't looking at it. If we are, presumably we already had the all the relevant pets displayed anyway.
+		-- This is an assumption, and it's not 100% true, but it's close. Without this, we forcibly clear filters when the user is looking at them.
+		-- But it will clear the chat filter if we can see it if we're looking at a chat or pet battle tooltip. Presumably it isn't our focus then.
+		if (not PetJournalPetCardPetInfo) or (not PetJournalPetCardPetInfo:IsVisible()) or (parent == FloatingBattlePetTooltip) then
+			C_PetJournal.ClearSearchFilter()
+		end
+
         numPets, numOwned = C_PetJournal.GetNumPets()
         local collectedPets = {}
         for i = 1, numPets do
