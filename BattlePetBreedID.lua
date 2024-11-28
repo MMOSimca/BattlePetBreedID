@@ -109,6 +109,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     local trueresults = {}
     local lowest
     for i = minQuality, maxQuality do -- Accounting for BlizzBug with rarity
+		-- Note that this value is also upconverted by 10x. Together with the upconversion from stats, it opposes the upconversion
         nQL = BPBID_Arrays.RealRarityValues[i] * 20 * nLevel
         
         -- Higher level pets can never have duplicate breeds, so calculations can be less accurate and faster (they remain the same since version 0.7)
@@ -152,7 +153,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
         
         -- Lowbie pets go here, the bane of my existence. Calculations must be intense and logic loops numerous.
         else
-            -- Calculate diffs much more intensely. Round calculations with 10^-2 and math.floor. Also, properly devalue HP by dividing its absolute value by 5
+            -- Calculate diffs much more intensely. Round calculations with 10^-2 and by using math.floor after adding 0.5. Also, properly devalue HP by dividing its absolute value by 5.
             local diff3 = (abs((floor(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 5) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 5) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
             local diff4 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 20) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
             local diff5 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 20) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
