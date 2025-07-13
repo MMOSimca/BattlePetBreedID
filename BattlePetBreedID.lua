@@ -618,20 +618,23 @@ SlashCmdList["BATTLEPETBREEDID"] = function(msg)
     Settings.OpenToCategory(addonname)
 end
 
-local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
-AddonCompartmentFrame:RegisterAddon({
-	text = addonname,
-	icon = "Interface/Icons/petjournalportrait.blp",
-	notCheckable = true,
-	func = function(button, menuInputData, menu)
-		Settings.OpenToCategory(addonname)
-	end,
-	funcOnEnter = function(button)
-		MenuUtil.ShowTooltip(button, function(tooltip)
-			tooltip:SetText(addonname .. mouseButtonNote)
-		end)
-	end,
-	funcOnLeave = function(button)
-		MenuUtil.HideTooltip(button)
-	end,
-})
+-- This stuff is only supported in a Retail client
+if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then
+	local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
+	AddonCompartmentFrame:RegisterAddon({
+		text = addonname,
+		icon = "Interface/Icons/petjournalportrait.blp",
+		notCheckable = true,
+		func = function(button, menuInputData, menu)
+			Settings.OpenToCategory(addonname)
+		end,
+		funcOnEnter = function(button)
+			MenuUtil.ShowTooltip(button, function(tooltip)
+				tooltip:SetText(addonname .. mouseButtonNote)
+			end)
+		end,
+		funcOnLeave = function(button)
+			MenuUtil.HideTooltip(button)
+		end,
+	})
+end

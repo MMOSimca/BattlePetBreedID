@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 11.1.7 Live; @file-date-iso@
+Last Update: Patch 11.1.7 / Patch 5.5.0; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact MMOSimca / Simca@Malfurion-US - either through MMO-Champion, through CurseForge, or in-game
@@ -9752,4 +9752,10 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4850] = false
     BPBID_Arrays.BreedsPerSpecies[4851] = false
     BPBID_Arrays.BreedsPerSpecies[4852] = {5}
+	
+	
+	-- Fix for changes unique to Mists of Pandaria Classic
+	if (WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE) then
+	    BPBID_Arrays.BasePetStats[630] = {8, 8, 8}
+	end
 end
