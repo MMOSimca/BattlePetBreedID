@@ -9133,7 +9133,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4231] = false
     BPBID_Arrays.BreedsPerSpecies[4232] = false
     BPBID_Arrays.BreedsPerSpecies[4233] = {12}
-    BPBID_Arrays.BreedsPerSpecies[4234] = {6}
+    BPBID_Arrays.BreedsPerSpecies[4234] = {9}
     BPBID_Arrays.BreedsPerSpecies[4235] = {5}
     BPBID_Arrays.BreedsPerSpecies[4236] = {9}
     BPBID_Arrays.BreedsPerSpecies[4237] = false
