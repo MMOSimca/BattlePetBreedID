@@ -505,18 +505,11 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             BPBID_Options.Breedtip.AllStats25 = true -- All breeds' stats at level 25
             BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
             BPBID_Options.Breedtip.Collected = true -- Collected breeds for current pet
-            
-            BPBID_Options.BattleFontFix = false -- Test old Pet Battle rarity coloring
         end
         
         -- Set up new system for detecting manual changes added in v1.0.8
         if (BPBID_Options.ManualChange == nil) then
             BPBID_Options.ManualChange = false
-        end
-        
-        -- Disable option unless user has manually changed it
-        if (not BPBID_Options.ManualChange) or (BPBID_Options.ManualChange ~= C_AddOns.GetAddOnMetadata(addonname, "Version")) then
-            BPBID_Options.BattleFontFix = false
         end
         
         -- If this addon loads after the Pet Journal

@@ -211,8 +211,6 @@ local blizzbugTitle = CreateFont("GameFontNormal", "Fix Bugs:") -- Used to say "
 blizzbugTitle:SetPoint("TOPLEFT", OptBreedtipAllStats25Rare, "BOTTOMLEFT", -32, -16)
 blizzbugTitle:SetTextColor(1, 1, 1, 1)
 
-local OptBugBattleFontFix = CreateCheckbox("Test old Pet Battle rarity coloring", 32, 32, "TOPLEFT", blizzbugTitle, "BOTTOMLEFT", 0, 0)
-
 local OptDefaultButton = CreateButton("Defaults", 80, 32, "TOPLEFT", lastcheckbox, "BOTTOMLEFT", 0, -32)
 
 -- Refresh all settings from storage
@@ -246,7 +244,6 @@ local function BPBID_Options_Refresh()
     OptBreedtipCurrentStats25Rare:SetChecked(BPBID_Options.Breedtip.CurrentStats25Rare)
     OptBreedtipAllStats25:SetChecked(BPBID_Options.Breedtip.AllStats25)
     OptBreedtipAllStats25Rare:SetChecked(BPBID_Options.Breedtip.AllStats25Rare)
-    OptBugBattleFontFix:SetChecked(BPBID_Options.BattleFontFix)
     OptBreedtipCollected:SetChecked(BPBID_Options.Breedtip.Collected)
 
     -- Enable/disable dependent checkboxes
@@ -507,8 +504,6 @@ local function BPBID_Options_Default()
     BPBID_Options.Breedtip.CurrentStats25Rare = true -- Always assume pet will be Rare at level 25
     BPBID_Options.Breedtip.AllStats25 = true -- All breeds' stats at level 25
     BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
-    
-    BPBID_Options.BattleFontFix = false -- Use alternate rarity coloring method in-battle
 
     -- Enable all checkboxes that can be enabled (defaults would enable them)
     BPBID_Options_EnableAll()
@@ -545,7 +540,6 @@ local function BPBID_GeneralCheckbox_OnClick(self, button, down)
     BPBID_Options.Breedtip.AllStats25 = OptBreedtipAllStats25:GetChecked()
     BPBID_Options.Breedtip.AllStats25Rare = OptBreedtipAllStats25Rare:GetChecked()
     BPBID_Options.Breedtip.Collected = OptBreedtipCollected:GetChecked()
-    BPBID_Options.BattleFontFix = OptBugBattleFontFix:GetChecked()
     
     -- Fix fontsize for PrimaryBattlePetUnitTooltip (TODO: PetFrame)
     if (not BPBID_Options.Names.BattleTooltip) and (internal.BattleFontSize) then
@@ -604,7 +598,6 @@ OptBreedtipAllStats:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipCurrentStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipAllStats25Rare:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 OptBreedtipCollected:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
-OptBugBattleFontFix:SetScript("OnClick", BPBID_GeneralCheckbox_OnClick)
 
 -- Reset to Defaults button
 OptDefaultButton:SetScript("OnClick", BPBID_Options_Default)

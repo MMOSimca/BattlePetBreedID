@@ -327,9 +327,8 @@ local function BPBID_Hook_BattleUpdate(self)
     if not tooltip then
         -- Set the name header if the user wants
         if (name) and (BPBID_Options.Names.PrimaryBattle) then
-            -- Set standard text or use hex coloring based on font fix option
-            if (BPBID_Options.BattleFontFix) then
-                local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            if hex then
                 self.Name:SetText("|c"..hex..name.." ("..breed..")".."|r")
             else
                 self.Name:SetText(name.." ("..breed..")")
@@ -338,9 +337,8 @@ local function BPBID_Hook_BattleUpdate(self)
     else
         -- Set the name header if the user wants
         if (name) and (BPBID_Options.Names.BattleTooltip) then
-            -- Set standard text or use hex coloring based on font fix option
-            if (BPBID_Options.BattleFontFix) then
-                local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            if hex then
                 self.Name:SetText("|c"..hex..name.." ("..breed..")".."|r")
             else
                 self.Name:SetText(name.." ("..breed..")")
