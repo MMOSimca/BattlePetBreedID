@@ -6878,9 +6878,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[1968] = {5, 8, 11}
     BPBID_Arrays.BreedsPerSpecies[1969] = {5}
     BPBID_Arrays.BreedsPerSpecies[1970] = false
-    BPBID_Arrays.BreedsPerSpecies[1971] = false
-    BPBID_Arrays.BreedsPerSpecies[1972] = false
-    BPBID_Arrays.BreedsPerSpecies[1973] = false
+    BPBID_Arrays.BreedsPerSpecies[1971] = {4}
+    BPBID_Arrays.BreedsPerSpecies[1972] = {5}
+    BPBID_Arrays.BreedsPerSpecies[1973] = {6}
     BPBID_Arrays.BreedsPerSpecies[1974] = {5}
     BPBID_Arrays.BreedsPerSpecies[1975] = {7}
     BPBID_Arrays.BreedsPerSpecies[1976] = {4}
@@ -9592,7 +9592,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4682] = {8}
     BPBID_Arrays.BreedsPerSpecies[4683] = {8}
     BPBID_Arrays.BreedsPerSpecies[4684] = {5, 8}
-    BPBID_Arrays.BreedsPerSpecies[4685] = {5}
+    BPBID_Arrays.BreedsPerSpecies[4685] = {5, 8}
     BPBID_Arrays.BreedsPerSpecies[4686] = {4}
     BPBID_Arrays.BreedsPerSpecies[4687] = false
     BPBID_Arrays.BreedsPerSpecies[4688] = false
