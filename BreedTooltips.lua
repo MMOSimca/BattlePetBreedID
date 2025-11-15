@@ -121,8 +121,7 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
         local collectedPets = {}
         for i = 1, numPets do
             local petID, speciesID2, owned, customName, level, favorite, isRevoked, speciesName, icon, petType, companionID, tooltip, description, isWild, canBattle, isTradeable, isUnique, obtainable = C_PetJournal.GetPetInfoByIndex(i)
-            if petID and speciesID2 == speciesID then 
-                local speciesID, customName, level, xp, maxXp, displayID, isFavorite, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique, obtainable = C_PetJournal.GetPetInfoByPetID(petID)
+            if petID and speciesID2 == speciesID then
                 local health, maxHealth, power, speed, rarity = C_PetJournal.GetPetStats(petID)
 
                 local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
