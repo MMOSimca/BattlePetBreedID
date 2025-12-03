@@ -4761,7 +4761,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[4714] = false
     BPBID_Arrays.BasePetStats[4715] = false
     BPBID_Arrays.BasePetStats[4716] = false
-    BPBID_Arrays.BasePetStats[4717] = false
+    BPBID_Arrays.BasePetStats[4717] = {7.75, 9, 7.25}
     BPBID_Arrays.BasePetStats[4718] = {8.5, 7.5, 8}
     BPBID_Arrays.BasePetStats[4719] = {8.25, 7.5, 8.25}
     BPBID_Arrays.BasePetStats[4720] = false
@@ -4855,8 +4855,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[4808] = false
     BPBID_Arrays.BasePetStats[4809] = false
     BPBID_Arrays.BasePetStats[4810] = false
-    BPBID_Arrays.BasePetStats[4811] = false
-    BPBID_Arrays.BasePetStats[4812] = false
+    BPBID_Arrays.BasePetStats[4811] = {7.5, 7.75, 8.75}
+    BPBID_Arrays.BasePetStats[4812] = {8.75, 7.75, 7.5}
     BPBID_Arrays.BasePetStats[4813] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[4814] = false
     BPBID_Arrays.BasePetStats[4815] = false
@@ -4895,7 +4895,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[4848] = {7.75, 7.5, 8.75}
     BPBID_Arrays.BasePetStats[4849] = {8.5, 7.5, 8}
     BPBID_Arrays.BasePetStats[4850] = {8.5, 8.5, 7}
-    BPBID_Arrays.BasePetStats[4851] = false
+    BPBID_Arrays.BasePetStats[4851] = {8, 8, 8}
     BPBID_Arrays.BasePetStats[4852] = {7, 8.5, 8.5}
     BPBID_Arrays.BasePetStats[4853] = {9, 7.25, 7.75}
     BPBID_Arrays.BasePetStats[4854] = {7.75, 7.25, 9}
@@ -4953,6 +4953,9 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BasePetStats[4906] = false
     BPBID_Arrays.BasePetStats[4907] = {7, 9, 8}
     BPBID_Arrays.BasePetStats[4908] = {7.5, 9, 7.5}
+    BPBID_Arrays.BasePetStats[4909] = false
+    BPBID_Arrays.BasePetStats[4910] = false
+    BPBID_Arrays.BasePetStats[4911] = {7.625, 8.375, 8}
 
 
     -- AVAILABLE BREEDS
@@ -9766,8 +9769,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4808] = false
     BPBID_Arrays.BreedsPerSpecies[4809] = false
     BPBID_Arrays.BreedsPerSpecies[4810] = false
-    BPBID_Arrays.BreedsPerSpecies[4811] = false
-    BPBID_Arrays.BreedsPerSpecies[4812] = false
+    BPBID_Arrays.BreedsPerSpecies[4811] = {8}
+    BPBID_Arrays.BreedsPerSpecies[4812] = {8}
     BPBID_Arrays.BreedsPerSpecies[4813] = {8}
     BPBID_Arrays.BreedsPerSpecies[4814] = false
     BPBID_Arrays.BreedsPerSpecies[4815] = false
@@ -9863,7 +9866,10 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4905] = false
     BPBID_Arrays.BreedsPerSpecies[4906] = false
     BPBID_Arrays.BreedsPerSpecies[4907] = {4}
-    BPBID_Arrays.BreedsPerSpecies[4908] = false
+    BPBID_Arrays.BreedsPerSpecies[4908] = {4}
+    BPBID_Arrays.BreedsPerSpecies[4909] = false
+    BPBID_Arrays.BreedsPerSpecies[4910] = false
+    BPBID_Arrays.BreedsPerSpecies[4911] = {11}
     
     
     -- Fix for changes unique to Mists of Pandaria Classic
