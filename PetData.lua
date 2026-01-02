@@ -1,6 +1,6 @@
 --[[
 BattlePetBreedID: Pet Data Module
-Last Update: Patch 11.2.5 / Patch 5.5.0; @file-date-iso@
+Last Update: Patch 11.2.7 / Patch 5.5.0; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact MMOSimca / Simca@Malfurion-US - either through MMO-Champion, through CurseForge, or in-game
@@ -9809,7 +9809,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4848] = {5}
     BPBID_Arrays.BreedsPerSpecies[4849] = {6}
     BPBID_Arrays.BreedsPerSpecies[4850] = {3}
-    BPBID_Arrays.BreedsPerSpecies[4851] = false
+    BPBID_Arrays.BreedsPerSpecies[4851] = {4}
     BPBID_Arrays.BreedsPerSpecies[4852] = {5}
     BPBID_Arrays.BreedsPerSpecies[4853] = {7}
     BPBID_Arrays.BreedsPerSpecies[4854] = {9}
