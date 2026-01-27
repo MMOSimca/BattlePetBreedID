@@ -1,17 +1,31 @@
-## Interface: 110002
+## Interface: 120000, 50503, 50502
 ## Title: Battle Pet BreedID
 ## Author: Simca@Malfurion
 ## Notes: Displays the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.
-## Version: @project-version@
+## Version: v1.39.0
 ## X-Category: Pet Battles
-## X-Date: @project-date-iso@
+## X-Date: 2026-01-20T19:24:45Z
 ## X-License: BSD
 ## X-Localizations: enUS
 ## X-Curse-Project-ID: 45935
+## X-Wago-ID: qKQxl76x
 ## X-WoWI-ID: 23217
 ## SavedVariables: BPBID_Options
+
+## Category: Pet Battles
+## Category-deDE: Haustierkämpfe
+## Category-esES: Duelos de mascotas
+## Category-esMX: Duelos de mascotas
+## Category-frFR: Combats de mascottes
+## Category-itIT: Battaglie fra pet
+## Category-koKR: 애완동물 대전
+## Category-ptBR: Batalhas de mascotes
+## Category-ruRU: Битвы питомцев
+## Category-zhCN: 宠物对战
+## Category-zhTW: 寵物對戰
 
 BattlePetBreedID.lua
 PetData.lua
 BreedTooltips.lua
 OptionsPanel.lua
+BPBIDAccessOptions.lua

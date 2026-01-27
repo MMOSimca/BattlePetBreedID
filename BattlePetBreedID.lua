@@ -109,6 +109,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
     local trueresults = {}
     local lowest
     for i = minQuality, maxQuality do -- Accounting for BlizzBug with rarity
+		-- Note that this value is also upconverted by 10x. Together with the upconversion from stats, it opposes the upconversion
         nQL = BPBID_Arrays.RealRarityValues[i] * 20 * nLevel
         
         -- Higher level pets can never have duplicate breeds, so calculations can be less accurate and faster (they remain the same since version 0.7)
@@ -152,7 +153,7 @@ function internal.CalculateBreedID(nSpeciesID, nQuality, nLevel, nMaxHP, nPower,
         
         -- Lowbie pets go here, the bane of my existence. Calculations must be intense and logic loops numerous.
         else
-            -- Calculate diffs much more intensely. Round calculations with 10^-2 and math.floor. Also, properly devalue HP by dividing its absolute value by 5
+            -- Calculate diffs much more intensely. Round calculations with 10^-2 and by using math.floor after adding 0.5. Also, properly devalue HP by dividing its absolute value by 5.
             local diff3 = (abs((floor(((ihp + 5) * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 5) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 5) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
             local diff4 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( ((ipower + 20) * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( (ispeed * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
             local diff5 = (abs((floor((ihp * nQL * 5 + 10000) / wildHPFactor * 0.01 + 0.5) / 0.01) - thp) / 5) + abs((floor( (ipower * nQL) / wildPowerFactor * 0.01 + 0.5) / 0.01) - tpower) + abs((floor( ((ispeed + 20) * nQL) * 0.01 + 0.5) / 0.01) - tspeed)
@@ -504,23 +505,11 @@ local function BPBID_Events_OnEvent(self, event, name, ...)
             BPBID_Options.Breedtip.AllStats25 = true -- All breeds' stats at level 25
             BPBID_Options.Breedtip.AllStats25Rare = true -- Always assume pet will be Rare at level 25
             BPBID_Options.Breedtip.Collected = true -- Collected breeds for current pet
-            
-            BPBID_Options.BattleFontFix = false -- Test old Pet Battle rarity coloring
         end
         
         -- Set up new system for detecting manual changes added in v1.0.8
         if (BPBID_Options.ManualChange == nil) then
             BPBID_Options.ManualChange = false
-        end
-        
-        -- Disable option unless user has manually changed it
-        if (not BPBID_Options.ManualChange) or (BPBID_Options.ManualChange ~= GetAddOnMetadata(addonname, "Version")) then
-            BPBID_Options.BattleFontFix = false
-        end
-        
-        -- Load Dev Tools for later if we're in debug mode
-        if (BPBID_Options.Debug) then
-            LoadAddOn("Blizzard_DebugTools")
         end
         
         -- If this addon loads after the Pet Journal
@@ -614,28 +603,33 @@ end
 -- Set our event handler function
 BPBID_Events:SetScript("OnEvent", BPBID_Events_OnEvent)
 
+--[[ this is all moved to BPBIDAccessOptions.lua for 12.x compatability
 -- Create slash commands
 SLASH_BATTLEPETBREEDID1 = "/battlepetbreedID"
 SLASH_BATTLEPETBREEDID2 = "/BPBID"
 SLASH_BATTLEPETBREEDID3 = "/breedID"
 SlashCmdList["BATTLEPETBREEDID"] = function(msg)
-    Settings.OpenToCategory(addonname)
+    Settings.OpenToCategory(CatID)
 end
 
-local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
-AddonCompartmentFrame:RegisterAddon({
-	text = addonname,
-	icon = "Interface/Icons/petjournalportrait.blp",
-	notCheckable = true,
-	func = function(button, menuInputData, menu)
-		Settings.OpenToCategory(addonname)
-	end,
-	funcOnEnter = function(button)
-		MenuUtil.ShowTooltip(button, function(tooltip)
-			tooltip:SetText(addonname .. mouseButtonNote)
-		end)
-	end,
-	funcOnLeave = function(button)
-		MenuUtil.HideTooltip(button)
-	end,
-})
+-- This stuff is only supported in a Retail client
+if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then
+	local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
+	AddonCompartmentFrame:RegisterAddon({
+		text = addonname,
+		icon = "Interface/Icons/petjournalportrait.blp",
+		notCheckable = true,
+		func = function(button, menuInputData, menu)
+			Settings.OpenToCategory(CatID)
+		end,
+		funcOnEnter = function(button)
+			MenuUtil.ShowTooltip(button, function(tooltip)
+				tooltip:SetText(addonname .. mouseButtonNote)
+			end)
+		end,
+		funcOnLeave = function(button)
+			MenuUtil.HideTooltip(button)
+		end,
+	})
+end
+]]--
