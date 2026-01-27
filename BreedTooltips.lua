@@ -68,10 +68,10 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
 
     -- Workaround for TradeSkillMaster's tooltip
     -- Note that setting parent breaks floating tooltip and setting two corner points breaks borders on TSM tooltip
-    -- Setting parent is also required for BattlePetTooltip because TSMExtraTip constantly reanchors itself on its parent
+    -- Setting parent is also required for BattlePetTooltip because TSMExtraTooltip constantly reanchors itself on its parent
     if (C_AddOns.IsAddOnLoaded("TradeSkillMaster")) then
         for i = 1, 10 do
-            local t = _G["TSMExtraTip" .. i]
+            local t = _G["TSMExtraTooltip" .. i]
             if t then
 				-- It probably never matters which point we check to learn the relative frame
 				-- This is because TSM tooltips should only be relative to one frame each
@@ -109,13 +109,19 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
 
 	-- Set line for "Collected"
     if (BPBID_Options.Breedtip.Collected) then
-        C_PetJournal.ClearSearchFilter()
+		-- Only clear the search filter if we aren't looking at it. If we are, presumably we already had the all the relevant pets displayed anyway.
+		-- This is an assumption, and it's not 100% true, but it's close. Without this, we forcibly clear filters when the user is looking at them.
+		-- But it will clear the chat filter if we can see it if we're looking at a chat or pet battle tooltip. Presumably it isn't our focus then.
+        local filterText = C_PetJournal.GetSearchFilter()
+		if filterText and not (filterText == "") and ((not PetJournalPetCardPetInfo) or (not PetJournalPetCardPetInfo:IsVisible()) or (parent == FloatingBattlePetTooltip)) then
+			C_PetJournal.ClearSearchFilter()
+		end
+
         numPets, numOwned = C_PetJournal.GetNumPets()
         local collectedPets = {}
         for i = 1, numPets do
             local petID, speciesID2, owned, customName, level, favorite, isRevoked, speciesName, icon, petType, companionID, tooltip, description, isWild, canBattle, isTradeable, isUnique, obtainable = C_PetJournal.GetPetInfoByIndex(i)
-            if petID and speciesID2 == speciesID then 
-                local speciesID, customName, level, xp, maxXp, displayID, isFavorite, name, icon, petType, creatureID, sourceText, description, isWild, canBattle, tradable, unique, obtainable = C_PetJournal.GetPetInfoByPetID(petID)
+            if petID and speciesID2 == speciesID then
                 local health, maxHealth, power, speed, rarity = C_PetJournal.GetPetStats(petID)
 
                 local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
@@ -179,8 +185,8 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             end
         end
 
-        -- Set line for "Current breed's base stats (level 1 Poor)" (have to have tblBreedID for this)
-        if (BPBID_Options.Breedtip.CurrentStats) and (tblBreedID) then
+        -- Set line for "Current breed's base stats (level 1 Poor)" (have to have BreedsPerSpecies and tblBreedID for this)
+        if (BPBID_Options.Breedtip.CurrentStats) and (BPBID_Arrays.BreedsPerSpecies[speciesID]) and (tblBreedID) then
             for i = 1, #tblBreedID do
                 local currentbreed = tblBreedID[i]
                 local currentstats = "\124cFFD4A017Breed " .. internal.RetrieveBreedName(currentbreed) .. "*:\124r " .. (BPBID_Arrays.BasePetStats[speciesID][1] + BPBID_Arrays.BreedStats[currentbreed][1]) .. "/" .. (BPBID_Arrays.BasePetStats[speciesID][2] + BPBID_Arrays.BreedStats[currentbreed][2]) .. "/" .. (BPBID_Arrays.BasePetStats[speciesID][3] + BPBID_Arrays.BreedStats[currentbreed][3])
@@ -216,8 +222,8 @@ function BPBID_SetBreedTooltip(parent, speciesID, tblBreedID, rareness, tooltipD
             end
         end
 
-        -- Set line for "Current breed's stats at level 25" (have to have tblBreedID for this)
-        if (BPBID_Options.Breedtip.CurrentStats25) and (tblBreedID) then
+        -- Set line for "Current breed's stats at level 25" (have to have BreedsPerSpecies and tblBreedID for this)
+        if (BPBID_Options.Breedtip.CurrentStats25) and (BPBID_Arrays.BreedsPerSpecies[speciesID]) and (tblBreedID) then
             for i = 1, #tblBreedID do
                 local currentbreed = tblBreedID[i]
                 local hex = "\124cFF0070DD" -- Always use rare color by default
@@ -321,9 +327,8 @@ local function BPBID_Hook_BattleUpdate(self)
     if not tooltip then
         -- Set the name header if the user wants
         if (name) and (BPBID_Options.Names.PrimaryBattle) then
-            -- Set standard text or use hex coloring based on font fix option
-            if (BPBID_Options.BattleFontFix) then
-                local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset])
+            local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            if hex then
                 self.Name:SetText("|c"..hex..name.." ("..breed..")".."|r")
             else
                 self.Name:SetText(name.." ("..breed..")")
@@ -332,9 +337,8 @@ local function BPBID_Hook_BattleUpdate(self)
     else
         -- Set the name header if the user wants
         if (name) and (BPBID_Options.Names.BattleTooltip) then
-            -- Set standard text or use hex coloring based on font fix option
-            if (not BPBID_Options.BattleFontFix) then
-                local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset])
+            local _, _, _, hex = C_Item.GetItemQualityColor(internal.rarityCache[self.petIndex + offset] - 1)
+            if hex then
                 self.Name:SetText("|c"..hex..name.." ("..breed..")".."|r")
             else
                 self.Name:SetText(name.." ("..breed..")")

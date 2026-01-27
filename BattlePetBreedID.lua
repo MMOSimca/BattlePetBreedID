@@ -609,7 +609,7 @@ SLASH_BATTLEPETBREEDID1 = "/battlepetbreedID"
 SLASH_BATTLEPETBREEDID2 = "/BPBID"
 SLASH_BATTLEPETBREEDID3 = "/breedID"
 SlashCmdList["BATTLEPETBREEDID"] = function(msg)
-    Settings.OpenToCategory(CatID)
+    Settings.OpenToCategory(addonname)
 end
 
 -- This stuff is only supported in a Retail client
@@ -620,7 +620,7 @@ if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then
 		icon = "Interface/Icons/petjournalportrait.blp",
 		notCheckable = true,
 		func = function(button, menuInputData, menu)
-			Settings.OpenToCategory(CatID)
+			Settings.OpenToCategory(addonname)
 		end,
 		funcOnEnter = function(button)
 			MenuUtil.ShowTooltip(button, function(tooltip)
