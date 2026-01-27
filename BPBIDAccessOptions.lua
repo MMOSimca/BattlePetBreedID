@@ -1,5 +1,6 @@
 -- Get folder path and set addon namespace
 local addonname, internal = ...
+local raw,properName,title,_ = C_AddOns.GetAddOnInfo(addonname)
 
 -- Access Style ... pre/post 12.x
 local CatID = addonname
@@ -16,9 +17,9 @@ end
 
 -- This stuff is only supported in a Retail client
 if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then
-	local mouseButtonNote = "\nDisplay the BreedID of pets in your journal, in battle, in chat links, and in AH tooltips.";
+	local mouseButtonNote = "\n" .. title;
 	AddonCompartmentFrame:RegisterAddon({
-		text = addonname,
+		text = properName,
 		icon = "Interface/Icons/petjournalportrait.blp",
 		notCheckable = true,
 		func = function(button, menuInputData, menu)
@@ -26,7 +27,7 @@ if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then
 		end,
 		funcOnEnter = function(button)
 			MenuUtil.ShowTooltip(button, function(tooltip)
-				tooltip:SetText(addonname .. mouseButtonNote)
+				tooltip:SetText(properName .. mouseButtonNote)
 			end)
 		end,
 		funcOnLeave = function(button)
