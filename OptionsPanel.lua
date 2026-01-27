@@ -610,6 +610,8 @@ Options.OnRefresh = BPBID_Options_Refresh
 -- Add the options panel to the Blizzard list
 local category = Settings.RegisterCanvasLayoutCategory(Options, properName, properName)
 if not (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then category.ID = addonname end
--- print("BPBIDOPID set to: " .. category.ID) -- debugging
-BPBIDOPID = category.ID
 Settings.RegisterAddOnCategory(category)
+
+function GetBPBIDOptionsID()
+	return category.ID
+end
