@@ -3,9 +3,7 @@ local addonname, internal = ...
 local raw,properName,title,_ = C_AddOns.GetAddOnInfo(addonname)
 
 -- Access Style ... pre/post 12.x
-local CatID = addonname
-if (WOW_PROJECT_ID == WOW_PROJECT_MAINLINE) then CatID = BPBIDOPID end
--- print("CatID id: " .. CatID) -- debugging
+local CatID = GetBPBIDOptionsID()
 
 -- Create slash commands
 SLASH_BATTLEPETBREEDID1 = "/battlepetbreedID"
