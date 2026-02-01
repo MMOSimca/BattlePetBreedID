@@ -9950,7 +9950,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4897] = false
     BPBID_Arrays.BreedsPerSpecies[4898] = false
     BPBID_Arrays.BreedsPerSpecies[4899] = false
-    BPBID_Arrays.BreedsPerSpecies[4900] = false
+    BPBID_Arrays.BreedsPerSpecies[4900] = {10}
     BPBID_Arrays.BreedsPerSpecies[4901] = {4}
     BPBID_Arrays.BreedsPerSpecies[4902] = false
     BPBID_Arrays.BreedsPerSpecies[4903] = false
