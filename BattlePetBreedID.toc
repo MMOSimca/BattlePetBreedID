@@ -28,4 +28,5 @@ BattlePetBreedID.lua
 PetData.lua
 BreedTooltips.lua
 OptionsPanel.lua
+BPBIDAccessOptions.lua
 
