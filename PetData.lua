@@ -9509,7 +9509,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4456] = {3, 4, 5, 6, 8, 10, 11}
     BPBID_Arrays.BreedsPerSpecies[4457] = {3, 4, 5, 6, 8, 10, 11}
     BPBID_Arrays.BreedsPerSpecies[4458] = false
-    BPBID_Arrays.BreedsPerSpecies[4459] = false
+    BPBID_Arrays.BreedsPerSpecies[4459] = {9}
     BPBID_Arrays.BreedsPerSpecies[4460] = {3, 4, 5, 6, 7, 11, 12}
     BPBID_Arrays.BreedsPerSpecies[4461] = {3, 4, 5, 6, 7, 11, 12}
     BPBID_Arrays.BreedsPerSpecies[4462] = {7}
@@ -9525,7 +9525,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4472] = {11}
     BPBID_Arrays.BreedsPerSpecies[4473] = {4}
     BPBID_Arrays.BreedsPerSpecies[4474] = false
-    BPBID_Arrays.BreedsPerSpecies[4475] = false
+    BPBID_Arrays.BreedsPerSpecies[4475] = {4}
     BPBID_Arrays.BreedsPerSpecies[4476] = {11}
     BPBID_Arrays.BreedsPerSpecies[4477] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
     BPBID_Arrays.BreedsPerSpecies[4478] = false
@@ -9558,7 +9558,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4505] = false
     BPBID_Arrays.BreedsPerSpecies[4506] = {5}
     BPBID_Arrays.BreedsPerSpecies[4507] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
-    BPBID_Arrays.BreedsPerSpecies[4508] = false
+    BPBID_Arrays.BreedsPerSpecies[4508] = {5}
     BPBID_Arrays.BreedsPerSpecies[4509] = false
     BPBID_Arrays.BreedsPerSpecies[4510] = {4, 8, 10, 11}
     BPBID_Arrays.BreedsPerSpecies[4511] = {5}
@@ -9683,7 +9683,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4630] = {9}
     BPBID_Arrays.BreedsPerSpecies[4631] = {9}
     BPBID_Arrays.BreedsPerSpecies[4632] = {12}
-    BPBID_Arrays.BreedsPerSpecies[4633] = false
+    BPBID_Arrays.BreedsPerSpecies[4633] = {6}
     BPBID_Arrays.BreedsPerSpecies[4634] = false
     BPBID_Arrays.BreedsPerSpecies[4635] = {11}
     BPBID_Arrays.BreedsPerSpecies[4636] = {10}
@@ -9880,7 +9880,7 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[4827] = {3}
     BPBID_Arrays.BreedsPerSpecies[4828] = {3}
     BPBID_Arrays.BreedsPerSpecies[4829] = {3}
-    BPBID_Arrays.BreedsPerSpecies[4830] = false
+    BPBID_Arrays.BreedsPerSpecies[4830] = {3}
     BPBID_Arrays.BreedsPerSpecies[4831] = false
     BPBID_Arrays.BreedsPerSpecies[4832] = {3}
     BPBID_Arrays.BreedsPerSpecies[4833] = {7}
@@ -10054,8 +10054,8 @@ function BPBID_Arrays.InitializeArrays()
     BPBID_Arrays.BreedsPerSpecies[5001] = false
     BPBID_Arrays.BreedsPerSpecies[5002] = false
     BPBID_Arrays.BreedsPerSpecies[5003] = false
-    
-    
+ 
+
     -- Fix for changes unique to Mists of Pandaria Classic
     if (WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE) then
         -- Undoing Peddlefeet 1 Power buff from Retail. This was probably a bug on Retail anyway but nobody ever noticed.
