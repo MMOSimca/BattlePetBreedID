@@ -389,8 +389,9 @@ local function BPBID_Hook_BPTShow(speciesID, level, rarity, maxHealth, power, sp
     rarity = rarity + 1
     local breedNum, quality, resultslist = internal.CalculateBreedID(speciesID, rarity, level, maxHealth, power, speed, false, false)
 
+    -- As of 12.0.1, this conflicts with other addons to produce error spam. TODO: Find a workaround.
     -- Add the breed to the tooltip's name text
-    if (BPBID_Options.Names.BPT) then
+    --[[if (BPBID_Options.Names.BPT) then
         local breed = internal.RetrieveBreedName(breedNum)
 
         -- BattlePetTooltip does not allow customnames for now, so we can just get this ourself (more reliable)
@@ -428,7 +429,7 @@ local function BPBID_Hook_BPTShow(speciesID, level, rarity, maxHealth, power, sp
             -- Set the name text variable to match the real name text now to prepare for the next check
             BPTNameText = BattlePetTooltip.Name:GetText()
         end
-    end
+    end]]--
 
     -- Set up the breed tooltip
     if (BPBID_Options.Tooltips.Enabled) and (BPBID_Options.Tooltips.BPT) then
